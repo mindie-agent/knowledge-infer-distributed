@@ -1,0 +1,65 @@
+{
+  "index": 5,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-distributed",
+  "level": "L2",
+  "title": "An async RPC wrapper does not supply inference cancellation or transactional cache rollback",
+  "mechanism": "At this TGI revision, Prefill and Decode call model.generate_token synchronously inside async RPC methods. Decode calls cache.pop for each input batch before concatenation/generation and caches the successor only afterward; the wrapper contains no rollback across those operations. SIGINT/SIGTERM change a cooperative flag polled by serve_inner, which has no explicit server.stop or drain call in this unit.",
+  "corrections": [
+    "A missing later batch causes the handler to raise after earlier pop calls. Actual cache removal and recovery semantics depend on the Cache implementation, which was not included; do not assert a measured lost batch.",
+    "Event-loop blocking and transport-level cancellation remain structural inferences, not observed runtime traces.",
+    "Cache-delete/clear API calls alone do not prove physical device-memory release.",
+    "Use distinct Prefill:151-191 and Decode:193-226 references when stating absence of a handler-local cancellation check."
+  ],
+  "source_scope": "All 11 corrected references read from pinned Git; no server process or grpc runtime test run.",
+  "supporting_ranges": [
+    {
+      "path": "server/text_generation_server/server.py",
+      "line_start": 41,
+      "line_end": 53,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "b461eef4bfd166ade3ab02d5e5ccc141e86c2d50f071dee45026c04a6b40bf38",
+      "range_sha256": "b06664deae386d4afd02b9839b5140601b2d13657ffd71e67cf678b5bb5a25fa",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/server.py:0-11284"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/server.py#L41-L53"
+    },
+    {
+      "path": "server/text_generation_server/server.py",
+      "line_start": 151,
+      "line_end": 226,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "b461eef4bfd166ade3ab02d5e5ccc141e86c2d50f071dee45026c04a6b40bf38",
+      "range_sha256": "a9d7e6b07d9ee3f62ac256564f414170b956992cbfbeb3fbd145d3ab4c01b407",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/server.py:0-11284"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/server.py#L151-L226"
+    },
+    {
+      "path": "server/text_generation_server/server.py",
+      "line_start": 307,
+      "line_end": 324,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "b461eef4bfd166ade3ab02d5e5ccc141e86c2d50f071dee45026c04a6b40bf38",
+      "range_sha256": "733c55610bcbc996bf95e1909bf3a69d1b58156872ea12e34e5fd3e0bf5f9c7b",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:server/text_generation_server/server.py:0-11284"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/server/text_generation_server/server.py#L307-L324"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "66d0b6be5410d80011d00c26c29b74c703f17e8c594948c61b4e137c629156a1",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "6b28abc99d0aa7e37d8c8485ee0ebc6af2a77ecbcb4f3356f466243edf6bc9bd",
+    "original_receipt": "11e7ff711e2c95360b6b2a36444c934187446e62f4c8ff8d8131718d1fbd439d",
+    "original_admission": "39b531b227bf9989e8ce67da10254fd065b2914191a47043eeeb70944acfb54f"
+  }
+}

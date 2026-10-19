@@ -1,0 +1,97 @@
+{
+  "closure": {
+    "unit-tgi-async-rpc-cancellation-boundary": [],
+    "unit-tgi-shard-result-aggregation": []
+  },
+  "digest": "19de47eff3ef0e3828ff4602d5cbaf95d44d6e1d7ef93e3e28ae3b4fd838047c",
+  "federation": {
+    "corpus": {
+      "automatic": false,
+      "bytes": 6893,
+      "estimated_tokens": 972,
+      "kind": "federation",
+      "path": ".",
+      "unit_ids": [
+        "unit-tgi-async-rpc-cancellation-boundary",
+        "unit-tgi-shard-result-aggregation"
+      ],
+      "units": 2
+    },
+    "domains": [
+      {
+        "automatic": false,
+        "bytes": 6893,
+        "estimated_tokens": 972,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "serving",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-tgi-async-rpc-cancellation-boundary",
+          "unit-tgi-shard-result-aggregation"
+        ],
+        "units": 2
+      }
+    ]
+  },
+  "index_build_elapsed_ms": 0.4253749502822757,
+  "index_digest": "a43ce51c40220f45aec837f7af648050e0961699e09487cf7782975c73a1ed14",
+  "leaves": [
+    {
+      "automatic": false,
+      "bytes": 6893,
+      "estimated_tokens": 972,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "serving/tgi",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-tgi-async-rpc-cancellation-boundary",
+        "unit-tgi-shard-result-aggregation"
+      ],
+      "units": 2
+    }
+  ],
+  "schema": "mindie-shard-topology/1",
+  "two_level_subtrees": [
+    {
+      "automatic": false,
+      "bytes": 6893,
+      "estimated_tokens": 972,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/tgi",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-tgi-async-rpc-cancellation-boundary",
+        "unit-tgi-shard-result-aggregation"
+      ],
+      "units": 2
+    }
+  ],
+  "unit_count": 2,
+  "units": {
+    "unit-tgi-async-rpc-cancellation-boundary": {
+      "bytes": 3396,
+      "category": "sop",
+      "content_sha256": "8614cefe8d0f339ea490a68c80875b5bf5ba03651759bb6a18e49bac455817ec",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 478,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-async-rpc-cancellation-boundary.md",
+      "tier": "L2"
+    },
+    "unit-tgi-shard-result-aggregation": {
+      "bytes": 3497,
+      "category": "sop",
+      "content_sha256": "f5a559afeaa88e11460d7ce7b1edd660b4633d088cd4deb9bb948c9cdd3159b5",
+      "domain_path": "serving/tgi",
+      "estimated_tokens": 494,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "serving/tgi/unit-tgi-shard-result-aggregation.md",
+      "tier": "L2"
+    }
+  }
+}

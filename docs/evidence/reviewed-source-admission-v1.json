@@ -1,0 +1,34 @@
+{
+  "schema_version": "mindie-reviewed-domain-admission/1",
+  "domain": "infer-distributed",
+  "validator_revision": "9e4ee0bc0e5440a71d3c4c82ea0440e8642ffa25",
+  "editorial_packet_sha256": [
+    "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605"
+  ],
+  "evidence_strength": "single_observation",
+  "input_kind": "ecosystem_repo",
+  "input_outcome": "observed",
+  "input_repetitions": 1,
+  "accepted_existing_unit_count": 0,
+  "admitted_unit_ids": [
+    "unit-tgi-shard-result-aggregation",
+    "unit-tgi-async-rpc-cancellation-boundary"
+  ],
+  "source_revisions": [
+    "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
+  ],
+  "c6": "applied",
+  "correct_condition_query": "matched",
+  "mismatched_revision": "excluded",
+  "missing_revision": "excluded",
+  "exact_ref_readback": "matched",
+  "index": "generated_and_checked",
+  "existing_unit_bytes": "preserved",
+  "source_projection": "actual_single_pass_Gitleaks_and_deterministic_scan_unchanged",
+  "decision_preparation": "Deterministic projection of independently reviewed mechanism and corrections; no new model interpretation.",
+  "formal_publication": "Requires final contract/2 release pin and remote readback.",
+  "model_calls": 0,
+  "framework_execution": 0,
+  "npu_calls": 0,
+  "remote_writes": 0
+}

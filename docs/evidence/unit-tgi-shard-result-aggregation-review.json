@@ -1,0 +1,77 @@
+{
+  "index": 0,
+  "decision": "accept_with_editorial_rewrite",
+  "domain": "infer-distributed",
+  "level": "L2",
+  "title": "Shard fan-out must aggregate control errors explicitly",
+  "mechanism": "At the pinned TGI revision, sharded info, health and filter_batch await every shard but return only the last Result; prefill, decode and clear_cache collect all Results. Generation lists are merged last shard first and the retained next_batch comes from that last shard. v2 warmup drops None values before choosing a minimum; v3 chooses a lexicographic minimum of a tuple. These are distinct aggregation contracts.",
+  "corrections": [
+    "Use build.rs:16-20 for the v2 protoc error branch.",
+    "Treat underlying tonic deadlines, transport cancellation and server cache lifetime as unverified.",
+    "The warmup image's PNG bytes and JPEG MIME mismatch are source facts; acceptance by a deployed decoder was not tested.",
+    "Do not infer all-shard health or component-wise v3 token minima from the returned control result."
+  ],
+  "source_scope": "All 21 corrected source-reference ranges read from pinned Git; actual execution not performed.",
+  "supporting_ranges": [
+    {
+      "path": "backends/client/src/v2/sharded_client.rs",
+      "line_start": 51,
+      "line_end": 96,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "5558604bf9e7b1cd4da4130c32eafc40feee0756686b69fc4e0af7a0cc49a761",
+      "range_sha256": "130ed77c51cd9b55d152efc08106a31a8a8806a614198f8dc7e7295a86ac92b7",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/client/src/v2/sharded_client.rs:0-8549"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/client/src/v2/sharded_client.rs#L51-L96"
+    },
+    {
+      "path": "backends/client/src/v2/sharded_client.rs",
+      "line_start": 122,
+      "line_end": 159,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "5558604bf9e7b1cd4da4130c32eafc40feee0756686b69fc4e0af7a0cc49a761",
+      "range_sha256": "9af1f5ce5c5d15414a15b83dbb953f78ced3ce9ddd6639ad6214817613ed3e06",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/client/src/v2/sharded_client.rs:0-8549"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/client/src/v2/sharded_client.rs#L122-L159"
+    },
+    {
+      "path": "backends/client/src/v2/sharded_client.rs",
+      "line_start": 168,
+      "line_end": 185,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "5558604bf9e7b1cd4da4130c32eafc40feee0756686b69fc4e0af7a0cc49a761",
+      "range_sha256": "3f115522ed448f130e7ad6cc31b91206db9fee6dc2769a3456ff6b73cfc04982",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/client/src/v2/sharded_client.rs:0-8549"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/client/src/v2/sharded_client.rs#L168-L185"
+    },
+    {
+      "path": "backends/client/src/v3/sharded_client.rs",
+      "line_start": 122,
+      "line_end": 168,
+      "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+      "source_sha256": "c13f135566d5fe640edc2e62f2fd1827d249bb16d1ed177fb308754e1dd82596",
+      "range_sha256": "4070695923809e4e982d4b44d75e65ad95ec4ac2354e3ad326ae48545393342e",
+      "unit_ids": [
+        "source:text-generation-inference:b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed:backends/client/src/v3/sharded_client.rs:0-9309"
+      ],
+      "url": "https://github.com/huggingface/text-generation-inference/blob/b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed/backends/client/src/v3/sharded_client.rs#L122-L168"
+    }
+  ],
+  "source_revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed",
+  "accepted_body_sha256": "8dd5df047eb400183a379b83e585bd0fe942c53fc720eb5b2ccb8a5771687ce1",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "huggingface/text-generation-inference",
+  "editorial_packet_sha256": "1e0edf38b6ea01d7d3b0d7e7c044567a2ce975a77f849b2bbdfaab8791db5605",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "c0ad2fa6c14acd22ac8ed17173cdfe166986a86cd6a6138f0e911d23b0d195c8",
+    "original_receipt": "79aa5854a8cac1d98a71a0fb897509101b530d124e3d643092726be1b4ffa42a",
+    "original_admission": "b57568cca1fa954f9fab117af72ca5a8479b152321fdc16b5bcda98042f56cf5"
+  }
+}
