@@ -1,0 +1,469 @@
+{
+  "schema": "mindie-cannbot-distributed-provenance/1",
+  "domain": "infer-distributed",
+  "purpose": "Provenance ledger for four distilled units covering Ascend HCCL transport and rank-table invariants, HCCL wait-timeout triage, PD-disaggregated KV transfer, and multi-node MoE expert parallelism with MC2 and All2All.",
+  "privacy": {
+    "policy": "no internal IPv4 addresses, usernames, or user-home paths",
+    "contains_internal_ips": false,
+    "contains_usernames": false,
+    "contains_user_home_paths": false,
+    "redaction": "Hosts, NPU device addresses and NIC names are placeholders. Private transcript inputs are represented by relative logical locators and SHA-256 digests only."
+  },
+  "source_sets": [
+    {
+      "id": "cannbot-knowledge",
+      "repository": "https://gitcode.com/cann/cannbot-knowledge",
+      "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+      "source_type": "ecosystem_repo",
+      "role": "primary distilled runbooks and concepts"
+    },
+    {
+      "id": "cannbot-skills",
+      "repository": "https://gitcode.com/cann/cannbot-skills",
+      "revision": "1fa2cbbc9fdddb4377ca26734e9b94d91c42b975",
+      "source_type": "ecosystem_repo",
+      "role": "environment and verification skill contracts"
+    },
+    {
+      "id": "mooncake",
+      "repository": "https://github.com/kvcache-ai/Mooncake",
+      "revision": "1f65cf13c9f886f8db8b88b7733367b18340ebf0",
+      "source_type": "ecosystem_repo",
+      "role": "Ascend direct transport and LLM-DataDist rank-table examples"
+    },
+    {
+      "id": "msmodeling",
+      "repository": "https://gitcode.com/Ascend/msmodeling",
+      "revision": "1adde03a04264fa976893fdf50495270175043e6",
+      "source_type": "ecosystem_repo",
+      "role": "A2/A3 multi-node hccn_tool link-check command ranges"
+    },
+    {
+      "id": "vllm-ascend-reviewed-checkout",
+      "repository": "https://github.com/vllm-project/vllm-ascend",
+      "revision": "2c0d5d0a12c0f8e812cdf0aee40f873a55611f5f",
+      "source_type": "local_reviewed_checkout_of_upstream",
+      "role": "MooncakeConnector asymmetric-TP, delayed-free and abort-timeout code paths"
+    }
+  ],
+  "transcript_inputs": [
+    {
+      "id": "packet_a3_pd_mooncake_mc2_moe",
+      "locator": "wave7/inputs/packet_a3_pd_mooncake_mc2_moe.md",
+      "sha256": "3bbbf1b18e62bb6a0457cb48cb4a395beb506139116f4518b8a7ce7ca964445a",
+      "role": "matched private transcript task index and branch-diff metadata",
+      "publication": "private transcript; referenced by digest only"
+    },
+    {
+      "id": "offline_transcript_digest",
+      "locator": "wave7/inputs/offline_transcript_digest.md",
+      "sha256": "9204f6be8c973adc88c0238456ec60872cc18c072866c85d6c4ad9bbbb797dbd",
+      "role": "offline digest of the multi-node A3/A5 PD, MC2 and HCCL observations",
+      "publication": "private transcript; referenced by digest only"
+    }
+  ],
+  "official_contracts": [
+    {
+      "id": "a3-ranktable",
+      "url": "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/910/commlib/hcclug/docs/zh/user_guide/cluster_info_config/rank_table_config_a3.md",
+      "role": "A3 rank-table resource configuration"
+    },
+    {
+      "id": "hccl-buffsize",
+      "url": "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/commlib/hcclug/docs/zh/user_guide/hccl_env/HCCL_BUFFSIZE.md",
+      "role": "HCCL_BUFFSIZE unit and default"
+    },
+    {
+      "id": "hccl-socket-ifname",
+      "url": "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/commlib/hcclug/docs/zh/user_guide/hccl_env/HCCL_SOCKET_IFNAME.md",
+      "role": "HCCL host NIC selection and first-match rule"
+    },
+    {
+      "id": "hccl-intra-roce",
+      "url": "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/commlib/hcclug/docs/zh/user_guide/hccl_env/HCCL_INTRA_ROCE_ENABLE.md",
+      "role": "intra-node RDMA switch"
+    },
+    {
+      "id": "hccl-exec-timeout",
+      "url": "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/commlib/hcclug/docs/zh/user_guide/hccl_env/HCCL_EXEC_TIMEOUT.md",
+      "role": "collective execution timeout"
+    },
+    {
+      "id": "ei0002",
+      "url": "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/920beta2/maintenref/troubleshooting/docs/zh/error_codes/EI0002-Communication_Error_Timeout.md",
+      "role": "notify-wait timeout semantics and 1800 s default"
+    },
+    {
+      "id": "ei0006",
+      "url": "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/920beta2/maintenref/troubleshooting/docs/zh/error_codes/EI0006-Communication_Error_Get_Socket.md",
+      "role": "socket-timeout semantics and all-rank log direction"
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit_path": "hccl/topology/unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms.md",
+      "tier": "L1",
+      "category": "axiom",
+      "evidence_strength": "hardware_spec",
+      "source_type": "hardware_spec+official_docs+ecosystem_repo",
+      "source_locator": "docs/evidence/cannbot-distributed-provenance.json#unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "execution": "not_performed",
+      "claims": [
+        "A2, A3 and A5 keep intra-node and inter-node transports in separate domains; the inter-node domain is RoCE v2.",
+        "A3 exposes two dies per card and sixteen logic devices per eight-card node; npu-smi distinguishes Chip Logic ID from Chip Phy-ID.",
+        "rank_table_file v1.0 binds node-local device_id, cluster-global rank_id and per-device RoCE device_ip.",
+        "HCCL_BUFFSIZE is a per-communicator MB capacity contract, defaulting to 200 MB, and must be equal on all ranks.",
+        "HCCL_SOCKET_IFNAME selects the host NIC used for HCCL socket bootstrap; it is not the NPU device IP.",
+        "HCCL_INTRA_ROCE_ENABLE=1 moves intra-node traffic to RDMA; it does not change the inter-node transport or create a SuperPod."
+      ],
+      "supporting_ranges": [
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/concepts/platforms/atlas_a3.md",
+          "line_start": 36,
+          "line_end": 46,
+          "claim": "A3 dual-die cards: 16 cards x 2 dies = 32 die-level ranks; die-level parallelism is explicit."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/concepts/platforms/ascend_950.md",
+          "line_start": 21,
+          "line_end": 73,
+          "claim": "950PR/950DT are the A5 generation; deployment counts and platform branches differ from A3."
+        },
+        {
+          "repository": "Ascend/msmodeling",
+          "revision": "1adde03a04264fa976893fdf50495270175043e6",
+          "path": "contrib/optix/multihost_infer/multihost_inference_optimization/README.md",
+          "line_start": 120,
+          "line_end": 220,
+          "claim": "A2 is checked over device ids 0..7 and A3 over 0..15; link, optical, lldp, net_health and ping use hccn_tool."
+        },
+        {
+          "repository": "Mooncake",
+          "revision": "1f65cf13c9f886f8db8b88b7733367b18340ebf0",
+          "path": "scripts/ascend/perf/llmdatadist_bandwidth_test_cross_machine_demo.py",
+          "line_start": 62,
+          "line_end": 88,
+          "claim": "Cross-machine LLM-DataDist rank table uses server_count=2, one device per server, device_id local and rank_id global 0/1."
+        },
+        {
+          "repository": "Mooncake",
+          "revision": "1f65cf13c9f886f8db8b88b7733367b18340ebf0",
+          "path": "scripts/ascend/perf/llmdatadist_bandwidth_test_single_machine_demo.py",
+          "line_start": 60,
+          "line_end": 80,
+          "claim": "Single-machine rank table keeps two devices under one server with device ids local and rank ids 0/1."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/runbooks/runtime/hccl_buffsize_too_small.md",
+          "line_start": 20,
+          "line_end": 51,
+          "claim": "HCCL_BUFFSIZE default 200 MB; too-small error; all ranks must agree."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/runbooks/runtime/moe_dispatch_combine_hccl_buffsize.md",
+          "line_start": 26,
+          "line_end": 70,
+          "claim": "MC2 dispatch/combine buffer formula and operator-side tiling failure when the buffer is too small."
+        },
+        {
+          "repository": "Mooncake",
+          "revision": "1f65cf13c9f886f8db8b88b7733367b18340ebf0",
+          "path": "docs/source/design/transfer-engine/transport/ascend_direct_transport.md",
+          "line_start": 55,
+          "line_end": 100,
+          "claim": "A2 server / A3 supernode default to HCCS; HCCL_INTRA_ROCE_ENABLE=1 forces RDMA; device memory registration is 2 MiB aligned."
+        }
+      ],
+      "evidence_refs": [
+        "docs/evidence/cannbot-distributed-provenance.json#unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/910/commlib/hcclug/docs/zh/user_guide/cluster_info_config/rank_table_config_a3.md",
+        "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/commlib/hcclug/docs/zh/user_guide/hccl_env/HCCL_BUFFSIZE.md",
+        "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/commlib/hcclug/docs/zh/user_guide/hccl_env/HCCL_SOCKET_IFNAME.md",
+        "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/commlib/hcclug/docs/zh/user_guide/hccl_env/HCCL_INTRA_ROCE_ENABLE.md",
+        "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/hccl_buffsize_too_small.md#L20-L51",
+        "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/design/transfer-engine/transport/ascend_direct_transport.md#L55-L100"
+      ],
+      "limitations": [
+        "A5 device enumeration is deliberately not asserted; it must be read from the installed npu-smi output.",
+        "The unit is a hardware/runtime contract, not a benchmark; no latency or bandwidth number is claimed.",
+        "A3 superpod fabric naming and A5 node fabric naming are installation-specific; only the separation from RoCE v2 is asserted."
+      ]
+    },
+    {
+      "unit_id": "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+      "unit_path": "hccl/triage/unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop.md",
+      "tier": "L2",
+      "category": "sop",
+      "evidence_strength": "software_contract",
+      "source_type": "software_contract+runbook",
+      "source_locator": "docs/evidence/cannbot-distributed-provenance.json#unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+      "execution": "not_performed",
+      "claims": [
+        "EI0006 is Get_Socket_Timeout; EI0002 is a notify-wait timeout whose default collective timeout is 1800 s; HCCL_E_WAIT_TIMEOUT is the same wait-timeout family.",
+        "A wait timeout is a secondary symptom until all-rank logs prove that every rank entered the collective.",
+        "One rank that crashes, exits, skips a collective on an idle DP batch, or has a different collective ledger produces a timeout on the peers without a physical link fault.",
+        "Physical degradation is separated with hccn_tool link, optical, stat, lldp and ping on the waiting peer's device.",
+        "Raising HCCL_EXEC_TIMEOUT before classifying participation versus link health masks the fault."
+      ],
+      "supporting_ranges": [
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/runbooks/runtime/hccl_timeout_secondary_to_rank_failure_oom.md",
+          "line_start": 20,
+          "line_end": 63,
+          "claim": "EI0006 is often secondary; grep all rank logs for an earlier OOM or crash; ASCEND_LAUNCH_BLOCKING can localize."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/runbooks/runtime/collective_participation_per_rank_consistency.md",
+          "line_start": 22,
+          "line_end": 84,
+          "claim": "Every rank must enter the same collective sequence; idle DP batches need a dummy forward; local-state-gated collectives diverge."
+        },
+        {
+          "repository": "Ascend/msmodeling",
+          "revision": "1adde03a04264fa976893fdf50495270175043e6",
+          "path": "contrib/optix/multihost_infer/multihost_inference_optimization/README.md",
+          "line_start": 145,
+          "line_end": 215,
+          "claim": "Documented hccn_tool checks: lldp for peer switch port, link for UP/DOWN, net_health, netdetect, gateway, ip and ping."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/guides/experience/interventions/yuanrong_kv_pool_remote_h2d_ascend_prereqs.md",
+          "line_start": 100,
+          "line_end": 118,
+          "claim": "Optical module, RoCE link UP, local NPU IP and remote NPU ping are the four physical checks before a device-direct transfer."
+        },
+        {
+          "repository": "cann/cannbot-skills",
+          "revision": "1fa2cbbc9fdddb4377ca26734e9b94d91c42b975",
+          "path": "communication/hccl-env-check/SKILL.md",
+          "line_start": 20,
+          "line_end": 74,
+          "claim": "HCCL environment checks are read-only and must report actual paths, exit codes and missing items rather than infer a pass."
+        }
+      ],
+      "evidence_refs": [
+        "docs/evidence/cannbot-distributed-provenance.json#unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/920beta2/maintenref/troubleshooting/docs/zh/error_codes/EI0002-Communication_Error_Timeout.md",
+        "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/920beta2/maintenref/troubleshooting/docs/zh/error_codes/EI0006-Communication_Error_Get_Socket.md",
+        "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/hccl_timeout_secondary_to_rank_failure_oom.md#L20-L63",
+        "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/collective_participation_per_rank_consistency.md#L22-L84",
+        "https://gitcode.com/Ascend/msmodeling/blob/1adde03a04264fa976893fdf50495270175043e6/contrib/optix/multihost_infer/multihost_inference_optimization/README.md#L145-L215"
+      ],
+      "limitations": [
+        "The SOP is a source- and runbook-derived software contract; no live NPU triage was performed for this unit.",
+        "EI0002's default 1800 s is a timeout budget, not a diagnosis; workload skew can legitimately exceed it.",
+        "hccn_tool output fields vary by driver and platform; interpret the actual command output rather than assuming a schema."
+      ]
+    },
+    {
+      "unit_id": "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
+      "unit_path": "serving/pd-disaggregation/unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop.md",
+      "tier": "L2",
+      "category": "sop",
+      "evidence_strength": "reproduced_empirical",
+      "source_type": "reproduced_run+source_contract",
+      "source_locator": "docs/evidence/cannbot-distributed-provenance.json#unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
+      "execution": "performed",
+      "claims": [
+        "MooncakeConnector requires prefill_tp_size >= decode_tp_size and computes tp_num_need_pulls from the per-rank KV-head counts.",
+        "The transferred asymmetric-TP KV layout is [block, split, token, head_per_split, dim] and must be restored to [block, token, split, head_per_split, dim] before attention consumes it.",
+        "A pull-based P/D connector must delay P-side block release until every distinct decode TP rank has acknowledged; duplicate acknowledgements must not count.",
+        "A request rejected before scheduler admission must still send an empty completion so the P node can release stranded blocks.",
+        "Abort and timeout reclamation must be verified by free-block count and by fault injection, not by the presence of a delete API."
+      ],
+      "supporting_ranges": [
+        {
+          "repository": "vllm-ascend",
+          "revision": "2c0d5d0a12c0f8e812cdf0aee40f873a55611f5f",
+          "path": "vllm_ascend/distributed/kv_transfer/kv_p2p/mooncake_connector.py",
+          "line_start": 1987,
+          "line_end": 2049,
+          "claim": "request_finished delays free, enqueues an empty receive for pre-admission rejection, and exports remote_ptp_size."
+        },
+        {
+          "repository": "vllm-ascend",
+          "revision": "2c0d5d0a12c0f8e812cdf0aee40f873a55611f5f",
+          "path": "vllm_ascend/distributed/kv_transfer/kv_p2p/mooncake_connector.py",
+          "line_start": 2097,
+          "line_end": 2215,
+          "claim": "MooncakeConnectorWorker rejects prefill_tp_size < decode_tp_size and computes tp_num_need_pulls from num_key_value_heads."
+        },
+        {
+          "repository": "vllm-ascend",
+          "revision": "2c0d5d0a12c0f8e812cdf0aee40f873a55611f5f",
+          "path": "vllm_ascend/distributed/kv_transfer/kv_p2p/mooncake_connector.py",
+          "line_start": 1120,
+          "line_end": 1180,
+          "claim": "Asymmetric-TP KV is transposed from [block, split, token, head_per_split, dim] to [block, token, split, head_per_split, dim]."
+        },
+        {
+          "repository": "vllm-ascend",
+          "revision": "2c0d5d0a12c0f8e812cdf0aee40f873a55611f5f",
+          "path": "vllm_ascend/distributed/kv_transfer/kv_p2p/mooncake_connector.py",
+          "line_start": 226,
+          "line_end": 247,
+          "claim": "Delayed free requests are force-released after VLLM_MOONCAKE_ABORT_REQUEST_TIMEOUT."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/runbooks/runtime/pd_prefill_kv_block_release_vs_decode_pull.md",
+          "line_start": 29,
+          "line_end": 105,
+          "claim": "Pull-based P/D release needs a distinct-decode-rank ACK barrier, duplicate-rank dedup, and synchronous handshake; CDCP push is an alternative."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/runbooks/runtime/vllm_ascend_mooncake_connector_backend_incompat.md",
+          "line_start": 32,
+          "line_end": 112,
+          "claim": "Only store connector needs register_buffer=true to produce mem type:1 device registration; torchair KV is 3-D and needs an adaptive block rank."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/runbooks/runtime/mooncake_ascend_hixl_kv_transfer_bringup.md",
+          "line_start": 20,
+          "line_end": 76,
+          "claim": "Mooncake Ascend direct needs USE_ASCEND_DIRECT, set_device before engine construction, positional initialize, and 2 MiB alignment on the HCCS IPC path."
+        },
+        {
+          "repository": "Mooncake",
+          "revision": "1f65cf13c9f886f8db8b88b7733367b18340ebf0",
+          "path": "scripts/ascend/perf/llmdatadist_bandwidth_test_cross_machine_demo.py",
+          "line_start": 62,
+          "line_end": 88,
+          "claim": "LLM-DataDist link uses a v1.0 rank table and polls query_register_mem_status until RegisterMemStatus.OK."
+        }
+      ],
+      "evidence_refs": [
+        "docs/evidence/cannbot-distributed-provenance.json#unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
+        "https://github.com/vllm-project/vllm-ascend/pull/1691",
+        "https://github.com/vllm-project/vllm-ascend/issues/4842",
+        "https://github.com/vllm-project/vllm-ascend/pull/2947",
+        "https://github.com/vllm-project/vllm-ascend/issues/5044",
+        "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/pd_prefill_kv_block_release_vs_decode_pull.md#L29-L105",
+        "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/mooncake_ascend_hixl_kv_transfer_bringup.md#L20-L76",
+        "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/design/transfer-engine/transport/ascend_direct_transport.md#L55-L100"
+      ],
+      "limitations": [
+        "The 4P+4D A3 baseline is recorded in the private transcript digest; exact model, image, host names and throughput are intentionally not reproduced here.",
+        "The LlmDataDist pull path is source-reviewed through its public contract and examples; it was not independently rerun for this unit.",
+        "Free-block accounting proves logical reclamation, not physical HBM release; allocator-level release remains unverified.",
+        "Mooncake and LlmDataDist are different connectors with different configuration surfaces; do not mix their fixes."
+      ]
+    },
+    {
+      "unit_id": "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
+      "unit_path": "serving/moe-ep/unit-multi-node-moe-ep-mc2-all2all-convergence-workflow.md",
+      "tier": "L3",
+      "category": "workflow",
+      "evidence_strength": "reproduced_empirical",
+      "source_type": "reproduced_run+source_contract",
+      "source_locator": "docs/evidence/cannbot-distributed-provenance.json#unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
+      "execution": "performed",
+      "claims": [
+        "Multi-node MoE EP admission must prove divisibility (batch/EP, experts/EP, SP length/attn-TP) and the A2 experts-per-rank ceiling before selecting MC2.",
+        "Prefill and decode should use different All2All paths: double-routing for large prefill token counts and MC2 dispatch/combine for small-batch EP decode.",
+        "MC2 dispatch/combine needs a dedicated HCCL communicator, a sufficient HCCL_BUFFSIZE, and comm_alg=fullmesh_v2 only where zero experts are absent.",
+        "Convergence requires a non-EP golden, routing-weight preservation, inverse-mapping integrity, and equal collective participation across DP ranks.",
+        "Scale-up is gated on repeated soak and fault-injection results, not on a single successful request."
+      ],
+      "supporting_ranges": [
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/concepts/techniques/moe_dispatch_combine_v2.md",
+          "line_start": 24,
+          "line_end": 117,
+          "claim": "MC2 dispatch/combine contract, A2 experts-per-rank ceiling, zero-expert support, dedicated communicator and fullmesh_v2 caveats."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/optimizations/experience/rules/mc2_dedicated_comm_domain.md",
+          "line_start": 22,
+          "line_end": 47,
+          "claim": "MC2 cannot share a communicator; moe_ep_group_mc2 is dedicated and buffers are sized per domain."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/optimizations/experience/rules/moe_ep_dispatch_path_by_stage.md",
+          "line_start": 26,
+          "line_end": 64,
+          "claim": "Prefill uses double-routing All2All; decode uses MC2; A2 or eager falls back."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/optimizations/experience/rules/moe_zero_expert_copy_expert_num.md",
+          "line_start": 28,
+          "line_end": 49,
+          "claim": "copy_expert_num handles zero experts inside MC2; fullmesh_v2 is incompatible with zero experts."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/runbooks/runtime/moe_dispatch_combine_hccl_buffsize.md",
+          "line_start": 26,
+          "line_end": 70,
+          "claim": "MC2 buffer formula and the operator tiling failure when HCCL_BUFFSIZE is too small."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/runbooks/runtime/parallel_dim_divisibility_constraints.md",
+          "line_start": 24,
+          "line_end": 56,
+          "claim": "batch must divide moe_ep_size; SP prefill length must align to attn_tp_size."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/guides/experience/interventions/multimachine_dp_ep_moe_collective_alignment.md",
+          "line_start": 24,
+          "line_end": 56,
+          "claim": "DP+EP ranks must align prefill/decode phase, run dummy work when idle, and replace variable-length collectives with fixed-length ones on multi-machine."
+        },
+        {
+          "repository": "cann/cannbot-knowledge",
+          "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+          "path": "knowledge/model/inference/runbooks/runtime/moe_alltoallv_single_expert_missing_d2h_sync.md",
+          "line_start": 20,
+          "line_end": 70,
+          "claim": "All2All-v split arrays come from non-blocking D2H; the single-expert branch needs an explicit device sync before the async collective reads them."
+        }
+      ],
+      "evidence_refs": [
+        "docs/evidence/cannbot-distributed-provenance.json#unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
+        "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/concepts/techniques/moe_dispatch_combine_v2.md#L24-L117",
+        "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/optimizations/experience/rules/mc2_dedicated_comm_domain.md#L22-L47",
+        "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/optimizations/experience/rules/moe_ep_dispatch_path_by_stage.md#L26-L64",
+        "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/moe_dispatch_combine_hccl_buffsize.md#L26-L70",
+        "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/guides/experience/interventions/multimachine_dp_ep_moe_collective_alignment.md#L24-L56"
+      ],
+      "limitations": [
+        "Multi-node A3/A5 EP runs are recorded in the private transcript digest; no throughput or accuracy number is claimed here.",
+        "A2's experts-per-rank ceiling and A3's absence are source-documented; A5 MC2 limits must be confirmed against the installed operator version.",
+        "The workflow is a convergence procedure, not a guarantee that fullmesh_v2 is beneficial for a given topology."
+      ]
+    }
+  ]
+}

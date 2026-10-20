@@ -1,29 +1,290 @@
 {
-  "build_elapsed_ms": 0.4253749502822757,
+  "build_elapsed_ms": 2.072499948553741,
   "closure": {
+    "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": [],
+    "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
     "unit-tgi-async-rpc-cancellation-boundary": [],
     "unit-tgi-shard-result-aggregation": []
   },
-  "digest": "a43ce51c40220f45aec837f7af648050e0961699e09487cf7782975c73a1ed14",
-  "generation": "1ddc24922bee0bdd6f836faeaab027b325542cbd0802e8f789c7b860f7e3d4ad",
+  "generation": "4d495cc09ef53216ac2a03d6c56628b30c6e1a2245f6c7064fac133f12d5efcc",
   "id_path": {
+    "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": "hccl/triage/unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop.md",
+    "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": "hccl/topology/unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms.md",
+    "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": "serving/moe-ep/unit-multi-node-moe-ep-mc2-all2all-convergence-workflow.md",
+    "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop": "serving/pd-disaggregation/unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop.md",
     "unit-tgi-async-rpc-cancellation-boundary": "serving/tgi/unit-tgi-async-rpc-cancellation-boundary.md",
     "unit-tgi-shard-result-aggregation": "serving/tgi/unit-tgi-shard-result-aggregation.md"
   },
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 2,
+  "unit_count": 6,
   "units": [
     {
       "category": "sop",
-      "closure_digest": "sha256:59a9c038fab3fefcc9f86087ce75170aacbe3aba7baf501814c4591d6e3e5b1a",
+      "conditions": {
+        "collective_transport": [
+          "hccs",
+          "roce-v2"
+        ],
+        "ranktable_schema": "1.0",
+        "vendor": "huawei-ascend"
+      },
+      "domain_path": "hccl/triage",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/triage/unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-distributed-provenance.json#unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+          "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/920beta2/maintenref/troubleshooting/docs/zh/error_codes/EI0002-Communication_Error_Timeout.md",
+          "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/920beta2/maintenref/troubleshooting/docs/zh/error_codes/EI0006-Communication_Error_Get_Socket.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/hccl_timeout_secondary_to_rank_failure_oom.md#L20-L63",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/collective_participation_per_rank_consistency.md#L22-L84",
+          "https://gitcode.com/Ascend/msmodeling/blob/1adde03a04264fa976893fdf50495270175043e6/contrib/optix/multihost_infer/multihost_inference_optimization/README.md#L145-L215"
+        ],
+        "source_digest": "fd7433c8c9b2de6d6d629e4d77ffb5dc09c57788a3f7d6d6c19dff678589f4d6",
+        "source_locator": "docs/evidence/cannbot-distributed-provenance.json#unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "source_type": "software_contract+runbook",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Triage EI0006/EI0002 notify-wait timeouts: separate rank skew from HCCN link degradation",
+      "token_estimate": 2037,
+      "triggers": {
+        "error_signatures": [
+          "EI0006",
+          "EI0002",
+          "HCCL_E_WAIT_TIMEOUT",
+          "Get_Socket_Timeout",
+          "An timeout occurs when the Notify register waits for execution"
+        ],
+        "keywords": [
+          "hccl",
+          "timeout",
+          "notify wait",
+          "rank skew",
+          "hccn_tool",
+          "optical",
+          "lldp",
+          "roce",
+          "link",
+          "participation"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "ranktable_schema": "1.0",
+        "transport": [
+          "hccs",
+          "roce-v2"
+        ],
+        "vendor": "huawei-ascend"
+      },
+      "domain_path": "hccl/topology",
+      "evidence_strength": "hardware_spec",
+      "id": "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "hccl/topology/unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-distributed-provenance.json#unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+          "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/910/commlib/hcclug/docs/zh/user_guide/cluster_info_config/rank_table_config_a3.md",
+          "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/commlib/hcclug/docs/zh/user_guide/hccl_env/HCCL_BUFFSIZE.md",
+          "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/commlib/hcclug/docs/zh/user_guide/hccl_env/HCCL_SOCKET_IFNAME.md",
+          "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/commlib/hcclug/docs/zh/user_guide/hccl_env/HCCL_INTRA_ROCE_ENABLE.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/hccl_buffsize_too_small.md#L20-L51",
+          "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/design/transfer-engine/transport/ascend_direct_transport.md#L55-L100"
+        ],
+        "source_digest": "fd7433c8c9b2de6d6d629e4d77ffb5dc09c57788a3f7d6d6c19dff678589f4d6",
+        "source_locator": "docs/evidence/cannbot-distributed-provenance.json#unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "source_type": "hardware_spec+official_docs+ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Ascend HCCL transport and rank-table axioms across A2, A3 and A5",
+      "token_estimate": 2270,
+      "triggers": {
+        "error_signatures": [
+          "EI0006",
+          "HCCL_BUFFSIZE is too SMALL",
+          "rank_table_file"
+        ],
+        "keywords": [
+          "hccl",
+          "hccs",
+          "roce",
+          "ranktable",
+          "device_id",
+          "rank_id",
+          "device_ip",
+          "a2",
+          "a3",
+          "a5",
+          "superpod"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "parallelism": [
+          "EP",
+          "MC2",
+          "All2All"
+        ],
+        "platform_family": [
+          "a2",
+          "a3",
+          "a5"
+        ],
+        "ranktable_schema": "1.0"
+      },
+      "domain_path": "serving/moe-ep",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "serving/moe-ep/unit-multi-node-moe-ep-mc2-all2all-convergence-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-distributed-provenance.json#unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/concepts/techniques/moe_dispatch_combine_v2.md#L24-L117",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/optimizations/experience/rules/mc2_dedicated_comm_domain.md#L22-L47",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/optimizations/experience/rules/moe_ep_dispatch_path_by_stage.md#L26-L64",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/moe_dispatch_combine_hccl_buffsize.md#L26-L70",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/guides/experience/interventions/multimachine_dp_ep_moe_collective_alignment.md#L24-L56"
+        ],
+        "source_digest": "fd7433c8c9b2de6d6d629e4d77ffb5dc09c57788a3f7d6d6c19dff678589f4d6",
+        "source_locator": "docs/evidence/cannbot-distributed-provenance.json#unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
+        "source_type": "reproduced_run+source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Bring up and converge multi-node MoE EP with MC2 dispatch/combine and All2All",
+      "token_estimate": 2405,
+      "triggers": {
+        "error_signatures": [
+          "HCCL_BUFFSIZE is too SMALL",
+          "MoeDistributeDispatchV2 do tiling failed",
+          "batch_size is not divisible by moe_ep_size"
+        ],
+        "keywords": [
+          "moe",
+          "expert parallel",
+          "mc2",
+          "dispatch",
+          "combine",
+          "all2all",
+          "hccl",
+          "ep",
+          "fullmesh_v2",
+          "copy_expert_num",
+          "eplb"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "connector": [
+          "MooncakeConnector",
+          "LlmDataDist"
+        ],
+        "kv_transport": [
+          "roce",
+          "rdma"
+        ],
+        "supports_asymmetric_tp": true
+      },
+      "domain_path": "serving/pd-disaggregation",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "serving/pd-disaggregation/unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-distributed-provenance.json#unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
+          "https://github.com/vllm-project/vllm-ascend/pull/1691",
+          "https://github.com/vllm-project/vllm-ascend/issues/4842",
+          "https://github.com/vllm-project/vllm-ascend/pull/2947",
+          "https://github.com/vllm-project/vllm-ascend/issues/5044",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/pd_prefill_kv_block_release_vs_decode_pull.md#L29-L105",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/model/inference/runbooks/runtime/mooncake_ascend_hixl_kv_transfer_bringup.md#L20-L76",
+          "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/design/transfer-engine/transport/ascend_direct_transport.md#L55-L100"
+        ],
+        "source_digest": "fd7433c8c9b2de6d6d629e4d77ffb5dc09c57788a3f7d6d6c19dff678589f4d6",
+        "source_locator": "docs/evidence/cannbot-distributed-provenance.json#unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
+        "source_type": "reproduced_run+source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "PD-disaggregated KV connector and asymmetric P-TP/D-TP KV-head slicing",
+      "token_estimate": 2501,
+      "triggers": {
+        "error_signatures": [
+          "103901",
+          "mem type:1",
+          "prefill_tp_size must be greater than or equal to the decode_tp_size",
+          "Force freed expired request",
+          "ASCEND_TRANSFER_TIMEOUT"
+        ],
+        "keywords": [
+          "mooncake",
+          "llm datadist",
+          "kv connector",
+          "pd disagg",
+          "asymmetric tp",
+          "kv head",
+          "rdma",
+          "roce",
+          "register_buffer",
+          "delayed free"
+        ]
+      }
+    },
+    {
+      "category": "sop",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:8614cefe8d0f339ea490a68c80875b5bf5ba03651759bb6a18e49bac455817ec",
-      "content_sha256": "8614cefe8d0f339ea490a68c80875b5bf5ba03651759bb6a18e49bac455817ec",
       "domain_path": "serving/tgi",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-async-rpc-cancellation-boundary",
@@ -45,7 +306,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "An async RPC wrapper does not supply inference cancellation or transactional cache rollback",
-      "token_estimate": 478,
+      "token_estimate": 475,
       "triggers": {
         "error_signatures": [],
         "keywords": [
@@ -68,13 +329,10 @@
     },
     {
       "category": "sop",
-      "closure_digest": "sha256:7917798362bb60ecf237fd6025244ca0a36550051f5788e30f2966d4ea666246",
       "conditions": {
         "repository": "huggingface/text-generation-inference",
         "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
       },
-      "content_digest": "sha256:f5a559afeaa88e11460d7ce7b1edd660b4633d088cd4deb9bb948c9cdd3159b5",
-      "content_sha256": "f5a559afeaa88e11460d7ce7b1edd660b4633d088cd4deb9bb948c9cdd3159b5",
       "domain_path": "serving/tgi",
       "evidence_strength": "single_observation",
       "id": "unit-tgi-shard-result-aggregation",
@@ -97,7 +355,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Shard fan-out must aggregate control errors explicitly",
-      "token_estimate": 494,
+      "token_estimate": 490,
       "triggers": {
         "error_signatures": [],
         "keywords": [

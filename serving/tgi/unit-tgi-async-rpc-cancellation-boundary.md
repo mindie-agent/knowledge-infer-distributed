@@ -43,7 +43,7 @@ triggers:
 ---
 At this TGI revision, Prefill and Decode call model.generate_token synchronously inside async RPC methods. Decode calls cache.pop for each input batch before concatenation/generation and caches the successor only afterward; the wrapper contains no rollback across those operations. SIGINT/SIGTERM change a cooperative flag polled by serve_inner, which has no explicit server.stop or drain call in this unit.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - A missing later batch causes the handler to raise after earlier pop calls. Actual cache removal and recovery semantics depend on the Cache implementation, which was not included; do not assert a measured lost batch.
 - Event-loop blocking and transport-level cancellation remain structural inferences, not observed runtime traces.
