@@ -1,0 +1,72 @@
+{
+  "schema": "mindie-distributed-provenance/1",
+  "domain": "infer-distributed",
+  "generated_at_utc": "2026-10-21T04:21:00Z",
+  "purpose": "Provenance ledger for CANNBot HCCL AICPU collective template engineering, HCCL-VM verification, and module-decoupled TP, EP, CP, and KVP parallel strategy units.",
+  "source_repositories": [
+    {
+      "id": "cannbot-skills",
+      "repository": "cann/cannbot-skills",
+      "remote": "https://gitcode.com/cann/cannbot-skills",
+      "revision": "f305e200aa4b1e1fed73cd21ff1f083b8df25a1e",
+      "files": [
+        {
+          "path": "communication/hccl-aicpu-best-practice/SKILL.md",
+          "sha256": "31bbef4be6929d5c86afd6ee5049d01e7f6227b66cec6559afc2dd9658cbc0f1",
+          "line_ranges": ["11-207"],
+          "used_for": "HCCL AICPU InsAlgTemplateBase interface contract, CalcScratchMultiple single-repeat rule, and dual CMake registration"
+        },
+        {
+          "path": "communication/hccl-aicpu-debug/SKILL.md",
+          "sha256": "bfccd671b6919de70c86df4601f8395c1d852f0cc7b8124e5b30882fa75a5464",
+          "line_ranges": ["6-21"],
+          "used_for": "HCCL AICPU build, selector miss, Checker data mismatch, and thread/notify hang triage"
+        },
+        {
+          "path": "communication/hccl-aicpu-perf-optimize/SKILL.md",
+          "sha256": "a1b20ff2a2dff2a03af91055007fbb4b8f64457dc79b7224541c74fe9c9fbe77",
+          "line_ranges": ["6-18"],
+          "used_for": "Controlled HCCL AICPU performance experiment design and separation of functional Checker from latency claims"
+        },
+        {
+          "path": "communication/hccl-env-check/SKILL.md",
+          "sha256": "5cbb1ad741d5777e5114fcb4d10320ef5d37e31c5dd0ccc8b2acbc407dfad329",
+          "line_ranges": ["6-80"],
+          "used_for": "Read-only HCCL, HCOMM, and CANN environment readiness verification"
+        },
+        {
+          "path": "communication/hccl-test-tool-hvm/SKILL.md",
+          "sha256": "4fab0be11bf360f3bccb3619f2ccd3c8bac0d3da1f6d4d2b7ab960607cc6cbdc",
+          "line_ranges": ["6-135"],
+          "used_for": "HCCL-VM collective simulation modes, comm-domain topology mapping, directed vs baseline evidence tracks, and CHECKER_RUN_SUMMARY gate"
+        },
+        {
+          "path": "model/model-infer-parallel-analysis/SKILL.md",
+          "sha256": "e8d1c8af698eb1115a1c0989e760b37bc54e4bedc914c852413ad05fa9dc262c",
+          "line_ranges": ["12-450"],
+          "used_for": "Module-decoupled TP, EP, CP, and KVP parallel strategy decision tree, MLA absorb KV sizing, and divisibility constraints"
+        },
+        {
+          "path": "model/model-infer-parallel-impl/SKILL.md",
+          "sha256": "e4c1b934f7698ac54e677977eb9cf93cc27c5e3ff40e551fa34f4196b718e07f",
+          "line_ranges": ["11-220"],
+          "used_for": "CommManager physical group reuse vs allow_physical_reuse=False and packed TND AllGather/ReduceScatter padding"
+        }
+      ]
+    },
+    {
+      "id": "cannbot",
+      "repository": "cann/cannbot",
+      "remote": "https://gitcode.com/cann/cannbot",
+      "revision": "d0f8c40ebc208fa17323781c89e4ec6ea16e4c52",
+      "files": [
+        {
+          "path": "plugins-official/hccl-op-generator/AGENTS.md",
+          "sha256": "0179b15c3e5eb33edc8ecb5da1a3815884044dfbd9e786d9f69eff04be056ad7",
+          "line_ranges": ["1-180"],
+          "used_for": "Multi-agent HCCL AICPU collective operator generation workflow and verification handoff"
+        }
+      ]
+    }
+  ]
+}

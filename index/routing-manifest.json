@@ -1,10 +1,20 @@
 {
-  "build_elapsed_ms": 2.072499948553741,
+  "build_elapsed_ms": 4.266500007361174,
   "closure": {
+    "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
     "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
     ],
     "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": [],
+    "unit-ascend-hccl-vm-checker-and-env-readiness-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
+    ],
+    "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
@@ -16,10 +26,13 @@
     "unit-tgi-async-rpc-cancellation-boundary": [],
     "unit-tgi-shard-result-aggregation": []
   },
-  "generation": "4d495cc09ef53216ac2a03d6c56628b30c6e1a2245f6c7064fac133f12d5efcc",
+  "generation": "506b4a08bb822fa931c9620a76b967ec142ee9799201b139624e7f961d10a354",
   "id_path": {
+    "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": "hccl/aicpu/unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop.md",
     "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": "hccl/triage/unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop.md",
     "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": "hccl/topology/unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms.md",
+    "unit-ascend-hccl-vm-checker-and-env-readiness-workflow": "hccl/verification/unit-ascend-hccl-vm-checker-and-env-readiness-workflow.md",
+    "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow": "serving/parallel-strategy/unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow.md",
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": "serving/moe-ep/unit-multi-node-moe-ep-mc2-all2all-convergence-workflow.md",
     "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop": "serving/pd-disaggregation/unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop.md",
     "unit-tgi-async-rpc-cancellation-boundary": "serving/tgi/unit-tgi-async-rpc-cancellation-boundary.md",
@@ -28,8 +41,63 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 6,
+  "unit_count": 9,
   "units": [
+    {
+      "category": "sop",
+      "conditions": {
+        "collective_transport": [
+          "hccs",
+          "roce-v2"
+        ],
+        "repository": "cann/cannbot-skills",
+        "revision": "f305e200aa4b1e1fed73cd21ff1f083b8df25a1e",
+        "vendor": "huawei-ascend"
+      },
+      "domain_path": "hccl/aicpu",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/aicpu/unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-hccl-and-parallel-provenance.json",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-best-practice/SKILL.md#L11-L207",
+          "https://gitcode.com/cann/cannbot/blob/d0f8c40ebc208fa17323781c89e4ec6ea16e4c52/plugins-official/hccl-op-generator/AGENTS.md#L1-L180"
+        ],
+        "source_digest": "31bbef4be6929d5c86afd6ee5049d01e7f6227b66cec6559afc2dd9658cbc0f1",
+        "source_locator": "docs/evidence/cannbot-hccl-and-parallel-provenance.json",
+        "source_type": "cannbot_skill_and_source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "HCCL AICPU InsAlgTemplateBase dataflow contract, single-repeat scratch budget, and host/device dual CMake registration SOP",
+      "token_estimate": 1098,
+      "triggers": {
+        "error_signatures": [
+          "undefined symbol InsTemp in libscatter_aicpu_kernel.so",
+          "CalcScratchMultiple multiplied by repeatNum causes excessive executor loop splitting",
+          "GetNotifyIdxMainToSub or GetNotifyIdxSubToMain length mismatch with CalcRes",
+          "INT64 UINT64 FP64 or HCCL_REDUCE_PROD fails on hardware reduction path"
+        ],
+        "keywords": [
+          "hccl",
+          "aicpu",
+          "InsAlgTemplateBase",
+          "CalcScratchMultiple",
+          "CalcRes",
+          "KernelRun",
+          "scatter_aicpu_kernel",
+          "Dataflow Spec"
+        ]
+      }
+    },
     {
       "category": "sop",
       "conditions": {
@@ -143,6 +211,121 @@
           "a3",
           "a5",
           "superpod"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "collective_transport": [
+          "hccs",
+          "roce-v2"
+        ],
+        "repository": "cann/cannbot-skills",
+        "revision": "f305e200aa4b1e1fed73cd21ff1f083b8df25a1e",
+        "vendor": "huawei-ascend"
+      },
+      "domain_path": "hccl/verification",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-hccl-vm-checker-and-env-readiness-workflow",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
+      ],
+      "path": "hccl/verification/unit-ascend-hccl-vm-checker-and-env-readiness-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-hccl-and-parallel-provenance.json",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-env-check/SKILL.md#L6-L80",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-test-tool-hvm/SKILL.md#L6-L135",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-debug/SKILL.md#L6-L21",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-perf-optimize/SKILL.md#L6-L18"
+        ],
+        "source_digest": "4fab0be11bf360f3bccb3619f2ccd3c8bac0d3da1f6d4d2b7ab960607cc6cbdc",
+        "source_locator": "docs/evidence/cannbot-hccl-and-parallel-provenance.json",
+        "source_type": "cannbot_skill_and_source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "HCCL-VM collective verification, comm-domain topology matrix, and AICPU fault isolation workflow",
+      "token_estimate": 1060,
+      "triggers": {
+        "error_signatures": [
+          "CHECKER_RUN_SUMMARY missing or failed",
+          "HCCL_ALGO directed algorithm not hit during hccl-vm verification",
+          "HCOMM_CODE_HOME or HCCL_ROOT NOT_READY"
+        ],
+        "keywords": [
+          "hccl-vm",
+          "hccl-test-tool-hvm",
+          "hccl-env-check",
+          "CHECKER_RUN_SUMMARY",
+          "CCU_SCHED",
+          "CCU_MS",
+          "AI_CPU",
+          "HCCL_ALGO",
+          "mock-comm"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "collective_transport": [
+          "hccs",
+          "roce-v2"
+        ],
+        "repository": "cann/cannbot-skills",
+        "revision": "f305e200aa4b1e1fed73cd21ff1f083b8df25a1e",
+        "vendor": "huawei-ascend"
+      },
+      "domain_path": "serving/parallel-strategy",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "serving/parallel-strategy/unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-hccl-and-parallel-provenance.json",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-parallel-analysis/SKILL.md#L12-L450",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-parallel-impl/SKILL.md#L11-L220"
+        ],
+        "source_digest": "e8d1c8af698eb1115a1c0989e760b37bc54e4bedc914c852413ad05fa9dc262c",
+        "source_locator": "docs/evidence/cannbot-hccl-and-parallel-provenance.json",
+        "source_type": "cannbot_skill_and_source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Module-decoupled TP/EP/DP/CP/KVP parallel strategy sizing, CommManager physical group reuse, and packed TND padding workflow",
+      "token_estimate": 1077,
+      "triggers": {
+        "error_signatures": [
+          "world_size is not divisible by tp_size",
+          "N_h * v_head_dim is not divisible by oproj_tp_size",
+          "oproj_tp_size must equal kvp_size when KVP is enabled",
+          "moe_ep_group_mc2 physical group reuse conflict"
+        ],
+        "keywords": [
+          "parallel_config",
+          "attn_tp_size",
+          "dense_tp_size",
+          "moe_tp_size",
+          "o_proj_tp_size",
+          "cp_size",
+          "kvp_size",
+          "CommManager",
+          "allow_physical_reuse"
         ]
       }
     },

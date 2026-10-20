@@ -1,9 +1,19 @@
 {
   "closure": {
+    "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
     "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
     ],
     "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": [],
+    "unit-ascend-hccl-vm-checker-and-env-readiness-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
+    ],
+    "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
@@ -18,55 +28,74 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 52369,
-      "estimated_tokens": 10178,
+      "bytes": 70365,
+      "estimated_tokens": 13413,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
         "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
         "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-vm-checker-and-env-readiness-workflow",
+        "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow",
         "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
         "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
         "unit-tgi-async-rpc-cancellation-boundary",
         "unit-tgi-shard-result-aggregation"
       ],
-      "units": 6
+      "units": 9
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 21416,
-        "estimated_tokens": 4307,
+        "bytes": 33512,
+        "estimated_tokens": 6465,
         "exceeds": [],
         "kind": "federation",
         "path": "hccl",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
+          "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
           "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
-          "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+          "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+          "unit-ascend-hccl-vm-checker-and-env-readiness-workflow"
         ],
-        "units": 2
+        "units": 4
       },
       {
         "automatic": false,
-        "bytes": 30953,
-        "estimated_tokens": 5871,
+        "bytes": 36853,
+        "estimated_tokens": 6948,
         "exceeds": [],
         "kind": "federation",
         "path": "serving",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
+          "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow",
           "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
           "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
           "unit-tgi-async-rpc-cancellation-boundary",
           "unit-tgi-shard-result-aggregation"
         ],
-        "units": 4
+        "units": 5
       }
     ]
   },
-  "index_build_elapsed_ms": 2.072499948553741,
+  "index_build_elapsed_ms": 4.266500007361174,
   "leaves": [
+    {
+      "automatic": false,
+      "bytes": 6037,
+      "estimated_tokens": 1098,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "hccl/aicpu",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
+      ],
+      "units": 1
+    },
     {
       "automatic": false,
       "bytes": 11104,
@@ -95,6 +124,19 @@
     },
     {
       "automatic": false,
+      "bytes": 6059,
+      "estimated_tokens": 1060,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "hccl/verification",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-hccl-vm-checker-and-env-readiness-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 11963,
       "estimated_tokens": 2405,
       "exceeds": [],
@@ -103,6 +145,19 @@
       "recommended_action": "review_leaf_split",
       "unit_ids": [
         "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5900,
+      "estimated_tokens": 1077,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "serving/parallel-strategy",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow"
       ],
       "units": 1
     },
@@ -138,6 +193,19 @@
   "two_level_subtrees": [
     {
       "automatic": false,
+      "bytes": 6037,
+      "estimated_tokens": 1098,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "hccl/aicpu",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 11104,
       "estimated_tokens": 2270,
       "exceeds": [],
@@ -164,6 +232,19 @@
     },
     {
       "automatic": false,
+      "bytes": 6059,
+      "estimated_tokens": 1060,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "hccl/verification",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascend-hccl-vm-checker-and-env-readiness-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 11963,
       "estimated_tokens": 2405,
       "exceeds": [],
@@ -172,6 +253,19 @@
       "recommended_action": "review_two_level_subtree_split",
       "unit_ids": [
         "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5900,
+      "estimated_tokens": 1077,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/parallel-strategy",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow"
       ],
       "units": 1
     },
@@ -203,8 +297,21 @@
       "units": 2
     }
   ],
-  "unit_count": 6,
+  "unit_count": 9,
   "units": {
+    "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": {
+      "bytes": 6037,
+      "category": "sop",
+      "content_sha256": "10d9090c1a514cb85c7ef8c76dd1338b7e63b5b453845cb3d14a0d8c6442a279",
+      "domain_path": "hccl/aicpu",
+      "estimated_tokens": 1098,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/aicpu/unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop.md",
+      "tier": "L2"
+    },
     "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": {
       "bytes": 10312,
       "category": "sop",
@@ -228,6 +335,33 @@
       "inherits_from": [],
       "path": "hccl/topology/unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms.md",
       "tier": "L1"
+    },
+    "unit-ascend-hccl-vm-checker-and-env-readiness-workflow": {
+      "bytes": 6059,
+      "category": "workflow",
+      "content_sha256": "76eca2d01b2e8b830509221cee0fd261547d9e927b0fd7901a9d82bb01c1ec21",
+      "domain_path": "hccl/verification",
+      "estimated_tokens": 1060,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/verification/unit-ascend-hccl-vm-checker-and-env-readiness-workflow.md",
+      "tier": "L3"
+    },
+    "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow": {
+      "bytes": 5900,
+      "category": "workflow",
+      "content_sha256": "a3ce2819f99a41aaa2f1cce65248e5c2a9ced5638e547c585c2cc7c38c5b5ab4",
+      "domain_path": "serving/parallel-strategy",
+      "estimated_tokens": 1077,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "serving/parallel-strategy/unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow.md",
+      "tier": "L3"
     },
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": {
       "bytes": 11963,
