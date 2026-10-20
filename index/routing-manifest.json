@@ -1,19 +1,84 @@
 {
-  "build_elapsed_ms": 4.266500007361174,
+  "build_elapsed_ms": 8.105500019155443,
   "closure": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop"
     ],
     "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
     ],
     "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": [],
+    "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+      "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop"
+    ],
     "unit-ascend-hccl-vm-checker-and-env-readiness-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
     ],
+    "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ],
     "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+      "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow"
+    ],
+    "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+      "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop"
+    ],
+    "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+    ],
+    "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+      "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+      "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow"
+    ],
+    "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ],
+    "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+      "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+      "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
+    ],
+    "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+      "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+      "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow",
+      "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop"
+    ],
+    "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
+    ],
+    "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+      "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop"
     ],
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
@@ -26,13 +91,27 @@
     "unit-tgi-async-rpc-cancellation-boundary": [],
     "unit-tgi-shard-result-aggregation": []
   },
-  "generation": "506b4a08bb822fa931c9620a76b967ec142ee9799201b139624e7f961d10a354",
+  "generation": "5058f5d9f61d35eeecbd2b41f6d69b36f91c358d8496529270adf5e5024ca085",
   "id_path": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": "hccl/aicpu/unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop.md",
+    "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop": "hccl/topology-and-network/roce-hccs-diagnostics/unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop.md",
     "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": "hccl/triage/unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop.md",
     "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": "hccl/topology/unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms.md",
+    "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow": "hccl/topology-and-network/roce-hccs-diagnostics/unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow.md",
     "unit-ascend-hccl-vm-checker-and-env-readiness-workflow": "hccl/verification/unit-ascend-hccl-vm-checker-and-env-readiness-workflow.md",
+    "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms.md",
+    "unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow.md",
     "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow": "serving/parallel-strategy/unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow.md",
+    "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-module-level-parallel-linear-and-moe-wiring-sop.md",
+    "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow": "shmem/symmetric-memory/sync-and-moe-dispatch/unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow.md",
+    "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop": "shmem/symmetric-memory/architecture-and-apis/unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop.md",
+    "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator": "shmem/symmetric-memory/sync-and-moe-dispatch/unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator.md",
+    "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms": "shmem/symmetric-memory/architecture-and-apis/unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms.md",
+    "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow.md",
+    "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop": "hccl/aicpu-collectives/debug-and-perf-tuning/unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop.md",
+    "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator": "hccl/aicpu-collectives/debug-and-perf-tuning/unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator.md",
+    "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop": "hccl/aicpu-collectives/design-and-implementation/unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop.md",
+    "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow": "hccl/aicpu-collectives/design-and-implementation/unit-hccl-aicpu-executor-binding-and-selector-registration-workflow.md",
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": "serving/moe-ep/unit-multi-node-moe-ep-mc2-all2all-convergence-workflow.md",
     "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop": "serving/pd-disaggregation/unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop.md",
     "unit-tgi-async-rpc-cancellation-boundary": "serving/tgi/unit-tgi-async-rpc-cancellation-boundary.md",
@@ -41,7 +120,7 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 9,
+  "unit_count": 23,
   "units": [
     {
       "category": "sop",
@@ -95,6 +174,65 @@
           "KernelRun",
           "scatter_aicpu_kernel",
           "Dataflow Spec"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "communication_stack": "hccl",
+        "diagnosis_domain": "comm-group-and-buffsize-rdma",
+        "runtime": [
+          "torch_npu",
+          "mindie"
+        ]
+      },
+      "domain_path": "hccl/topology-and-network/roce-hccs-diagnostics",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop"
+      ],
+      "path": "hccl/topology-and-network/roce-hccs-diagnostics/unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_comm_group_construction_pitfalls.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_buffsize_too_small.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/moe_dispatch_combine_hccl_buffsize.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/pd_kv_transfer_timeout_from_hccl_rdma_budget.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/tensor_prep_before_hccl_collective.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-env-config/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-env-debug/SKILL.md"
+        ],
+        "source_digest": "d6c40aa1ba022f59bcc69f94a43215e9f01f4bdb22fe4627a493db48c4376def",
+        "source_locator": "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_comm_group_construction_pitfalls.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Ascend HCCL Communicator Group Construction, HCCL_BUFFSIZE Sizing, and PD KV-Transfer RDMA Budget SOP",
+      "token_estimate": 884,
+      "triggers": {
+        "error_signatures": [
+          "EI0006: HCCL buffer size is too small",
+          "Notify wait timeout during first collective on sub-group",
+          "PD disaggregated KV transfer RDMA timeout under burst load",
+          "hcclCommInitRootInfo rank order mismatch across sub-groups"
+        ],
+        "keywords": [
+          "HCCL_BUFFSIZE",
+          "hccl_buffsize_too_small",
+          "new_group global creation order",
+          "tensor_prep_before_hccl_collective",
+          "pd_kv_transfer_timeout_from_hccl_rdma_budget",
+          "HCCL_RDMA_TIMEOUT",
+          "HCCL_RDMA_RETRY_CNT"
         ]
       }
     },
@@ -217,6 +355,65 @@
     {
       "category": "workflow",
       "conditions": {
+        "accelerator": "ascend",
+        "communication_stack": "hccl",
+        "diagnosis_domain": "secondary-timeout-and-in-kernel-mc2",
+        "runtime": [
+          "torch_npu",
+          "ascendc"
+        ]
+      },
+      "domain_path": "hccl/topology-and-network/roce-hccs-diagnostics",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop"
+      ],
+      "path": "hccl/topology-and-network/roce-hccs-diagnostics/unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_timeout_secondary_to_rank_failure_oom.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_aiv_expansion_vs_prefill_micro_batch.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/kernel/comm_hccl.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/runbooks/accuracy/hccl_channels_and_hcomm_completion.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/runbooks/accuracy/hccl_commit_flag_and_peerwise_counts.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/optimizations/rank_mock_hccl_aic_aiv_syncall.md"
+        ],
+        "source_digest": "585f77cfb47c4c5c19911ce0bfa3e340e25ce63ba79611834b20f889eeee2c13",
+        "source_locator": "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_timeout_secondary_to_rank_failure_oom.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Ascend HCCL Secondary Timeout Root-Rank Triage, AIV Op-Expansion Starvation, and In-Kernel HcclComm Workflow",
+      "token_estimate": 820,
+      "triggers": {
+        "error_signatures": [
+          "EI0002: Notify wait timeout secondary to single-rank exception",
+          "HCCL_OP_EXPANSION_MODE=AIV prefill micro-batch starvation",
+          "HcclAicpuWait or HcommWait unfinished handle in custom MC2 kernel",
+          "Commit flag missing in device-side Hccl Send/Recv"
+        ],
+        "keywords": [
+          "hccl_timeout_secondary_to_rank_failure_oom",
+          "hccl_aiv_expansion_vs_prefill_micro_batch",
+          "hccl_channels_and_hcomm_completion",
+          "hccl_commit_flag_and_peerwise_counts",
+          "rank_mock_hccl_aic_aiv_syncall",
+          "Device-side Hccl client"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
         "collective_transport": [
           "hccs",
           "roce-v2"
@@ -274,6 +471,121 @@
       }
     },
     {
+      "category": "axiom",
+      "conditions": {
+        "accelerator": "ascend",
+        "dimensions": [
+          "tp",
+          "dp",
+          "ep",
+          "cp",
+          "sp",
+          "pp"
+        ],
+        "domain": "multi-dimensional-parallelism"
+      },
+      "domain_path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-parallel-analysis/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/parallel_strategy_overview.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/tp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/dp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/ep.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/cp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/sp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/pp.md"
+        ],
+        "source_digest": "0e948c87ddf1e1e47bc23b0ffa3562206428df8090bb543c31eb5cad49b5f647",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-parallel-analysis/SKILL.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Ascend Multi-Dimensional Parallelism (TP, DP, EP, CP, SP, PP) Tensor Partitioning and Communication Axioms",
+      "token_estimate": 749,
+      "triggers": {
+        "error_signatures": [
+          "world_size not divisible by tp_size * dp_size * pp_size",
+          "expert_parallel_size must divide num_routed_experts",
+          "num_key_value_heads must be divisible by tensor_parallel_size",
+          "sequence length not divisible by context_parallel_size"
+        ],
+        "keywords": [
+          "hybrid parallelism axioms",
+          "TP DP EP CP SP PP",
+          "ColumnParallelLinear RowParallelLinear",
+          "Ulysses All-to-All CP",
+          "Ring Attention CP",
+          "communication volume per layer"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "accelerator": "ascend",
+        "domain": "multi-dimensional-parallelism",
+        "framework": [
+          "mindspeed",
+          "megatron-lm"
+        ],
+        "workload": "distributed-training-and-long-context"
+      },
+      "domain_path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow",
+      "inherits_from": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/megatron_parallelism_overview.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/megatron_tensor_and_sequence_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/megatron_pipeline_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/megatron_context_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/megatron_moe_expert_parallel.md"
+        ],
+        "source_digest": "eece983adf97239783d545acb0dc668605f25dfd6472519b6a3030979257f33a",
+        "source_locator": "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/megatron_parallelism_overview.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Ascend MindSpeed/Megatron TP-2D, Virtual Pipeline (VPP/DualPipeV), and Hybrid CP Configuration Workflow",
+      "token_estimate": 648,
+      "triggers": {
+        "error_signatures": [
+          "tp_x * tp_y must equal tensor_model_parallel_size",
+          "num_layers must be divisible by pipeline_model_parallel_size * vpp_size",
+          "DualPipeV micro-batch count less than 2 * pp_size",
+          "hybrid context parallel ulysses_degree * ring_degree != cp_size"
+        ],
+        "keywords": [
+          "Megatron TP-2D tp_x tp_y",
+          "Virtual Pipeline Parallelism VPP",
+          "DualPipeV bidirectional schedule",
+          "hybrid_Adaptive Context Parallel",
+          "Ulysses + Ring CP",
+          "MoE EP + ETP Megatron"
+        ]
+      }
+    },
+    {
       "category": "workflow",
       "conditions": {
         "collective_transport": [
@@ -326,6 +638,548 @@
           "kvp_size",
           "CommManager",
           "allow_physical_reuse"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "domain": "multi-dimensional-parallelism",
+        "stage": "module-level-parallel-wiring",
+        "workload": "llm-inference"
+      },
+      "domain_path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop",
+      "inherits_from": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+        "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+        "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow"
+      ],
+      "path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-module-level-parallel-linear-and-moe-wiring-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-parallel-impl/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-parallel-analysis/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/tp.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/parallelism/ep.md"
+        ],
+        "source_digest": "48948c2944f7a4e190f00cef6d5447c729495891d65ea656d325618103247d72",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-parallel-impl/SKILL.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Ascend Inference Module-Level Parallel Linear, Vocab Embedding, and MoE EP/TP Wiring SOP",
+      "token_estimate": 869,
+      "triggers": {
+        "error_signatures": [
+          "RowParallelLinear bias added before AllReduce",
+          "VocabParallelEmbedding out-of-range token mask missing",
+          "fused QKV ColumnParallelLinear uneven head split",
+          "shared expert output duplicated across EP ranks"
+        ],
+        "keywords": [
+          "model-infer-parallel-impl",
+          "VocabParallelEmbedding",
+          "MergedColumnParallelLinear",
+          "QKVParallelLinear",
+          "RowParallelLinear reduce_results",
+          "shared expert TP vs routed expert EP"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "accelerator": "ascend",
+        "communication_stack": "shmem",
+        "synchronization_scope": "cross-pe-and-intra-device"
+      },
+      "domain_path": "shmem/symmetric-memory/sync-and-moe-dispatch",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow",
+      "inherits_from": [
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+        "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+        "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop"
+      ],
+      "path": "shmem/symmetric-memory/sync-and-moe-dispatch/unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/concepts/synchronization_and_ordering.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/concepts/memory_ordering_semantics.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/concepts/atomic_operations.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/runbooks/sync_hang_debugging.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/runbooks/memory_corruption_debugging.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/runbooks/runtime_error_troubleshooting.md"
+        ],
+        "source_digest": "493ddde9aa61aec3dd7ac07709923778c8052fbd15d25eaf22a2b70bb89f01a5",
+        "source_locator": "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/concepts/synchronization_and_ordering.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Ascend SHMEM Cross-PE Signal-Wait Synchronization, Intra-Device AIC-AIV Sync, and Hang Diagnosis Workflow",
+      "token_estimate": 909,
+      "triggers": {
+        "error_signatures": [
+          "aclshmem_signal_wait_until hang on remote PE",
+          "aclshmem_barrier_all deadlock across AI cores",
+          "aclshmem_sync_all uninitialized pSync symmetric array",
+          "stale payload read after aclshmem_signal_wait_until"
+        ],
+        "keywords": [
+          "aclshmem_signal_wait_until",
+          "aclshmem_fence",
+          "aclshmem_quiet",
+          "aclshmem_sync_all",
+          "aclshmem_barrier_all",
+          "ACLSHMEM_CMP_EQ",
+          "ACLSHMEM_CMP_GE",
+          "cross-core synchronization"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "communication_stack": "shmem",
+        "execution_scope": "ascendc-device-kernel",
+        "transport_engine": [
+          "mte",
+          "sdma"
+        ]
+      },
+      "domain_path": "shmem/symmetric-memory/architecture-and-apis",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+      "inherits_from": [
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "path": "shmem/symmetric-memory/architecture-and-apis/unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/guides/device_api_guide.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/concepts/rma_communication.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/optimizations/mte_vs_sdma_selection.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/optimizations/ub_vs_gm_data_path.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/optimizations/put_with_signal_fusion.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/optimizations/nonblocking_overlap_pipeline.md"
+        ],
+        "source_digest": "714180212609118b090319900d8c50ebd3054408f647144be6e74d74b7e7a032",
+        "source_locator": "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/guides/device_api_guide.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Ascend SHMEM Device-Side RMA (MTE vs SDMA) and Put-With-Signal Data Movement SOP",
+      "token_estimate": 803,
+      "triggers": {
+        "error_signatures": [
+          "aclshmem_put_nbi UB buffer reused before aclshmem_quiet",
+          "aclshmemx_putmem_signal_nbi UB alignment error",
+          "aclshmem_get_nbi stale data read in UB",
+          "SDMA RMA bandwidth degradation on small payload"
+        ],
+        "keywords": [
+          "aclshmem_put_nbi",
+          "aclshmem_get_nbi",
+          "aclshmem_ub_put_nbi",
+          "aclshmemx_mte_put_nbi",
+          "aclshmemx_sdma_put_nbi",
+          "aclshmem_putmem_signal",
+          "UB vs GM RMA"
+        ]
+      }
+    },
+    {
+      "category": "mutator",
+      "conditions": {
+        "accelerator": "ascend",
+        "communication_stack": "shmem",
+        "optimization_lever": "one-sided-put-signal-double-buffer",
+        "workload": "moe-ep-token-dispatch-combine"
+      },
+      "domain_path": "shmem/symmetric-memory/sync-and-moe-dispatch",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator",
+      "inherits_from": [
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+        "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+        "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+        "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+        "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow"
+      ],
+      "path": "shmem/symmetric-memory/sync-and-moe-dispatch/unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/shmem-ops-generator/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/optimizations/moe_cross_rank_dispatch_with_putmem_signal.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/optimizations/moe_cross_rank_dispatch_sync_delay.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/patterns/alltoall_exchange.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/patterns/ring_shift_and_halo_exchange.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/optimizations/multi_core_parallel_partitioning.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/guides/pytorch_extension_integration.md"
+        ],
+        "source_digest": "c31aa0921e86cc9581e5111194e3ff3cfd43f14d243f1f87cdc713d3cb6f5627",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/shmem-ops-generator/SKILL.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L4",
+      "title": "Ascend SHMEM Low-Latency MoE Cross-Rank Token Dispatch/Combine and Double-Buffer Mutator",
+      "token_estimate": 743,
+      "triggers": {
+        "error_signatures": [
+          "MoE AllToAll dispatch latency bottleneck in decode",
+          "hcclAlltoAllV synchronization overhead small batch MoE",
+          "moe_cross_rank_dispatch_with_putmem_signal"
+        ],
+        "keywords": [
+          "shmem-ops-generator",
+          "MoE SHMEM dispatch combine",
+          "one-sided token dispatch",
+          "double-buffered symmetric slot",
+          "core-to-PE partitioning",
+          "putmem_signal MoE"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "accelerator": "ascend",
+        "communication_stack": "shmem",
+        "interconnect": [
+          "hccs",
+          "roce"
+        ],
+        "memory_model": "pgas-symmetric-heap"
+      },
+      "domain_path": "shmem/symmetric-memory/architecture-and-apis",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "shmem/symmetric-memory/architecture-and-apis/unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/guides/system_overview.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/concepts/aclshmem_core_concepts.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/concepts/initialization_and_bootstrap.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/concepts/symmetric_memory_model.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/concepts/team_management.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/guides/host_api_guide.md"
+        ],
+        "source_digest": "8e20403476db508732626be65b7da9c6d8ec6e680385e477fd768c9832e8ec30",
+        "source_locator": "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/communication/shmem/guides/system_overview.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Ascend SHMEM PGAS Symmetric Heap Addressing, UID Bootstrap, and Team Hierarchy Axioms",
+      "token_estimate": 841,
+      "triggers": {
+        "error_signatures": [
+          "aclshmemx_init_attr_t initialization failure",
+          "aclshmem_ptr returned null for remote PE",
+          "aclshmem_malloc collective size mismatch across PEs",
+          "aclshmem_team_split_strided invalid stride or size"
+        ],
+        "keywords": [
+          "aclshmemx_get_uniqueid",
+          "aclshmemx_set_attr_uniqueid_args",
+          "aclshmem_ptr symmetric address",
+          "aclshmem_malloc collective heap",
+          "ACLSHMEM_TEAM_WORLD",
+          "ACLSHMEM_TEAM_SHARED",
+          "aclshmem_my_pe"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "accelerator": "ascend",
+        "domain": "multi-dimensional-parallelism",
+        "framework": [
+          "torchtitan",
+          "pytorch-dtensor"
+        ],
+        "workload": "fsdp2-5d-and-dsa-sparse-attention"
+      },
+      "domain_path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow",
+      "inherits_from": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/torchtitan_parallelism_overview.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/torchtitan_data_and_tensor_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/torchtitan_pipeline_context_and_moe_parallel.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/dsa_sparse_attention_parallel.md"
+        ],
+        "source_digest": "ba2a802b8805f1ab75c7d1079fb0eda07bd81ac3a46c0d390e5c28c9a7169dab",
+        "source_locator": "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/training/concepts/parallelism/torchtitan_parallelism_overview.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Ascend TorchTitan 5D DeviceMesh, FSDP2 DTensor Sharding, and DeepSeek Sparse Attention (DSA) CP Workflow",
+      "token_estimate": 658,
+      "triggers": {
+        "error_signatures": [
+          "DeviceMesh 5D dimension order mismatch in TorchTitan",
+          "fully_shard FSDP2 DTensor placement conflict with EP",
+          "DSA sparse index kv gather load imbalance across CP ranks"
+        ],
+        "keywords": [
+          "TorchTitan 5D DeviceMesh",
+          "FSDP2 fully_shard DTensor",
+          "Async TP DTensor",
+          "DeepSeek Sparse Attention DSA CP",
+          "ep_tp vs dp_shard_cp mesh"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "communication_stack": "hccl",
+        "stage": "functional-debug-and-checker",
+        "subsystem": "aicpu-collective-algorithm"
+      },
+      "domain_path": "hccl/aicpu-collectives/debug-and-perf-tuning",
+      "evidence_strength": "software_contract",
+      "id": "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop",
+      "inherits_from": [
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+        "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+        "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
+      ],
+      "path": "hccl/aicpu-collectives/debug-and-perf-tuning/unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-debug/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-test-tool-hvm/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-env-debug/SKILL.md"
+        ],
+        "source_digest": "eca1f2f89da5cbe45c14fc5597d833189c56816f876b8732a88de8fab598a9f6",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-debug/SKILL.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "HCCL AICPU Functional Checker Mismatch, Wrong-Result Bisect, and Hang Debug SOP",
+      "token_estimate": 622,
+      "triggers": {
+        "error_signatures": [
+          "HVM Checker data verification failed at rank",
+          "AICPU OpExpansion Notify wait hang in simulation",
+          "HCCL AICPU output mismatch on non-divisible count",
+          "HCCL AICPU fallback to default algorithm unexpectedly"
+        ],
+        "keywords": [
+          "hccl-aicpu-debug",
+          "HVM Checker mismatch",
+          "Notify wait deadlock",
+          "OpExpansion DAG dump",
+          "slice offset bisect",
+          "CheckParams fallback"
+        ]
+      }
+    },
+    {
+      "category": "mutator",
+      "conditions": {
+        "accelerator": "ascend",
+        "communication_stack": "hccl",
+        "optimization_lever": "cost-model-and-pipeline-chunking",
+        "subsystem": "aicpu-collective-algorithm"
+      },
+      "domain_path": "hccl/aicpu-collectives/debug-and-perf-tuning",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator",
+      "inherits_from": [
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+        "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow",
+        "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+        "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow",
+        "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop"
+      ],
+      "path": "hccl/aicpu-collectives/debug-and-perf-tuning/unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-perf-optimize/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-test-tool-hvm/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-env-perf/SKILL.md"
+        ],
+        "source_digest": "8f5e55487bfe423b26399451221947d203897df9036a3d29a65a03fb2e254c48",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-perf-optimize/SKILL.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L4",
+      "title": "HCCL AICPU Cost-Model α-β-γ Calibration, HVM Trace Profiling, and Selector Threshold Mutator",
+      "token_estimate": 623,
+      "triggers": {
+        "error_signatures": [
+          "HCCL selector chose suboptimal Ring over HalvingDoubling",
+          "HVM Estimate latency diverges from hardware profile",
+          "high startup overhead α in multi-round collective",
+          "low link utilization β in single-channel AICPU collective"
+        ],
+        "keywords": [
+          "hccl-aicpu-perf-optimize",
+          "HVM Estimate cost model",
+          "alpha beta gamma collective model",
+          "Ring vs Halving-Doubling crossover",
+          "Hierarchical Mesh AllReduce",
+          "multi-channel OpExpansion"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "communication_stack": "hccl",
+        "stage": "dataflow-and-stride-design",
+        "subsystem": "aicpu-collective-algorithm"
+      },
+      "domain_path": "hccl/aicpu-collectives/design-and-implementation",
+      "evidence_strength": "software_contract",
+      "id": "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
+      ],
+      "path": "hccl/aicpu-collectives/design-and-implementation/unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-design/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-implement/SKILL.md",
+          "https://gitcode.com/cann/cannbot/blob/d0f8c40ebc208fa17323781c89e4ec6ea16e4c52/plugins-official/hccl-op-generator/doc/design.md"
+        ],
+        "source_digest": "8c09eba0ce34cde238537da0962c566b7d9f6f58d702e0b8e2316180f3cc0fd6",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-design/SKILL.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "HCCL AICPU Collective Algorithm Design, Five-Stride Buffer Addressing, and OpExpansion SOP",
+      "token_estimate": 731,
+      "triggers": {
+        "error_signatures": [
+          "AICPU collective slice address out of bounds",
+          "srcStride dstStride five-stride calculation mismatch",
+          "OpExpansion LinkWith LinkRight dependency cycle",
+          "tail slice truncation in ring or halving-doubling"
+        ],
+        "keywords": [
+          "hccl-aicpu-design",
+          "five-stride addressing",
+          "OpExpansion DAG",
+          "LinkWith LinkRight",
+          "HCCL slice partitioning",
+          "ScratchPad memory layout"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "accelerator": "ascend",
+        "communication_stack": "hccl",
+        "stage": "executor-and-selector-registration",
+        "subsystem": "aicpu-collective-algorithm"
+      },
+      "domain_path": "hccl/aicpu-collectives/design-and-implementation",
+      "evidence_strength": "software_contract",
+      "id": "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow",
+      "inherits_from": [
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop"
+      ],
+      "path": "hccl/aicpu-collectives/design-and-implementation/unit-hccl-aicpu-executor-binding-and-selector-registration-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-implement/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-env-config/SKILL.md",
+          "https://gitcode.com/cann/cannbot/blob/d0f8c40ebc208fa17323781c89e4ec6ea16e4c52/plugins-official/hccl-op-generator/doc/design.md"
+        ],
+        "source_digest": "2c8efbf1cc3e8bdb6d966de7be7ec43e71aff1f849854613127fa5c5d375f617",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-aicpu-implement/SKILL.md",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "HCCL AICPU Executor Subclass Binding, AlgConfig Selector Registration, and Dual-CMake Build Workflow",
+      "token_estimate": 627,
+      "triggers": {
+        "error_signatures": [
+          "HCCL_OP_EXPANSION_MODE=AICPU algorithm not selected",
+          "AlgConfig selector registration missing for collective",
+          "undefined symbol in libhccl_alg_template.so",
+          "AICPU executor Prepare or Run returned HCCL_E_PARA"
+        ],
+        "keywords": [
+          "hccl-aicpu-implement",
+          "HCCL_OP_EXPANSION_MODE",
+          "AlgConfig selector",
+          "AICPU Executor subclass",
+          "libhccl_alg_template.so",
+          "HcclAlgTemplateRegister"
         ]
       }
     },

@@ -3,16 +3,81 @@
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
     ],
+    "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop"
+    ],
     "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
     ],
     "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": [],
+    "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+      "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop"
+    ],
     "unit-ascend-hccl-vm-checker-and-env-readiness-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
     ],
+    "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ],
     "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+      "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow"
+    ],
+    "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+      "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop"
+    ],
+    "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+    ],
+    "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+      "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+      "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow"
+    ],
+    "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ],
+    "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+      "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+      "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
+    ],
+    "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+      "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+      "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow",
+      "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop"
+    ],
+    "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop"
+    ],
+    "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+      "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop"
     ],
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
@@ -28,37 +93,73 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 70365,
-      "estimated_tokens": 13413,
+      "bytes": 143008,
+      "estimated_tokens": 23940,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
         "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+        "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop",
         "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
         "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow",
         "unit-ascend-hccl-vm-checker-and-env-readiness-workflow",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+        "unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow",
         "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow",
+        "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop",
+        "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow",
+        "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+        "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+        "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow",
+        "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop",
+        "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator",
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+        "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow",
         "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
         "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
         "unit-tgi-async-rpc-cancellation-boundary",
         "unit-tgi-shard-result-aggregation"
       ],
-      "units": 9
+      "units": 23
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 33512,
-        "estimated_tokens": 6465,
+        "bytes": 63136,
+        "estimated_tokens": 10772,
         "exceeds": [],
         "kind": "federation",
         "path": "hccl",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
           "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+          "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop",
           "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
           "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
-          "unit-ascend-hccl-vm-checker-and-env-readiness-workflow"
+          "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow",
+          "unit-ascend-hccl-vm-checker-and-env-readiness-workflow",
+          "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop",
+          "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator",
+          "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+          "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
+        ],
+        "units": 10
+      },
+      {
+        "automatic": false,
+        "bytes": 20458,
+        "estimated_tokens": 2924,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "parallelism",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+          "unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow",
+          "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop",
+          "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow"
         ],
         "units": 4
       },
@@ -78,10 +179,26 @@
           "unit-tgi-shard-result-aggregation"
         ],
         "units": 5
+      },
+      {
+        "automatic": false,
+        "bytes": 22561,
+        "estimated_tokens": 3296,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "shmem",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow",
+          "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+          "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator",
+          "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+        ],
+        "units": 4
       }
     ]
   },
-  "index_build_elapsed_ms": 4.266500007361174,
+  "index_build_elapsed_ms": 8.105500019155443,
   "leaves": [
     {
       "automatic": false,
@@ -98,6 +215,34 @@
     },
     {
       "automatic": false,
+      "bytes": 8598,
+      "estimated_tokens": 1245,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "hccl/aicpu-collectives/debug-and-perf-tuning",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop",
+        "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 8928,
+      "estimated_tokens": 1358,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "hccl/aicpu-collectives/design-and-implementation",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+        "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
       "bytes": 11104,
       "estimated_tokens": 2270,
       "exceeds": [],
@@ -108,6 +253,20 @@
         "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
       ],
       "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 12098,
+      "estimated_tokens": 1704,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "hccl/topology-and-network/roce-hccs-diagnostics",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop",
+        "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow"
+      ],
+      "units": 2
     },
     {
       "automatic": false,
@@ -134,6 +293,22 @@
         "unit-ascend-hccl-vm-checker-and-env-readiness-workflow"
       ],
       "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 20458,
+      "estimated_tokens": 2924,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+        "unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow",
+        "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop",
+        "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow"
+      ],
+      "units": 4
     },
     {
       "automatic": false,
@@ -185,6 +360,34 @@
       "unit_ids": [
         "unit-tgi-async-rpc-cancellation-boundary",
         "unit-tgi-shard-result-aggregation"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 11058,
+      "estimated_tokens": 1644,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "shmem/symmetric-memory/architecture-and-apis",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 11503,
+      "estimated_tokens": 1652,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "shmem/symmetric-memory/sync-and-moe-dispatch",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow",
+        "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator"
       ],
       "units": 2
     }
@@ -206,6 +409,22 @@
     },
     {
       "automatic": false,
+      "bytes": 17526,
+      "estimated_tokens": 2603,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "hccl/aicpu-collectives",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop",
+        "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator",
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+        "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
+      ],
+      "units": 4
+    },
+    {
+      "automatic": false,
       "bytes": 11104,
       "estimated_tokens": 2270,
       "exceeds": [],
@@ -216,6 +435,20 @@
         "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
       ],
       "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 12098,
+      "estimated_tokens": 1704,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "hccl/topology-and-network",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop",
+        "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow"
+      ],
+      "units": 2
     },
     {
       "automatic": false,
@@ -242,6 +475,22 @@
         "unit-ascend-hccl-vm-checker-and-env-readiness-workflow"
       ],
       "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 20458,
+      "estimated_tokens": 2924,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "parallelism/hybrid-strategies",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+        "unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow",
+        "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop",
+        "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow"
+      ],
+      "units": 4
     },
     {
       "automatic": false,
@@ -295,9 +544,25 @@
         "unit-tgi-shard-result-aggregation"
       ],
       "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 22561,
+      "estimated_tokens": 3296,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "shmem/symmetric-memory",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow",
+        "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+        "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "units": 4
     }
   ],
-  "unit_count": 9,
+  "unit_count": 23,
   "units": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": {
       "bytes": 6037,
@@ -310,6 +575,20 @@
         "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
       ],
       "path": "hccl/aicpu/unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop.md",
+      "tier": "L2"
+    },
+    "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop": {
+      "bytes": 6172,
+      "category": "sop",
+      "content_sha256": "d4d731b70861f8a7e245f8a0ce48465cedf7b2f1c945fb6b5a685cba77657af8",
+      "domain_path": "hccl/topology-and-network/roce-hccs-diagnostics",
+      "estimated_tokens": 884,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/topology-and-network/roce-hccs-diagnostics/unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop.md",
       "tier": "L2"
     },
     "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": {
@@ -336,6 +615,21 @@
       "path": "hccl/topology/unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms.md",
       "tier": "L1"
     },
+    "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow": {
+      "bytes": 5926,
+      "category": "workflow",
+      "content_sha256": "002d5a60f3021e5b67d35d7529d7008c07bb4840f96ffbbf47207df55a73300a",
+      "domain_path": "hccl/topology-and-network/roce-hccs-diagnostics",
+      "estimated_tokens": 820,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop",
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/topology-and-network/roce-hccs-diagnostics/unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow.md",
+      "tier": "L3"
+    },
     "unit-ascend-hccl-vm-checker-and-env-readiness-workflow": {
       "bytes": 6059,
       "category": "workflow",
@@ -350,6 +644,32 @@
       "path": "hccl/verification/unit-ascend-hccl-vm-checker-and-env-readiness-workflow.md",
       "tier": "L3"
     },
+    "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms": {
+      "bytes": 5511,
+      "category": "axiom",
+      "content_sha256": "4cb29b5f3a3381d702416e020c74742dafbaf0edf3d8cb80005aac825f467a47",
+      "domain_path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp",
+      "estimated_tokens": 749,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms.md",
+      "tier": "L1"
+    },
+    "unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow": {
+      "bytes": 4889,
+      "category": "workflow",
+      "content_sha256": "4f3d52da2809179f8c3c4017704080b373732473a163e8ba1f070a94254321ce",
+      "domain_path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp",
+      "estimated_tokens": 648,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow.md",
+      "tier": "L3"
+    },
     "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow": {
       "bytes": 5900,
       "category": "workflow",
@@ -361,6 +681,145 @@
         "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
       ],
       "path": "serving/parallel-strategy/unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow.md",
+      "tier": "L3"
+    },
+    "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop": {
+      "bytes": 5398,
+      "category": "sop",
+      "content_sha256": "558344d4a38ef1541ad518a08bfcb045e011422c63dd475385e0ed3826f54c79",
+      "domain_path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp",
+      "estimated_tokens": 869,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+        "unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow"
+      ],
+      "path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-module-level-parallel-linear-and-moe-wiring-sop.md",
+      "tier": "L2"
+    },
+    "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow": {
+      "bytes": 5998,
+      "category": "workflow",
+      "content_sha256": "e35b11e874e7246b6f7ebcc24f9703474d8a3161616846c5408403346490106a",
+      "domain_path": "shmem/symmetric-memory/sync-and-moe-dispatch",
+      "estimated_tokens": 909,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "path": "shmem/symmetric-memory/sync-and-moe-dispatch/unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow.md",
+      "tier": "L3"
+    },
+    "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop": {
+      "bytes": 5449,
+      "category": "sop",
+      "content_sha256": "163e1f67b113fbb241cebc13b3a6e8a7cb02363b9f065f9e4ea0a284aa52528f",
+      "domain_path": "shmem/symmetric-memory/architecture-and-apis",
+      "estimated_tokens": 803,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "path": "shmem/symmetric-memory/architecture-and-apis/unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop.md",
+      "tier": "L2"
+    },
+    "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator": {
+      "bytes": 5505,
+      "category": "mutator",
+      "content_sha256": "2ad5fa7c62605c6ba0ccc2f301e7736301743d2ad94912db53ed651639016223",
+      "domain_path": "shmem/symmetric-memory/sync-and-moe-dispatch",
+      "estimated_tokens": 743,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow",
+        "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "path": "shmem/symmetric-memory/sync-and-moe-dispatch/unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator.md",
+      "tier": "L4"
+    },
+    "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms": {
+      "bytes": 5609,
+      "category": "axiom",
+      "content_sha256": "d66c0a753c5aada70df48e133022c0596846bc19ac13d4fa73148ce253870e2c",
+      "domain_path": "shmem/symmetric-memory/architecture-and-apis",
+      "estimated_tokens": 841,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "shmem/symmetric-memory/architecture-and-apis/unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms.md",
+      "tier": "L1"
+    },
+    "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow": {
+      "bytes": 4660,
+      "category": "workflow",
+      "content_sha256": "86888b89eed0b2e92c5c5314ce29764eef59dcac4c7a7b3bab69c40110f11304",
+      "domain_path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp",
+      "estimated_tokens": 658,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow.md",
+      "tier": "L3"
+    },
+    "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop": {
+      "bytes": 4201,
+      "category": "sop",
+      "content_sha256": "225b2d32cb1d3f2765c6b55ac36c83c1726ca00f38afda927deccfa3e8866088",
+      "domain_path": "hccl/aicpu-collectives/debug-and-perf-tuning",
+      "estimated_tokens": 622,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+        "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
+      ],
+      "path": "hccl/aicpu-collectives/debug-and-perf-tuning/unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop.md",
+      "tier": "L2"
+    },
+    "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator": {
+      "bytes": 4397,
+      "category": "mutator",
+      "content_sha256": "73e5723de22589b6d4f3e0833b17f90ffead8f22c98edf40317e1150fd8eb844",
+      "domain_path": "hccl/aicpu-collectives/debug-and-perf-tuning",
+      "estimated_tokens": 623,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop",
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
+        "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
+      ],
+      "path": "hccl/aicpu-collectives/debug-and-perf-tuning/unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator.md",
+      "tier": "L4"
+    },
+    "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop": {
+      "bytes": 4645,
+      "category": "sop",
+      "content_sha256": "a9d610e734f9f43d40a90af95749424341e4523e5f576cf5bc3892f8c65bf1d7",
+      "domain_path": "hccl/aicpu-collectives/design-and-implementation",
+      "estimated_tokens": 731,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/aicpu-collectives/design-and-implementation/unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop.md",
+      "tier": "L2"
+    },
+    "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow": {
+      "bytes": 4283,
+      "category": "workflow",
+      "content_sha256": "fafcbc95d82a8d79ab097d41ff94ce18eab31f9e62de28cc9a601922fc59b958",
+      "domain_path": "hccl/aicpu-collectives/design-and-implementation",
+      "estimated_tokens": 627,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
+        "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop"
+      ],
+      "path": "hccl/aicpu-collectives/design-and-implementation/unit-hccl-aicpu-executor-binding-and-selector-registration-workflow.md",
       "tier": "L3"
     },
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": {
