@@ -37,7 +37,7 @@ triggers:
 ---
 At the pinned TGI revision, sharded info, health and filter_batch await every shard but return only the last Result; prefill, decode and clear_cache collect all Results. Generation lists are merged last shard first and the retained next_batch comes from that last shard. v2 warmup drops None values before choosing a minimum; v3 chooses a lexicographic minimum of a tuple. These are distinct aggregation contracts.
 
-Reviewed limits and corrections:
+Scope and caveats:
 
 - Use build.rs:16-20 for the v2 protoc error branch.
 - Treat underlying tonic deadlines, transport cancellation and server cache lifetime as unverified.

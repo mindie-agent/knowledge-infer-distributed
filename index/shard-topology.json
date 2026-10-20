@@ -1,46 +1,128 @@
 {
   "closure": {
+    "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": [],
+    "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
     "unit-tgi-async-rpc-cancellation-boundary": [],
     "unit-tgi-shard-result-aggregation": []
   },
-  "digest": "19de47eff3ef0e3828ff4602d5cbaf95d44d6e1d7ef93e3e28ae3b4fd838047c",
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 6893,
-      "estimated_tokens": 972,
+      "bytes": 52369,
+      "estimated_tokens": 10178,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
         "unit-tgi-async-rpc-cancellation-boundary",
         "unit-tgi-shard-result-aggregation"
       ],
-      "units": 2
+      "units": 6
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 6893,
-        "estimated_tokens": 972,
+        "bytes": 21416,
+        "estimated_tokens": 4307,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "hccl",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+          "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+        ],
+        "units": 2
+      },
+      {
+        "automatic": false,
+        "bytes": 30953,
+        "estimated_tokens": 5871,
         "exceeds": [],
         "kind": "federation",
         "path": "serving",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
+          "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
+          "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
           "unit-tgi-async-rpc-cancellation-boundary",
           "unit-tgi-shard-result-aggregation"
         ],
-        "units": 2
+        "units": 4
       }
     ]
   },
-  "index_build_elapsed_ms": 0.4253749502822757,
-  "index_digest": "a43ce51c40220f45aec837f7af648050e0961699e09487cf7782975c73a1ed14",
+  "index_build_elapsed_ms": 2.072499948553741,
   "leaves": [
     {
       "automatic": false,
-      "bytes": 6893,
-      "estimated_tokens": 972,
+      "bytes": 11104,
+      "estimated_tokens": 2270,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "hccl/topology",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 10312,
+      "estimated_tokens": 2037,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "hccl/triage",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 11963,
+      "estimated_tokens": 2405,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "serving/moe-ep",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 12125,
+      "estimated_tokens": 2501,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "serving/pd-disaggregation",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6865,
+      "estimated_tokens": 965,
       "exceeds": [],
       "kind": "leaf",
       "path": "serving/tgi",
@@ -56,8 +138,60 @@
   "two_level_subtrees": [
     {
       "automatic": false,
-      "bytes": 6893,
-      "estimated_tokens": 972,
+      "bytes": 11104,
+      "estimated_tokens": 2270,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "hccl/topology",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 10312,
+      "estimated_tokens": 2037,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "hccl/triage",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 11963,
+      "estimated_tokens": 2405,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/moe-ep",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 12125,
+      "estimated_tokens": 2501,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "serving/pd-disaggregation",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6865,
+      "estimated_tokens": 965,
       "exceeds": [],
       "kind": "subtree",
       "path": "serving/tgi",
@@ -69,25 +203,77 @@
       "units": 2
     }
   ],
-  "unit_count": 2,
+  "unit_count": 6,
   "units": {
-    "unit-tgi-async-rpc-cancellation-boundary": {
-      "bytes": 3396,
+    "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": {
+      "bytes": 10312,
       "category": "sop",
-      "content_sha256": "8614cefe8d0f339ea490a68c80875b5bf5ba03651759bb6a18e49bac455817ec",
+      "content_sha256": "615ed244058f7f2b0c06056345ec3cf459f1f1369bd058080b5b938e3103fe9d",
+      "domain_path": "hccl/triage",
+      "estimated_tokens": 2037,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/triage/unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop.md",
+      "tier": "L2"
+    },
+    "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": {
+      "bytes": 11104,
+      "category": "axiom",
+      "content_sha256": "f8aeb732cd2c56e129ff3e180e046e37fe18b310de9586f4827ecdba96a16698",
+      "domain_path": "hccl/topology",
+      "estimated_tokens": 2270,
+      "evidence_strength": "hardware_spec",
+      "inherits_from": [],
+      "path": "hccl/topology/unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms.md",
+      "tier": "L1"
+    },
+    "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": {
+      "bytes": 11963,
+      "category": "workflow",
+      "content_sha256": "97a8c4dde8d294d22a9753eb800b0bfc82e5c2cd1c9436fd1d8113591ee0f61b",
+      "domain_path": "serving/moe-ep",
+      "estimated_tokens": 2405,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "serving/moe-ep/unit-multi-node-moe-ep-mc2-all2all-convergence-workflow.md",
+      "tier": "L3"
+    },
+    "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop": {
+      "bytes": 12125,
+      "category": "sop",
+      "content_sha256": "bdf4b8ca131b94d0d0881a82eccec9d0b424759e63bda48deb66aa5c21016dd7",
+      "domain_path": "serving/pd-disaggregation",
+      "estimated_tokens": 2501,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "serving/pd-disaggregation/unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop.md",
+      "tier": "L2"
+    },
+    "unit-tgi-async-rpc-cancellation-boundary": {
+      "bytes": 3382,
+      "category": "sop",
+      "content_sha256": "593e4f8387148d36a371661e18adc535dec9502f69c46301702e1b10e45eb146",
       "domain_path": "serving/tgi",
-      "estimated_tokens": 478,
+      "estimated_tokens": 475,
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "serving/tgi/unit-tgi-async-rpc-cancellation-boundary.md",
       "tier": "L2"
     },
     "unit-tgi-shard-result-aggregation": {
-      "bytes": 3497,
+      "bytes": 3483,
       "category": "sop",
-      "content_sha256": "f5a559afeaa88e11460d7ce7b1edd660b4633d088cd4deb9bb948c9cdd3159b5",
+      "content_sha256": "5f5fd23ac7fe05350874ffe6fbfc5588922f4131ae41db0bd72335f99a338c2f",
       "domain_path": "serving/tgi",
-      "estimated_tokens": 494,
+      "estimated_tokens": 490,
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "serving/tgi/unit-tgi-shard-result-aggregation.md",
