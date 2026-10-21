@@ -1,5 +1,5 @@
 {
-  "build_elapsed_ms": 8.105500019155443,
+  "build_elapsed_ms": 28.667292091995478,
   "closure": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
@@ -58,6 +58,28 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
     ],
+    "unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+    ],
+    "unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ],
+    "unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop": [
+      "unit-tgi-async-rpc-cancellation-boundary",
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
     "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
@@ -80,6 +102,28 @@
       "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
       "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop"
     ],
+    "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
@@ -89,9 +133,21 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
     ],
     "unit-tgi-async-rpc-cancellation-boundary": [],
-    "unit-tgi-shard-result-aggregation": []
+    "unit-tgi-shard-result-aggregation": [],
+    "unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ],
+    "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ]
   },
-  "generation": "5058f5d9f61d35eeecbd2b41f6d69b36f91c358d8496529270adf5e5024ca085",
+  "generation": "cfac5ece9c979fb82d545f65b6e00236c7e06e14d26194555810ab8533764310",
   "id_path": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": "hccl/aicpu/unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop.md",
     "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop": "hccl/topology-and-network/roce-hccs-diagnostics/unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop.md",
@@ -108,19 +164,33 @@
     "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator": "shmem/symmetric-memory/sync-and-moe-dispatch/unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator.md",
     "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms": "shmem/symmetric-memory/architecture-and-apis/unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms.md",
     "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow.md",
+    "unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop": "shmem/kv-offload-and-hixl/host-ddr-and-fabric-mem/one-sided-rma-and-gather/unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop.md",
+    "unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop": "shmem/moe-deepep/dispatch-and-combine/tilelang-and-pypto-kernels/unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop.md",
+    "unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow": "dynamo/disaggregated-serving/worker-discovery-and-prefill/typed-pool-and-bootstrap/unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow.md",
+    "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection/unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop.md",
+    "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort/unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop.md",
     "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop": "hccl/aicpu-collectives/debug-and-perf-tuning/unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop.md",
     "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator": "hccl/aicpu-collectives/debug-and-perf-tuning/unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator.md",
     "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop": "hccl/aicpu-collectives/design-and-implementation/unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop.md",
     "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow": "hccl/aicpu-collectives/design-and-implementation/unit-hccl-aicpu-executor-binding-and-selector-registration-workflow.md",
+    "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop": "hccl/benchmark/hccl-test-suite/mpi-allreduce-and-alltoallv/unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop.md",
+    "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow": "hccl/benchmark/hccl-test-suite/roce-pfc-and-retcode-triage/unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow.md",
+    "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy/unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop.md",
+    "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases/unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow.md",
+    "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases/unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop.md",
+    "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy/unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop.md",
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": "serving/moe-ep/unit-multi-node-moe-ep-mc2-all2all-convergence-workflow.md",
     "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop": "serving/pd-disaggregation/unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop.md",
     "unit-tgi-async-rpc-cancellation-boundary": "serving/tgi/unit-tgi-async-rpc-cancellation-boundary.md",
-    "unit-tgi-shard-result-aggregation": "serving/tgi/unit-tgi-shard-result-aggregation.md"
+    "unit-tgi-shard-result-aggregation": "serving/tgi/unit-tgi-shard-result-aggregation.md",
+    "unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop": "vllm-ascend/pipeline-parallel/dynamic-chunked-pp/quadratic-latency-and-calibration/unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop.md",
+    "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow": "vllm-ascend/pd-disaggregation/mooncake-connectors/multi-node-and-colocated/unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow.md",
+    "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop": "vllm-ascend/multi-node-ray/cluster-placement-and-env/ray-tp-pp-ep-orchestration/unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop.md"
   },
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 23,
+  "unit_count": 37,
   "units": [
     {
       "category": "sop",
@@ -975,6 +1045,269 @@
     {
       "category": "sop",
       "conditions": {
+        "domain": "shmem",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "shmem/kv-offload-and-hixl/host-ddr-and-fabric-mem/one-sided-rma-and-gather",
+      "evidence_strength": "software_contract",
+      "id": "unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop",
+      "inherits_from": [
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "path": "shmem/kv-offload-and-hixl/host-ddr-and-fabric-mem/one-sided-rma-and-gather/unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v4/deepseek_v4_shmem_guide.md#L1-L265"
+        ],
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/deepseek_v4/deepseek_v4_shmem_guide.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "DeepSeek-V4 SHMEM Symmetric Host DDR KVCache Offload & HIXL Fabric-Memory One-Sided RMA SOP",
+      "token_estimate": 991,
+      "triggers": {
+        "error_signatures": [
+          "aclshmem_malloc failed",
+          "OPTION_ENABLE_USE_FABRIC_MEM",
+          "npu_gather_selection_kv_cache"
+        ],
+        "keywords": [
+          "shmem",
+          "aclshmem-malloc",
+          "host-side",
+          "npu-gather-selection-kv-cache",
+          "hixl",
+          "fabric-mem",
+          "d2rh",
+          "rh2d",
+          "deepseek-v4"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "shmem",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "shmem/moe-deepep/dispatch-and-combine/tilelang-and-pypto-kernels",
+      "evidence_strength": "software_contract",
+      "id": "unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop",
+      "inherits_from": [
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "shmem/moe-deepep/dispatch-and-combine/tilelang-and-pypto-kernels/unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v4/deepseek_v4_shmem_guide.md#L266-L561"
+        ],
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/deepseek_v4/deepseek_v4_shmem_guide.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "DeepSeek-V4 SHMEM Symmetric Window Buffer & Tilelang/pyPTO One-Sided MoE Dispatch/Combine SOP",
+      "token_estimate": 1043,
+      "triggers": {
+        "error_signatures": [
+          "MoeDistributeCppBuffer",
+          "shmem_ub_put_nbi_new",
+          "WaitUntil timeout"
+        ],
+        "keywords": [
+          "shmem",
+          "deepep",
+          "moe-distribute",
+          "tilelang",
+          "pypto",
+          "shmem-ub-put-nbi",
+          "shmem-signal",
+          "wait-until",
+          "dispatch-combine"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "domain": "dynamo",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Disaggregated Prefill/Decode Cluster"
+        ]
+      },
+      "domain_path": "dynamo/disaggregated-serving/worker-discovery-and-prefill/typed-pool-and-bootstrap",
+      "evidence_strength": "software_contract",
+      "id": "unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "dynamo/disaggregated-serving/worker-discovery-and-prefill/typed-pool-and-bootstrap/unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/ai-dynamo/dynamo/blob/7bc6263706afdecdbdd316751cc0b72e35cee970/lib/llm/src/kv_router/prefill_router/mod.rs#L51-L261",
+          "https://github.com/ai-dynamo/dynamo/blob/7bc6263706afdecdbdd316751cc0b72e35cee970/docs/fern/pages/cli/disaggregated-serving/overview.mdx#L9-L67",
+          "https://github.com/ai-dynamo/dynamo/blob/7bc6263706afdecdbdd316751cc0b72e35cee970/docs/fern/pages/developer-guide/knowledge-base/modular-components/router/routing-concepts.md#L35-L39"
+        ],
+        "source_locator": "ai-dynamo/dynamo@7bc6263706afdecdbdd316751cc0b72e35cee970:lib/llm/src/kv_router/prefill_router/mod.rs",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Dynamo Disaggregated Prefill/Decode Discovery, Bootstrap Handoff & Conditional Bypass Workflow",
+      "token_estimate": 1128,
+      "triggers": {
+        "error_signatures": [
+          "Prefill router not yet activated",
+          "No disaggregated params in prefill response",
+          "x-bypass-remote-prefill"
+        ],
+        "keywords": [
+          "dynamo",
+          "prefill-router",
+          "disaggregated-serving",
+          "bootstrap-info",
+          "conditional-disagg",
+          "staged-kv-cleanup",
+          "nixl",
+          "mooncake"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "dynamo",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Multi-Worker LLM Serving Fleet"
+        ]
+      },
+      "domain_path": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection",
+      "evidence_strength": "software_contract",
+      "id": "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection/unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/ai-dynamo/dynamo/blob/7bc6263706afdecdbdd316751cc0b72e35cee970/docs/fern/pages/developer-guide/knowledge-base/modular-components/router/routing-concepts.md#L10-L89",
+          "https://github.com/ai-dynamo/dynamo/blob/7bc6263706afdecdbdd316751cc0b72e35cee970/docs/fern/pages/developer-guide/knowledge-base/modular-components/router/configuration-and-tuning.md#L14-L248",
+          "https://github.com/ai-dynamo/dynamo/blob/7bc6263706afdecdbdd316751cc0b72e35cee970/lib/llm/src/kv_router/request_guard.rs#L115-L274"
+        ],
+        "source_locator": "ai-dynamo/dynamo@7bc6263706afdecdbdd316751cc0b72e35cee970:docs/fern/pages/developer-guide/knowledge-base/modular-components/router/routing-concepts.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Dynamo KV-Aware Router Radix Prefix Overlap, Multi-Tier Cache Credits & Worker Cost Selection SOP",
+      "token_estimate": 1039,
+      "triggers": {
+        "error_signatures": [
+          "Rejected cohort",
+          "PYTHONHASHSEED",
+          "dynamo-two-tier-cost-fn"
+        ],
+        "keywords": [
+          "dynamo",
+          "kv-router",
+          "radix-tree",
+          "overlap-score-credit",
+          "worker-selection",
+          "two-tier-cost-fn",
+          "pythonhashseed"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "dynamo",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Distributed LLM Router Runtime"
+        ]
+      },
+      "domain_path": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort",
+      "evidence_strength": "software_contract",
+      "id": "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop",
+      "inherits_from": [
+        "unit-tgi-async-rpc-cancellation-boundary",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-tgi-async-rpc-cancellation-boundary",
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort/unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/ai-dynamo/dynamo/blob/7bc6263706afdecdbdd316751cc0b72e35cee970/lib/llm/src/kv_router/routing_host/cancellation.rs#L17-L248",
+          "https://github.com/ai-dynamo/dynamo/blob/7bc6263706afdecdbdd316751cc0b72e35cee970/docs/fern/pages/developer-guide/knowledge-base/modular-components/router/configuration-and-tuning.md#L249-L299"
+        ],
+        "source_locator": "ai-dynamo/dynamo@7bc6263706afdecdbdd316751cc0b72e35cee970:lib/llm/src/kv_router/routing_host/cancellation.rs",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Dynamo Router Policy-Class Queue Backpressure (HTTP 529) & Staged-KV Decode Cancellation Budget SOP",
+      "token_estimate": 1278,
+      "triggers": {
+        "error_signatures": [
+          "decode cleanup budget exhausted",
+          "HTTP 529",
+          "Request was cancelled"
+        ],
+        "keywords": [
+          "dynamo",
+          "cancellation",
+          "cleanup-budget",
+          "staged-kv",
+          "backpressure",
+          "http-529",
+          "wspt",
+          "fcfs"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
         "accelerator": "ascend",
         "communication_stack": "hccl",
         "stage": "functional-debug-and-checker",
@@ -1180,6 +1513,317 @@
           "AICPU Executor subclass",
           "libhccl_alg_template.so",
           "HcclAlgTemplateRegister"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "hccl",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "hccl/benchmark/hccl-test-suite/mpi-allreduce-and-alltoallv",
+      "evidence_strength": "software_contract",
+      "id": "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/benchmark/hccl-test-suite/mpi-allreduce-and-alltoallv/unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/hccl-test/SKILL.md#L1-L260",
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/hccl-test/references/parameters.md#L1-L185",
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/hccl-test/scripts/setup-hccl-env.sh#L1-L95"
+        ],
+        "source_locator": "Ascend/agent-skills@942f0138aa9c78467507babb09aa9c64c5f534dc:skills/hccl-test/SKILL.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Ascend hccl-test MPICH Compilation, Multi-Node Collective Launch & Algorithm/Protocol Matrix SOP",
+      "token_estimate": 1098,
+      "triggers": {
+        "error_signatures": [
+          "check_err",
+          "all_reduce_test failed",
+          "HCCL_ALGO"
+        ],
+        "keywords": [
+          "hccl-test",
+          "mpich",
+          "mpirun",
+          "all-reduce-test",
+          "alltoallv-test",
+          "hccl-algo",
+          "busbw",
+          "roce",
+          "hccs"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "domain": "hccl",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "hccl/benchmark/hccl-test-suite/roce-pfc-and-retcode-triage",
+      "evidence_strength": "software_contract",
+      "id": "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/benchmark/hccl-test-suite/roce-pfc-and-retcode-triage/unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/hccl-test/references/common-issues.md#L1-L265",
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/hccl-test/SKILL.md#L150-L260"
+        ],
+        "source_locator": "Ascend/agent-skills@942f0138aa9c78467507babb09aa9c64c5f534dc:skills/hccl-test/references/common-issues.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Ascend hccl-test Retcode Diagnosis, Zombie IPC Cleanup & RoCE PFC/ECN Packet-Loss Triage Workflow",
+      "token_estimate": 1017,
+      "triggers": {
+        "error_signatures": [
+          "ret=107002",
+          "ret=507033",
+          "Notify wait execute failed",
+          "roce_out_of_seq"
+        ],
+        "keywords": [
+          "hccl-test",
+          "hccn-tool",
+          "roce",
+          "pfc",
+          "ecn",
+          "zombie-process",
+          "ipcs",
+          "aclrtsetdevice",
+          "notify-wait-timeout"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "mooncake",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy",
+      "evidence_strength": "software_contract",
+      "id": "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy/unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/design/transfer-engine/transport/ascend_direct_transport.md#L1-L266",
+          "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/getting_started/supported-protocols.md#L1-L165"
+        ],
+        "source_locator": "kvcache-ai/Mooncake@1f65cf13c9f886f8db8b88b7733367b18340ebf0:docs/source/design/transfer-engine/transport/ascend_direct_transport.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Mooncake Ascend Direct (ADXL/HIXL) Transport Port Budget, Auto-Connect & Timeout Arithmetic SOP",
+      "token_estimate": 1050,
+      "triggers": {
+        "error_signatures": [
+          "ASCEND_ERR_TIMEOUT",
+          "ERR_KERNELS_FAIL",
+          "AdxlEngine Connect failed"
+        ],
+        "keywords": [
+          "mooncake",
+          "ascend-direct",
+          "adxl",
+          "hixl",
+          "hccs",
+          "roce",
+          "hccl-port",
+          "timeout-arithmetic"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "domain": "mooncake",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Distributed CPU/DRAM/RDMA Store Cluster"
+        ]
+      },
+      "domain_path": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases",
+      "evidence_strength": "software_contract",
+      "id": "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases/unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/design/store/mooncake-store.md#L1-L260",
+          "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/deployment/mooncake-store-deployment-guide.md#L1-L162"
+        ],
+        "source_locator": "kvcache-ai/Mooncake@1f65cf13c9f886f8db8b88b7733367b18340ebf0:docs/source/design/store/mooncake-store.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Mooncake Store Master High Availability, Etcd OpLog Replay & Fail-Closed Standby Promotion Workflow",
+      "token_estimate": 1129,
+      "triggers": {
+        "error_signatures": [
+          "Failed to catch up op_log",
+          "CatchUpOpLogs failed",
+          "MAX_GAP_WAIT_TIME"
+        ],
+        "keywords": [
+          "mooncake-store",
+          "high-availability",
+          "etcd",
+          "oplog",
+          "snapshot",
+          "standby-promotion",
+          "fail-closed"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "mooncake",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Distributed CPU/DRAM/RDMA Store Cluster"
+        ]
+      },
+      "domain_path": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases",
+      "evidence_strength": "software_contract",
+      "id": "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases/unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/design/store/mooncake-store.md#L1-L260",
+          "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/deployment/mooncake-store-deployment-guide.md#L1-L162"
+        ],
+        "source_locator": "kvcache-ai/Mooncake@1f65cf13c9f886f8db8b88b7733367b18340ebf0:docs/source/design/store/mooncake-store.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Mooncake Store Two-Phase Put Protocol, Offset Allocator & Lease TTL Eviction SOP",
+      "token_estimate": 1065,
+      "triggers": {
+        "error_signatures": [
+          "NO_AVAILABLE_HANDLE",
+          "PutStart failed",
+          "put_start_discard_timeout_sec"
+        ],
+        "keywords": [
+          "mooncake-store",
+          "offset-allocator",
+          "cachelib",
+          "put-start",
+          "put-end",
+          "put-revoke",
+          "kv-lease-ttl",
+          "eviction"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "mooncake",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Multi-NIC RoCE / InfiniBand / PCIe"
+        ]
+      },
+      "domain_path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy",
+      "evidence_strength": "software_contract",
+      "id": "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy/unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/design/transfer-engine/index.md#L1-L162",
+          "https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/design/architecture.md#L1-L95"
+        ],
+        "source_locator": "kvcache-ai/Mooncake@1f65cf13c9f886f8db8b88b7733367b18340ebf0:docs/source/design/transfer-engine/index.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Mooncake Transfer Engine Segment Memory Registration, Zero-Copy Batch Submit & P2P Handshake SOP",
+      "token_estimate": 1089,
+      "triggers": {
+        "error_signatures": [
+          "ERR_INVALID_ARGUMENT",
+          "openSegment failed",
+          "registerLocalMemory failed"
+        ],
+        "keywords": [
+          "mooncake",
+          "transfer-engine",
+          "register-local-memory",
+          "open-segment",
+          "p2p-handshake",
+          "batch-transfer",
+          "zero-copy",
+          "kv-cache"
         ]
       }
     },
@@ -1404,6 +2048,158 @@
           "control",
           "errors",
           "explicitly"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "vllm-ascend",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "vllm-ascend/pipeline-parallel/dynamic-chunked-pp/quadratic-latency-and-calibration",
+      "evidence_strength": "software_contract",
+      "id": "unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop",
+      "inherits_from": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "vllm-ascend/pipeline-parallel/dynamic-chunked-pp/quadratic-latency-and-calibration/unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/docs/source/developer_guide/Design_Documents/dynamic_chunked_pipeline_parallel.md#L1-L260",
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/docs/source/tutorials/features/dynamic_chunked_pipeline_parallel.md#L1-L210"
+        ],
+        "source_locator": "vllm-project/vllm-ascend@175ef4d49c2072f9233619636f0309f4f88b4e2c:docs/source/developer_guide/Design_Documents/dynamic_chunked_pipeline_parallel.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "vLLM-Ascend Dynamic Chunked Pipeline Parallelism (DCPP) Quadratic Latency Predictor & Calibration SOP",
+      "token_estimate": 953,
+      "triggers": {
+        "error_signatures": [
+          "enable_dynamic_chunked",
+          "DynamicChunkScheduler",
+          "pipeline bubble"
+        ],
+        "keywords": [
+          "vllm-ascend",
+          "pipeline-parallelism",
+          "dynamic-chunked-pp",
+          "dcpp",
+          "quadratic-latency-model",
+          "token-budget",
+          "pipeline-bubble"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "domain": "vllm-ascend",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "vllm-ascend/pd-disaggregation/mooncake-connectors/multi-node-and-colocated",
+      "evidence_strength": "software_contract",
+      "id": "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "vllm-ascend/pd-disaggregation/mooncake-connectors/multi-node-and-colocated/unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/docs/source/tutorials/features/pd_disaggregation_mooncake_multi_node.md#L1-L260",
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/docs/source/tutorials/features/pd_disaggregation_mooncake_single_node.md#L1-L215",
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/docs/source/tutorials/features/pd_colocated_mooncake_multi_instance.md#L1-L220"
+        ],
+        "source_locator": "vllm-project/vllm-ascend@175ef4d49c2072f9233619636f0309f4f88b4e2c:docs/source/tutorials/features/pd_disaggregation_mooncake_multi_node.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "vLLM-Ascend PD Disaggregation via MooncakeConnectorLayerwise & MooncakeConnectorStore Workflow",
+      "token_estimate": 1080,
+      "triggers": {
+        "error_signatures": [
+          "MooncakeConnectorLayerwise",
+          "MooncakeConnectorStore",
+          "kv_port collision"
+        ],
+        "keywords": [
+          "vllm-ascend",
+          "pd-disaggregation",
+          "mooncake-connector-layerwise",
+          "mooncake-connector-store",
+          "kv-transfer-config",
+          "load-balance-proxy",
+          "metaserver"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "vllm-ascend",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "vllm-ascend/multi-node-ray/cluster-placement-and-env/ray-tp-pp-ep-orchestration",
+      "evidence_strength": "software_contract",
+      "id": "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "vllm-ascend/multi-node-ray/cluster-placement-and-env/ray-tp-pp-ep-orchestration/unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/docs/source/tutorials/features/ray.md#L1-L165",
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/docs/source/developer_guide/testing/e2e/multi_node/nightly_ci_test.md#L1-L160"
+        ],
+        "source_locator": "vllm-project/vllm-ascend@175ef4d49c2072f9233619636f0309f4f88b4e2c:docs/source/tutorials/features/ray.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "vLLM-Ascend Multi-Node Ray Cluster NPU Resource Registration, HCCN Verification & TP/PP Launch SOP",
+      "token_estimate": 997,
+      "triggers": {
+        "error_signatures": [
+          "HCCL_IF_IP",
+          "GLOO_SOCKET_IFNAME",
+          "net health status"
+        ],
+        "keywords": [
+          "vllm-ascend",
+          "ray",
+          "multi-node",
+          "hccn-conf",
+          "hccl-if-ip",
+          "gloo-socket-ifname",
+          "distributed-executor-backend"
         ]
       }
     }
