@@ -57,6 +57,28 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
     ],
+    "unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+    ],
+    "unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ],
+    "unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop": [
+      "unit-tgi-async-rpc-cancellation-boundary",
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
     "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
@@ -79,6 +101,28 @@
       "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
       "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop"
     ],
+    "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+    ],
+    "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
@@ -88,13 +132,25 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
     ],
     "unit-tgi-async-rpc-cancellation-boundary": [],
-    "unit-tgi-shard-result-aggregation": []
+    "unit-tgi-shard-result-aggregation": [],
+    "unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ],
+    "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+    ],
+    "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ]
   },
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 143008,
-      "estimated_tokens": 23940,
+      "bytes": 221892,
+      "estimated_tokens": 38897,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
@@ -113,22 +169,51 @@
         "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator",
         "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
         "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow",
+        "unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop",
+        "unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop",
+        "unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow",
+        "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop",
+        "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop",
         "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop",
         "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator",
         "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
         "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow",
+        "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop",
+        "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow",
+        "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop",
+        "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow",
+        "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop",
+        "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop",
         "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow",
         "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
         "unit-tgi-async-rpc-cancellation-boundary",
-        "unit-tgi-shard-result-aggregation"
+        "unit-tgi-shard-result-aggregation",
+        "unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop",
+        "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow",
+        "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop"
       ],
-      "units": 23
+      "units": 37
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 63136,
-        "estimated_tokens": 10772,
+        "bytes": 18289,
+        "estimated_tokens": 3445,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "dynamo",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow",
+          "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop",
+          "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop"
+        ],
+        "units": 3
+      },
+      {
+        "automatic": false,
+        "bytes": 74156,
+        "estimated_tokens": 12887,
         "exceeds": [],
         "kind": "federation",
         "path": "hccl",
@@ -143,9 +228,27 @@
           "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop",
           "unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator",
           "unit-hccl-aicpu-dataflow-spec-and-five-stride-addressing-sop",
-          "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
+          "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow",
+          "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop",
+          "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow"
         ],
-        "units": 10
+        "units": 12
+      },
+      {
+        "automatic": false,
+        "bytes": 22601,
+        "estimated_tokens": 4333,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "mooncake",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop",
+          "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow",
+          "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop",
+          "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop"
+        ],
+        "units": 4
       },
       {
         "automatic": false,
@@ -182,8 +285,8 @@
       },
       {
         "automatic": false,
-        "bytes": 22561,
-        "estimated_tokens": 3296,
+        "bytes": 33063,
+        "estimated_tokens": 5330,
         "exceeds": [],
         "kind": "federation",
         "path": "shmem",
@@ -192,14 +295,70 @@
           "unit-ascend-shmem-cross-pe-signal-wait-and-memory-ordering-workflow",
           "unit-ascend-shmem-device-rma-mte-and-sdma-data-movement-sop",
           "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator",
-          "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+          "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms",
+          "unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop",
+          "unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop"
         ],
-        "units": 4
+        "units": 6
+      },
+      {
+        "automatic": false,
+        "bytes": 16472,
+        "estimated_tokens": 3030,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "vllm-ascend",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop",
+          "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow",
+          "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop"
+        ],
+        "units": 3
       }
     ]
   },
-  "index_build_elapsed_ms": 8.105500019155443,
+  "index_build_elapsed_ms": 28.667292091995478,
   "leaves": [
+    {
+      "automatic": false,
+      "bytes": 6075,
+      "estimated_tokens": 1128,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "dynamo/disaggregated-serving/worker-discovery-and-prefill/typed-pool-and-bootstrap",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5717,
+      "estimated_tokens": 1039,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6497,
+      "estimated_tokens": 1278,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop"
+      ],
+      "units": 1
+    },
     {
       "automatic": false,
       "bytes": 6037,
@@ -240,6 +399,32 @@
         "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
       ],
       "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 5711,
+      "estimated_tokens": 1098,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "hccl/benchmark/hccl-test-suite/mpi-allreduce-and-alltoallv",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5309,
+      "estimated_tokens": 1017,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "hccl/benchmark/hccl-test-suite/roce-pfc-and-retcode-triage",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow"
+      ],
+      "units": 1
     },
     {
       "automatic": false,
@@ -293,6 +478,34 @@
         "unit-ascend-hccl-vm-checker-and-env-readiness-workflow"
       ],
       "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 11381,
+      "estimated_tokens": 2194,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow",
+        "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 11220,
+      "estimated_tokens": 2139,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop",
+        "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop"
+      ],
+      "units": 2
     },
     {
       "automatic": false,
@@ -365,6 +578,32 @@
     },
     {
       "automatic": false,
+      "bytes": 5124,
+      "estimated_tokens": 991,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "shmem/kv-offload-and-hixl/host-ddr-and-fabric-mem/one-sided-rma-and-gather",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5378,
+      "estimated_tokens": 1043,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "shmem/moe-deepep/dispatch-and-combine/tilelang-and-pypto-kernels",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 11058,
       "estimated_tokens": 1644,
       "exceeds": [],
@@ -390,10 +629,88 @@
         "unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator"
       ],
       "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 5339,
+      "estimated_tokens": 997,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "vllm-ascend/multi-node-ray/cluster-placement-and-env/ray-tp-pp-ep-orchestration",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5905,
+      "estimated_tokens": 1080,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "vllm-ascend/pd-disaggregation/mooncake-connectors/multi-node-and-colocated",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5228,
+      "estimated_tokens": 953,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "vllm-ascend/pipeline-parallel/dynamic-chunked-pp/quadratic-latency-and-calibration",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop"
+      ],
+      "units": 1
     }
   ],
   "schema": "mindie-shard-topology/1",
   "two_level_subtrees": [
+    {
+      "automatic": false,
+      "bytes": 6075,
+      "estimated_tokens": 1128,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "dynamo/disaggregated-serving/worker-discovery-and-prefill",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5717,
+      "estimated_tokens": 1039,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "dynamo/kv-router/radix-and-cost-model",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6497,
+      "estimated_tokens": 1278,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "dynamo/runtime/backpressure-and-cancellation",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop"
+      ],
+      "units": 1
+    },
     {
       "automatic": false,
       "bytes": 6037,
@@ -422,6 +739,20 @@
         "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow"
       ],
       "units": 4
+    },
+    {
+      "automatic": false,
+      "bytes": 11020,
+      "estimated_tokens": 2115,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "hccl/benchmark/hccl-test-suite",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop",
+        "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow"
+      ],
+      "units": 2
     },
     {
       "automatic": false,
@@ -475,6 +806,34 @@
         "unit-ascend-hccl-vm-checker-and-env-readiness-workflow"
       ],
       "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 11381,
+      "estimated_tokens": 2194,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "mooncake/store/master-ha-and-eviction",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow",
+        "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 11220,
+      "estimated_tokens": 2139,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "mooncake/transfer-engine/rdma-and-ascend-direct",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop",
+        "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop"
+      ],
+      "units": 2
     },
     {
       "automatic": false,
@@ -547,6 +906,32 @@
     },
     {
       "automatic": false,
+      "bytes": 5124,
+      "estimated_tokens": 991,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "shmem/kv-offload-and-hixl/host-ddr-and-fabric-mem",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5378,
+      "estimated_tokens": 1043,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "shmem/moe-deepep/dispatch-and-combine",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 22561,
       "estimated_tokens": 3296,
       "exceeds": [],
@@ -560,9 +945,48 @@
         "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
       ],
       "units": 4
+    },
+    {
+      "automatic": false,
+      "bytes": 5339,
+      "estimated_tokens": 997,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "vllm-ascend/multi-node-ray/cluster-placement-and-env",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5905,
+      "estimated_tokens": 1080,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "vllm-ascend/pd-disaggregation/mooncake-connectors",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5228,
+      "estimated_tokens": 953,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "vllm-ascend/pipeline-parallel/dynamic-chunked-pp",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop"
+      ],
+      "units": 1
     }
   ],
-  "unit_count": 23,
+  "unit_count": 37,
   "units": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": {
       "bytes": 6037,
@@ -765,6 +1189,73 @@
       "path": "parallelism/hybrid-strategies/tp-dp-ep-cp-sp/unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow.md",
       "tier": "L3"
     },
+    "unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop": {
+      "bytes": 5124,
+      "category": "sop",
+      "content_sha256": "8ccd0cf2be82a07aff9eec424b37036a35d17e8c1862f279fc61ce4b90dcbbc2",
+      "domain_path": "shmem/kv-offload-and-hixl/host-ddr-and-fabric-mem/one-sided-rma-and-gather",
+      "estimated_tokens": 991,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "path": "shmem/kv-offload-and-hixl/host-ddr-and-fabric-mem/one-sided-rma-and-gather/unit-deepseek-shmem-host-kv-offload-and-hixl-fabric-mem-sop.md",
+      "tier": "L2"
+    },
+    "unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop": {
+      "bytes": 5378,
+      "category": "sop",
+      "content_sha256": "79d1864ac1b92674260e678c9284c5ae8b441fc27f9355116eede210d99fc27e",
+      "domain_path": "shmem/moe-deepep/dispatch-and-combine/tilelang-and-pypto-kernels",
+      "estimated_tokens": 1043,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+        "unit-ascend-shmem-symmetric-heap-addressing-and-team-axioms"
+      ],
+      "path": "shmem/moe-deepep/dispatch-and-combine/tilelang-and-pypto-kernels/unit-deepseek-shmem-win-buffer-tilelang-pypto-dispatch-combine-sop.md",
+      "tier": "L2"
+    },
+    "unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow": {
+      "bytes": 6075,
+      "category": "workflow",
+      "content_sha256": "816c374c05d20ae94c6f399ae67186e2a36e99953ec0ca279c48909ccd0da699",
+      "domain_path": "dynamo/disaggregated-serving/worker-discovery-and-prefill/typed-pool-and-bootstrap",
+      "estimated_tokens": 1128,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "dynamo/disaggregated-serving/worker-discovery-and-prefill/typed-pool-and-bootstrap/unit-dynamo-disaggregated-prefill-decode-discovery-and-bootstrap-workflow.md",
+      "tier": "L3"
+    },
+    "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop": {
+      "bytes": 5717,
+      "category": "sop",
+      "content_sha256": "225fc87de43248628021261b4c321446e68499ade85b579d47b50f263546c669",
+      "domain_path": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection",
+      "estimated_tokens": 1039,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection/unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop.md",
+      "tier": "L2"
+    },
+    "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop": {
+      "bytes": 6497,
+      "category": "sop",
+      "content_sha256": "0f7c4e9114e0debaa5f9f99feae9099fbf7a04ccf92b9f04a329dc2268ac6ca1",
+      "domain_path": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort",
+      "estimated_tokens": 1278,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
+        "unit-tgi-async-rpc-cancellation-boundary"
+      ],
+      "path": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort/unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop.md",
+      "tier": "L2"
+    },
     "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop": {
       "bytes": 4201,
       "category": "sop",
@@ -822,6 +1313,85 @@
       "path": "hccl/aicpu-collectives/design-and-implementation/unit-hccl-aicpu-executor-binding-and-selector-registration-workflow.md",
       "tier": "L3"
     },
+    "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop": {
+      "bytes": 5711,
+      "category": "sop",
+      "content_sha256": "091fec3afb504e5ef4e8503b335744f76a8be768115d703ac87643e679545497",
+      "domain_path": "hccl/benchmark/hccl-test-suite/mpi-allreduce-and-alltoallv",
+      "estimated_tokens": 1098,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/benchmark/hccl-test-suite/mpi-allreduce-and-alltoallv/unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop.md",
+      "tier": "L2"
+    },
+    "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow": {
+      "bytes": 5309,
+      "category": "workflow",
+      "content_sha256": "3e557afcde0935d05948f889003cdc944f01169a8d43c9f921ea45223ff55c79",
+      "domain_path": "hccl/benchmark/hccl-test-suite/roce-pfc-and-retcode-triage",
+      "estimated_tokens": 1017,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
+      ],
+      "path": "hccl/benchmark/hccl-test-suite/roce-pfc-and-retcode-triage/unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow.md",
+      "tier": "L3"
+    },
+    "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop": {
+      "bytes": 5557,
+      "category": "sop",
+      "content_sha256": "a4ddd1bb0db60341e7304cb37557280d7d4c71a0a5d287817d7789b23d5b618a",
+      "domain_path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy",
+      "estimated_tokens": 1050,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy/unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop.md",
+      "tier": "L2"
+    },
+    "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow": {
+      "bytes": 5822,
+      "category": "workflow",
+      "content_sha256": "7615a9c6b915448e7997d5c7c7995e21dd060c5a703ca431d5dd08f846469886",
+      "domain_path": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases",
+      "estimated_tokens": 1129,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases/unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow.md",
+      "tier": "L3"
+    },
+    "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop": {
+      "bytes": 5559,
+      "category": "sop",
+      "content_sha256": "e677ddb25417e1d2c1cbc5a60b2a96299f36353fafd45dfa454744cc0821acbe",
+      "domain_path": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases",
+      "estimated_tokens": 1065,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases/unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop.md",
+      "tier": "L2"
+    },
+    "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop": {
+      "bytes": 5663,
+      "category": "sop",
+      "content_sha256": "1dc70fdf9672a2030ddf68c66b82a75157ee410154985b0f6e983bcc63ef0ecb",
+      "domain_path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy",
+      "estimated_tokens": 1089,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy/unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop.md",
+      "tier": "L2"
+    },
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": {
       "bytes": 11963,
       "category": "workflow",
@@ -870,6 +1440,46 @@
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "serving/tgi/unit-tgi-shard-result-aggregation.md",
+      "tier": "L2"
+    },
+    "unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop": {
+      "bytes": 5228,
+      "category": "sop",
+      "content_sha256": "1a416ea8f9cc3cf5a5292c8d6255864c7b5b3bf4e903430265ae34329a4558e1",
+      "domain_path": "vllm-ascend/pipeline-parallel/dynamic-chunked-pp/quadratic-latency-and-calibration",
+      "estimated_tokens": 953,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "vllm-ascend/pipeline-parallel/dynamic-chunked-pp/quadratic-latency-and-calibration/unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop.md",
+      "tier": "L2"
+    },
+    "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow": {
+      "bytes": 5905,
+      "category": "workflow",
+      "content_sha256": "c571624320af4b0782312e7c96b740bd3f39fcb4d69cef158bdf4484761ad42b",
+      "domain_path": "vllm-ascend/pd-disaggregation/mooncake-connectors/multi-node-and-colocated",
+      "estimated_tokens": 1080,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
+      ],
+      "path": "vllm-ascend/pd-disaggregation/mooncake-connectors/multi-node-and-colocated/unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow.md",
+      "tier": "L3"
+    },
+    "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop": {
+      "bytes": 5339,
+      "category": "sop",
+      "content_sha256": "dac833774f9a85953c961e0cae2fb8b14a7834f49154055d3b810f9ce24a266f",
+      "domain_path": "vllm-ascend/multi-node-ray/cluster-placement-and-env/ray-tp-pp-ep-orchestration",
+      "estimated_tokens": 997,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "vllm-ascend/multi-node-ray/cluster-placement-and-env/ray-tp-pp-ep-orchestration/unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop.md",
       "tier": "L2"
     }
   }
