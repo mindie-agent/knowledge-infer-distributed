@@ -76,4 +76,4 @@ provenance:
    - In Prefill-Decode (PD) disaggregated serving (`LLMDataDist` / `Mooncake` / `NIXL` over HCCL RoCE), concurrent multi-layer KV block pulls across P-instances and D-instances create RoCE PFC pause frames and transient packet drops.
    - Hardware RoCE retransmission timeout per attempt is $4.096\,\mu\text{s} \times 2^{\text{HCCL\_RDMA\_TIMEOUT}}$, repeated `HCCL_RDMA_RETRY_CNT` times. If the budget is too small, RoCE tears down the QP with `link error / cqe error` during transient congestion.
 2. **Production PD RoCE Tuning**:
-   - Set `export HCCL_RDMA_TIMEOUT=20` ($pprox 4.29\text{ s}$ base backoff ceiling) and `export HCCL_RDMA_RETRY_CNT=7` across both Prefill and Decode nodes, and verify DSCP/PFC lossless queue priority (`HCCL_RDMA_TC` / `HCCL_RDMA_SL`) matches the ToR switch QoS profile.
+   - Set `export HCCL_RDMA_TIMEOUT=20` ($\approx 4.29\text{ s}$ base backoff ceiling) and `export HCCL_RDMA_RETRY_CNT=7` across both Prefill and Decode nodes, and verify DSCP/PFC lossless queue priority (`HCCL_RDMA_TC` / `HCCL_RDMA_SL`) matches the ToR switch QoS profile.
