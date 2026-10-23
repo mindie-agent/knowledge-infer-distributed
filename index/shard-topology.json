@@ -107,6 +107,15 @@
     "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
     ],
+    "unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+      "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop"
+    ],
+    "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ],
     "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
@@ -149,8 +158,8 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 221892,
-      "estimated_tokens": 38897,
+      "bytes": 234197,
+      "estimated_tokens": 41063,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
@@ -180,6 +189,8 @@
         "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow",
         "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop",
         "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow",
+        "unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow",
+        "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop",
         "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop",
         "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow",
         "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop",
@@ -192,7 +203,7 @@
         "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow",
         "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop"
       ],
-      "units": 37
+      "units": 39
     },
     "domains": [
       {
@@ -212,7 +223,7 @@
       },
       {
         "automatic": false,
-        "bytes": 74156,
+        "bytes": 74157,
         "estimated_tokens": 12887,
         "exceeds": [],
         "kind": "federation",
@@ -252,8 +263,8 @@
       },
       {
         "automatic": false,
-        "bytes": 20458,
-        "estimated_tokens": 2924,
+        "bytes": 32762,
+        "estimated_tokens": 5090,
         "exceeds": [],
         "kind": "federation",
         "path": "parallelism",
@@ -262,9 +273,11 @@
           "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
           "unit-ascend-megatron-tp2d-vpp-dualpipev-and-cp-training-workflow",
           "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop",
-          "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow"
+          "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow",
+          "unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow",
+          "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop"
         ],
-        "units": 4
+        "units": 6
       },
       {
         "automatic": false,
@@ -318,7 +331,7 @@
       }
     ]
   },
-  "index_build_elapsed_ms": 28.667292091995478,
+  "index_build_elapsed_ms": 20.38804200128652,
   "leaves": [
     {
       "automatic": false,
@@ -441,7 +454,7 @@
     },
     {
       "automatic": false,
-      "bytes": 12098,
+      "bytes": 12099,
       "estimated_tokens": 1704,
       "exceeds": [],
       "kind": "leaf",
@@ -522,6 +535,32 @@
         "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow"
       ],
       "units": 4
+    },
+    {
+      "automatic": false,
+      "bytes": 5422,
+      "estimated_tokens": 874,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "parallelism/mindie-sd-and-omni/collectives-and-connectors",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 6882,
+      "estimated_tokens": 1292,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "parallelism/mindie-sd-and-omni/workflows",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow"
+      ],
+      "units": 1
     },
     {
       "automatic": false,
@@ -769,7 +808,7 @@
     },
     {
       "automatic": false,
-      "bytes": 12098,
+      "bytes": 12099,
       "estimated_tokens": 1704,
       "exceeds": [],
       "kind": "subtree",
@@ -850,6 +889,20 @@
         "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow"
       ],
       "units": 4
+    },
+    {
+      "automatic": false,
+      "bytes": 12304,
+      "estimated_tokens": 2166,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "parallelism/mindie-sd-and-omni",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow",
+        "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop"
+      ],
+      "units": 2
     },
     {
       "automatic": false,
@@ -986,7 +1039,7 @@
       "units": 1
     }
   ],
-  "unit_count": 37,
+  "unit_count": 39,
   "units": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": {
       "bytes": 6037,
@@ -1002,9 +1055,9 @@
       "tier": "L2"
     },
     "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop": {
-      "bytes": 6172,
+      "bytes": 6173,
       "category": "sop",
-      "content_sha256": "d4d731b70861f8a7e245f8a0ce48465cedf7b2f1c945fb6b5a685cba77657af8",
+      "content_sha256": "5d53b04d2876b76868bf1ce2e01e08ff5061b158ae743f2fbb973bbeb87dc657",
       "domain_path": "hccl/topology-and-network/roce-hccs-diagnostics",
       "estimated_tokens": 884,
       "evidence_strength": "reproduced_empirical",
@@ -1338,6 +1391,35 @@
       ],
       "path": "hccl/benchmark/hccl-test-suite/roce-pfc-and-retcode-triage/unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow.md",
       "tier": "L3"
+    },
+    "unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow": {
+      "bytes": 6882,
+      "category": "workflow",
+      "content_sha256": "fa016522e4c22c57a29a431ce1790d152fb351e3c08445546d0e8db3a578fd22",
+      "domain_path": "parallelism/mindie-sd-and-omni/workflows",
+      "estimated_tokens": 1292,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+        "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop"
+      ],
+      "path": "parallelism/mindie-sd-and-omni/workflows/unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow.md",
+      "tier": "L3"
+    },
+    "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop": {
+      "bytes": 5422,
+      "category": "sop",
+      "content_sha256": "95888e1fa9d71cb643d6d501c97c4efc0867ed72c2bb21628780e20d23ea0a79",
+      "domain_path": "parallelism/mindie-sd-and-omni/collectives-and-connectors",
+      "estimated_tokens": 874,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "parallelism/mindie-sd-and-omni/collectives-and-connectors/unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop.md",
+      "tier": "L2"
     },
     "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop": {
       "bytes": 5557,

@@ -12,7 +12,7 @@
   <a href="https://github.com/mindie-agent/mindie-agent"><img src="https://img.shields.io/badge/MindIE%20Agent-Ecosystem-7045f5.svg" alt="MindIE Agent"></a>
   <a href="./publication-contract.json"><img src="https://img.shields.io/badge/Schema-mindie--graded--unit%2F1-0f766e.svg" alt="Schema mindie-graded-unit/1"></a>
   <a href="./publication-contract.json"><img src="https://img.shields.io/badge/domain-infer--distributed-0284c7.svg" alt="Domain infer-distributed"></a>
-  <a href="./index/routing-manifest.json"><img src="https://img.shields.io/badge/Graded%20Units-23%20Units-d97757.svg" alt="23 Graded Units"></a>
+  <a href="./index/routing-manifest.json"><img src="https://img.shields.io/badge/Graded%20Units-39%20Units-d97757.svg" alt="39 Graded Units"></a>
   <a href="./index/shard-topology.json"><img src="https://img.shields.io/badge/Levels-L1%20to%20L4-10a37f.svg" alt="Levels L1-L4"></a>
 </p>
 
@@ -81,11 +81,11 @@
 
 ## 🏗️ 领域全景与 L1–L4 分级架构
 
-本仓库承载 MindIE Agent 的 **`infer-distributed` 领域分级知识源**（共 **23 个分级知识单元**：`L1: 3`、`L2: 10`、`L3: 8`、`L4: 2`）。聚焦昇腾 Atlas A2 / A3 / A5 集群上的 HCCL 集合通信机制、RoCE / HCCS 物理拓扑与 Ranktable 校验、EI0006/EI0002 Notify-Wait 超时与次生超时根因定位、HCCL AICPU 自定义集合通信算法与代价模型校准、多机 MoE EP（All2All / MC2）收敛、PD 分离非对称 TP KV 传输、多维混合并行（TP/DP/EP/CP/SP/PP）以及 CANN SHMEM 低时延跨卡内存直通访问。
+本仓库承载 MindIE Agent 的 **`infer-distributed` 领域分级知识源**（共 **39 个分级知识单元**：`L1: 3`、`L2: 21`、`L3: 13`、`L4: 2`）。聚焦昇腾 Atlas A2 / A3 / A5 集群上的 HCCL 集合通信机制、RoCE / HCCS 物理拓扑与 Ranktable 校验、EI0006/EI0002 Notify-Wait 超时与次生超时根因定位、HCCL AICPU 自定义集合通信算法与代价模型校准、多机 MoE EP（All2All / MC2）收敛、PD 分离非对称 TP KV 传输、多维混合并行（TP/DP/EP/CP/SP/PP）以及 CANN SHMEM 低时延跨卡内存直通访问。
 
 ### 1. `mindie-graded-unit/1` 四级知识单元体系（L1–L4）
 
-本知识库拒绝碎片化的聊天摘要或脱离前提的“万能经验”，所有知识单元均按工程抽象粒度与可操作性划分为 **L1–L4 四个层级**（当前分布：**L1: 3 · L2: 10 · L3: 8 · L4: 2**）：
+本知识库拒绝碎片化的聊天摘要或脱离前提的“万能经验”，所有知识单元均按工程抽象粒度与可操作性划分为 **L1–L4 四个层级**（当前分布：**L1: 3 · L2: 21 · L3: 13 · L4: 2**）：
 
 | 层级 | 标准类别 (`category`) | 工程定位 | 核心内容与准入要求 |
 | :---: | --- | --- | --- |
@@ -100,7 +100,7 @@
 flowchart LR
   Agent["🤖 AI Coding Agent (Claude Code / Codex / Kimi / DSH)"]
   Query["🔎 knowledge_query (查询词 + 实测环境条件)"]
-  Manifest["📋 index/routing-manifest.json (23 个单元元数据 · 条件与继承闭包)"]
+  Manifest["📋 index/routing-manifest.json (39 个单元元数据 · 条件与继承闭包)"]
   Topology["🗂️ index/shard-topology.json (子领域分片拓扑 · L1-L4 统计)"]
   Match{"⚖️ 条件匹配引擎 (matched / mismatch / condition_unknown)"}
   Explain["📖 knowledge_explain (按精确修订号 @revision 精读)"]
@@ -117,16 +117,19 @@ flowchart LR
 
 ## 📊 子领域分布与代表性知识单元
 
-[`index/routing-manifest.json`](./index/routing-manifest.json) 与 [`index/shard-topology.json`](./index/shard-topology.json) 是由全量 Markdown 单元派生的权威实时清单。当前仓库共包含 **23 个分级知识单元**（**L1: 3 · L2: 10 · L3: 8 · L4: 2**）：
+[`index/routing-manifest.json`](./index/routing-manifest.json) 与 [`index/shard-topology.json`](./index/shard-topology.json) 是由全量 Markdown 单元派生的权威实时清单。当前仓库共包含 **39 个分级知识单元**（**L1: 3 · L2: 21 · L3: 13 · L4: 2**）：
 
 ### 1. 子领域（Subdomain）分布统计
 
 | 子领域目录 | 单元数量 | 层级分布 (`L1–L4`) | 核心覆盖范围 |
 | --- | :---: | :---: | --- |
-| `hccl` | **10** | `L1: 1, L2: 5, L3: 3, L4: 1` | HCCL RoCE/HCCS 拓扑与 Ranktable 公理、通信域构造与 `HCCL_BUFFSIZE` 预算、EI0006/EI0002 超时与次生超时排障、HCCL-VM 校验器及 AICPU 集合通信算子开发与代价模型校准 |
+| `hccl` | **12** | `L1: 1, L2: 6, L3: 4, L4: 1` | HCCL RoCE/HCCS 拓扑与 Ranktable 公理、通信域构造与 `HCCL_BUFFSIZE` 预算、EI0006/EI0002 超时与次生超时排障、HCCL-VM 校验器、`hccl-test` MPICH 压测/PFC-ECN 排障及 AICPU 集合通信算子开发与代价模型校准 |
+| `parallelism` | **6** | `L1: 1, L2: 2, L3: 3` | 多维混合并行（TP/DP/EP/CP/SP/PP）张量切分公理、推理模块级并行线性层与 MoE 接线 SOP、MindSpeed TP-2D/DualPipeV、TorchTitan 5D DeviceMesh/DSA-CP，以及 MindIE-SD/vLLM-Omni DiT 通信掩盖、USP Ulysses/CFG 与功耗降频治理 |
+| `shmem` | **6** | `L1: 1, L2: 3, L3: 1, L4: 1` | Ascend SHMEM PGAS 对称堆寻址与 Team 层次公理、Device 侧 RMA (MTE vs SDMA) 传输、DeepSeek-V4 对称窗口缓冲区与 Host DDR KVCache/HIXL 卸载 SOP、跨 PE Signal-Wait 死锁排障工作流及低时延 MoE Dispatch/Combine 双缓冲 Mutator |
 | `serving` | **5** | `L2: 3, L3: 2` | 多机 MoE EP MC2/All2All 收敛工作流、模块解耦 TP/EP/DP/CP/KVP 并行策略、PD 分离非对称 P-TP/D-TP KV 头切分与分布式分片控制错误聚合 |
-| `parallelism` | **4** | `L1: 1, L2: 1, L3: 2` | 多维混合并行（TP/DP/EP/CP/SP/PP）张量切分公理、推理模块级并行线性层与 MoE 接线 SOP、MindSpeed TP-2D/DualPipeV 及 TorchTitan 5D DeviceMesh/DSA-CP 工作流 |
-| `shmem` | **4** | `L1: 1, L2: 1, L3: 1, L4: 1` | Ascend SHMEM PGAS 对称堆寻址与 Team 层次公理、Device 侧 RMA (MTE vs SDMA) 传输 SOP、跨 PE Signal-Wait 内存序与死锁排障工作流及低时延 MoE 跨卡 Dispatch/Combine 双缓冲 Mutator |
+| `mooncake` | **4** | `L2: 3, L3: 1` | Mooncake Ascend Direct (ADXL/HIXL) 端口与超时预算、Transfer Engine 零拷贝段内存注册与 P2P 握手、两阶段 Put 租约 TTL 驱逐及 Etcd OpLog 主备切换工作流 |
+| `dynamo` | **3** | `L2: 2, L3: 1` | Dynamo PD 分离服务发现与引导交接工作流、KV 感知路由 Radix 前缀重叠代价选择及队列反压（HTTP 529）/在途解码取消预算规程 |
+| `vllm-ascend` | **3** | `L2: 2, L3: 1` | `vLLM-Ascend` 多机 Ray 集群 NPU 资源注册与 HCCN 预检、动态分块流水线并行（DCPP）二次时延预测器校准及 Mooncake Layerwise/Store PD 分离工作流 |
 
 ### 2. 代表性分级知识单元（Representative Units）
 
@@ -144,6 +147,8 @@ flowchart LR
 | [`unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow`](./serving/parallel-strategy/unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow.md) | `serving` | **L3** / `workflow` | Module-decoupled TP/EP/DP/CP/KVP parallel strategy sizing, CommManager physical group reuse, and packed TND padding workflow | `mindie://infer-distributed/units/unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow@1` |
 | [`unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator`](./hccl/aicpu-collectives/debug-and-perf-tuning/unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator.md) | `hccl` | **L4** / `mutator` | HCCL AICPU Cost-Model α-β-γ Calibration, HVM Trace Profiling, and Selector Threshold Mutator | `mindie://infer-distributed/units/unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator@1` |
 | [`unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator`](./shmem/symmetric-memory/sync-and-moe-dispatch/unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator.md) | `shmem` | **L4** / `mutator` | Ascend SHMEM Low-Latency MoE Cross-Rank Token Dispatch/Combine and Double-Buffer Mutator | `mindie://infer-distributed/units/unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator@1` |
+| [`unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop`](./parallelism/mindie-sd-and-omni/collectives-and-connectors/unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop.md) | `parallelism` | **L2** / `sop` | MindIE-SD & vllm-omni Ulysses/Ring/CFG hybrid sequence parallelism, FA+AllToAll power-cap mitigation, EPLB, and YuanrongConnector SOP | `mindie://infer-distributed/units/unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop@1` |
+| [`unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow`](./parallelism/mindie-sd-and-omni/workflows/unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow.md) | `parallelism` | **L3** / `workflow` | MindIE-SD DiT-only few-step multirank probe, c/f communication-masking bound, and scaling convergence workflow | `mindie://infer-distributed/units/unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow@1` |
 
 ---
 
@@ -157,6 +162,7 @@ knowledge-infer-distributed/
 ├── AGENTS.md                           # 维护者与 AI Agent 仓库操作边界规范
 ├── README.md                           # 中文主文档
 ├── README.en.md                        # 英文主文档 (English Documentation)
+├── LICENSE                             # 双许可声明 (CC BY 4.0 语料与文档 + MIT 维护脚本)
 ├── index/
 │   ├── routing-manifest.json           # [派生索引] 全量单元 ID、路径、层级、条件、继承闭包与 Token 估算
 │   └── shard-topology.json             # [派生索引] 子领域分片计数与层级拓扑
@@ -184,10 +190,19 @@ knowledge-infer-distributed/
 - **主仓库与一键安装入口**：[`mindie-agent/mindie-agent`](https://github.com/mindie-agent/mindie-agent)
 - **知识检索与隐私脱敏运行时**：[`mindie-agent/knowledge`](https://github.com/mindie-agent/knowledge)（Python 包 `mindie-knowledge`）
 - **七大公开领域知识库矩阵**：
-  - [`knowledge-vllm-ascend`](https://github.com/mindie-agent/knowledge-vllm-ascend) — `vLLM-Ascend` 适配、图编译、MoE 与 PD 分离（43 Units）
-  - [`knowledge-operators`](https://github.com/mindie-agent/knowledge-operators) — AscendC / BiShengIR / Triton / TileLang 算子开发与优化（87 Units）
-  - [`knowledge-infer-core`](https://github.com/mindie-agent/knowledge-infer-core) — 核心推理引擎调度、KV Cache、多流并行与服务化架构（78 Units）
-  - [`knowledge-infer-distributed`](https://github.com/mindie-agent/knowledge-infer-distributed) — HCCL 集合通信、RoCE/HCCS 拓扑、多维并行与 SHMEM（23 Units）
-  - [`knowledge-infer-observability`](https://github.com/mindie-agent/knowledge-infer-observability) — CANN 故障诊断、`msprof` 性能剖析与精度验证（23 Units）
-  - [`knowledge-infer-ops-compat`](https://github.com/mindie-agent/knowledge-infer-ops-compat) — GE/TorchAir 图编译、自定义算子注册与 CUDA 迁移兼容（22 Units）
-  - [`knowledge-agent-engineering`](https://github.com/mindie-agent/knowledge-agent-engineering) — 智能体编排、远端 NPU 租约协同、脱敏审计与基准评测（23 Units）
+  - [`knowledge-vllm-ascend`](https://github.com/mindie-agent/knowledge-vllm-ascend) — `vLLM-Ascend` 与 `vLLM-Omni` 适配、图编译、MoE、PD 分离与多阶段全模态流水线（91 Units）
+  - [`knowledge-operators`](https://github.com/mindie-agent/knowledge-operators) — AscendC / BiShengIR / Triton / TileLang / MindIE-SD 算子开发与优化（105 Units）
+  - [`knowledge-infer-core`](https://github.com/mindie-agent/knowledge-infer-core) — 核心推理引擎调度、KV Cache、`MindIE-SD` 扩散加速与服务化架构（109 Units）
+  - [`knowledge-infer-distributed`](https://github.com/mindie-agent/knowledge-infer-distributed) — HCCL 集合通信、RoCE/HCCS 拓扑、Ulysses/Ring/CFG 混合并行与 SHMEM（39 Units）
+  - [`knowledge-infer-observability`](https://github.com/mindie-agent/knowledge-infer-observability) — CANN 故障诊断、`msprof` 性能剖析与 A/B/A 性能/精度门禁（39 Units）
+  - [`knowledge-infer-ops-compat`](https://github.com/mindie-agent/knowledge-infer-ops-compat) — GE/TorchAir/Inductor 图编译、自定义算子注册与两阶段框架集成（34 Units）
+  - [`knowledge-agent-engineering`](https://github.com/mindie-agent/knowledge-agent-engineering) — 智能体编排、S0–S6 自动调优工作流、脱敏审计与基准评测（33 Units）
+
+---
+
+## 📄 开源许可（License）
+
+本仓库遵循 [`LICENSE`](./LICENSE) 双许可声明（与 `mindie-publication-contract/2` 仓库结构对齐）：
+
+- **知识语料、派生索引、公开反馈与文档证据**（`<domain_path>/unit-*.md`、`index/`、`feedback/`、`README.md`、`README.en.md`、`AGENTS.md`、`docs/`）采用 **[Creative Commons Attribution 4.0 International (CC BY 4.0)](./LICENSE)** 许可协议。
+- **仓库维护脚本与工作流配置**（`scripts/`、`.github/workflows/`、`publication-contract.json`）采用 **[MIT License](./LICENSE)** 许可协议。

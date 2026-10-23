@@ -1,5 +1,5 @@
 {
-  "build_elapsed_ms": 28.667292091995478,
+  "build_elapsed_ms": 20.38804200128652,
   "closure": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
@@ -108,6 +108,15 @@
     "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
     ],
+    "unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+      "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop"
+    ],
+    "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop": [
+      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+      "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+    ],
     "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
@@ -147,7 +156,7 @@
       "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
     ]
   },
-  "generation": "cfac5ece9c979fb82d545f65b6e00236c7e06e14d26194555810ab8533764310",
+  "generation": "96dc3b9f9401cb9ee2fb7d1cfeb5bc2f52e2b0d90bdf25aad7104f34cdd474b4",
   "id_path": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": "hccl/aicpu/unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop.md",
     "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop": "hccl/topology-and-network/roce-hccs-diagnostics/unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop.md",
@@ -175,6 +184,8 @@
     "unit-hccl-aicpu-executor-binding-and-selector-registration-workflow": "hccl/aicpu-collectives/design-and-implementation/unit-hccl-aicpu-executor-binding-and-selector-registration-workflow.md",
     "unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop": "hccl/benchmark/hccl-test-suite/mpi-allreduce-and-alltoallv/unit-hccl-test-mpich-compilation-and-collective-bandwidth-benchmark-sop.md",
     "unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow": "hccl/benchmark/hccl-test-suite/roce-pfc-and-retcode-triage/unit-hccl-test-retcode-zombie-cleanup-and-roce-pfc-ecn-triage-workflow.md",
+    "unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow": "parallelism/mindie-sd-and-omni/workflows/unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow.md",
+    "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop": "parallelism/mindie-sd-and-omni/collectives-and-connectors/unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop.md",
     "unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy/unit-mooncake-ascend-direct-adxl-hixl-timeout-and-port-budget-sop.md",
     "unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases/unit-mooncake-store-etcd-oplog-snapshot-fail-closed-promotion-workflow.md",
     "unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop": "mooncake/store/master-ha-and-eviction/oplog-failover-and-leases/unit-mooncake-store-offset-allocator-lease-ttl-and-zombie-put-recovery-sop.md",
@@ -190,7 +201,7 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 37,
+  "unit_count": 39,
   "units": [
     {
       "category": "sop",
@@ -1617,6 +1628,127 @@
           "ipcs",
           "aclrtsetdevice",
           "notify-wait-timeout"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Multi-rank DiT parallelism selection, comm-stream masking optimization, and CP x sparse attention integration"
+        ]
+      },
+      "domain_path": "parallelism/mindie-sd-and-omni/workflows",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+        "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms",
+        "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop"
+      ],
+      "path": "parallelism/mindie-sd-and-omni/workflows/unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/dit-parallel-opt/SKILL.md"
+        ],
+        "source_digest": "a48ef062ddc8a6354655aafe27336e4ee7ccf2e45cc7e0c494e4f6e9fb73256c",
+        "source_locator": "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/dit-parallel-opt/SKILL.md",
+        "source_type": "architecture_and_runtime_guide",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "MindIE-SD dit-parallel-opt topology selection, CP x sparse seam, comm-masking c/f bound, and DiT-only few-step multirank workflow",
+      "token_estimate": 1292,
+      "triggers": {
+        "error_signatures": [
+          "comm-stream masking achieves only ~50% overlap instead of expected 1 - 1/n",
+          "CP + sparse attention output is byte-identical to dense baseline or degrades quality",
+          "per-step latency across card group uniformly elevated by ~10x despite npu-smi Health=OK"
+        ],
+        "keywords": [
+          "dit-parallel-opt",
+          "mask_bound_calc",
+          "bubble_attribution",
+          "collective_attribution",
+          "fewstep_multirank_probe",
+          "cp-sparse-combination",
+          "parallel-form-selection"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "Multi-NPU DiT sequence/context parallelism, MoE expert load balancing, thermal power-cap mitigation, and cross-stage Omni NPU memory transfer"
+        ]
+      },
+      "domain_path": "parallelism/mindie-sd-and-omni/collectives-and-connectors",
+      "evidence_strength": "software_contract",
+      "id": "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop",
+      "inherits_from": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+        "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
+      ],
+      "path": "parallelism/mindie-sd-and-omni/collectives-and-connectors/unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/parallelism.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/dit-parallel-opt/SKILL.md",
+          "vllm-project/vllm-omni@20778540fd04eb3753632d0ea1c966f8415cc5f3:vllm_omni/platforms/npu/omni_connectors/yuanrong_transfer_engine_connector.py"
+        ],
+        "source_digest": "15c2118d6d627dd36b500626f40662a1361ad03bf55aeadfa50eb7368da07f72",
+        "source_locator": "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/parallelism.md",
+        "source_type": "architecture_and_runtime_guide",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "MindIE-SD and vLLM-Omni USP Ulysses/KV-AllGather, HcclAlltoAllV workaround, FA_Power_Cap, Dynamic EPLB, and YuanrongTransferEngineConnector SOP",
+      "token_estimate": 874,
+      "triggers": {
+        "error_signatures": [
+          "HcclAlltoAllV SIGSEGV on split path",
+          "PCIe TDP PMC thermal throttling during ultra-long video FlashAttention",
+          "YuanrongTransferEngineConnector requires an NPU memory pool",
+          "profile shows only allGather and no allToAll when sequence sharding is enabled"
+        ],
+        "keywords": [
+          "usp_attention",
+          "kv_gather_group",
+          "HcclAlltoAllV",
+          "FA_Power_Cap",
+          "insertcomm",
+          "blockattn",
+          "Dynamic-EPLB",
+          "EPLB_AUTH_KEY",
+          "YuanrongTransferEngineConnector"
         ]
       }
     },

@@ -12,7 +12,7 @@
   <a href="https://github.com/mindie-agent/mindie-agent"><img src="https://img.shields.io/badge/MindIE%20Agent-Ecosystem-7045f5.svg" alt="MindIE Agent"></a>
   <a href="./publication-contract.json"><img src="https://img.shields.io/badge/Schema-mindie--graded--unit%2F1-0f766e.svg" alt="Schema mindie-graded-unit/1"></a>
   <a href="./publication-contract.json"><img src="https://img.shields.io/badge/domain-infer--distributed-0284c7.svg" alt="Domain infer-distributed"></a>
-  <a href="./index/routing-manifest.json"><img src="https://img.shields.io/badge/Graded%20Units-23%20Units-d97757.svg" alt="23 Graded Units"></a>
+  <a href="./index/routing-manifest.json"><img src="https://img.shields.io/badge/Graded%20Units-39%20Units-d97757.svg" alt="39 Graded Units"></a>
   <a href="./index/shard-topology.json"><img src="https://img.shields.io/badge/Levels-L1%20to%20L4-10a37f.svg" alt="Levels L1-L4"></a>
 </p>
 
@@ -81,11 +81,11 @@ Once installed, the native host plugin connects to the [`mindie-knowledge`](http
 
 ## 🏗️ Domain Overview & L1–L4 Graded Architecture
 
-This repository hosts the **`infer-distributed` graded domain knowledge corpus** for MindIE Agent (**23 graded units**: `L1: 3`, `L2: 10`, `L3: 8`, `L4: 2`). It focuses on HCCL collective communication across Ascend Atlas A2 / A3 / A5 clusters, RoCE / HCCS physical topology and rank-table validation, EI0006/EI0002 notify-wait and secondary timeout root-rank triage, HCCL AICPU collective algorithms and cost-model calibration, multi-node MoE EP (All2All / MC2) convergence, PD-disaggregated asymmetric-TP KV transfer, hybrid multi-dimensional parallelism (TP/DP/EP/CP/SP/PP), and CANN SHMEM low-latency cross-PE symmetric memory.
+This repository hosts the **`infer-distributed` graded domain knowledge corpus** for MindIE Agent (**39 graded units**: `L1: 3`, `L2: 21`, `L3: 13`, `L4: 2`). It focuses on HCCL collective communication across Ascend Atlas A2 / A3 / A5 clusters, RoCE / HCCS physical topology and rank-table validation, EI0006/EI0002 notify-wait and secondary timeout root-rank triage, HCCL AICPU collective algorithms and cost-model calibration, multi-node MoE EP (All2All / MC2) convergence, PD-disaggregated asymmetric-TP KV transfer, hybrid multi-dimensional parallelism (TP/DP/EP/CP/SP/PP), and CANN SHMEM low-latency cross-PE symmetric memory.
 
 ### 1. The `mindie-graded-unit/1` L1–L4 Hierarchy
 
-Instead of lossy chat summaries or unconditioned "best practices", every knowledge unit in this repository is structured into **four graded levels (L1–L4)** based on engineering abstraction and actionability (current breakdown: **L1: 3 · L2: 10 · L3: 8 · L4: 2**):
+Instead of lossy chat summaries or unconditioned "best practices", every knowledge unit in this repository is structured into **four graded levels (L1–L4)** based on engineering abstraction and actionability (current breakdown: **L1: 3 · L2: 21 · L3: 13 · L4: 2**):
 
 | Level | Canonical Category (`category`) | Role | Scope & Admission Requirements |
 | :---: | --- | --- | --- |
@@ -100,7 +100,7 @@ Instead of lossy chat summaries or unconditioned "best practices", every knowled
 flowchart LR
   Agent["🤖 AI Coding Agent (Claude Code / Codex / Kimi / DSH)"]
   Query["🔎 knowledge_query (Query text + observed conditions)"]
-  Manifest["📋 index/routing-manifest.json (23 units · condition predicates · inheritance)"]
+  Manifest["📋 index/routing-manifest.json (39 units · condition predicates · inheritance)"]
   Topology["🗂️ index/shard-topology.json (Subdomain shards · L1-L4 counts)"]
   Match{"⚖️ Condition Matcher (matched / mismatch / condition_unknown)"}
   Explain["📖 knowledge_explain (Read pinned unit @revision)"]
@@ -117,16 +117,19 @@ flowchart LR
 
 ## 📊 Subdomain Breakdown & Representative Units
 
-[`index/routing-manifest.json`](./index/routing-manifest.json) and [`index/shard-topology.json`](./index/shard-topology.json) are the authoritative derived inventories rebuilt from the Markdown units. This repository currently contains **23 graded knowledge units** (**L1: 3 · L2: 10 · L3: 8 · L4: 2**):
+[`index/routing-manifest.json`](./index/routing-manifest.json) and [`index/shard-topology.json`](./index/shard-topology.json) are the authoritative derived inventories rebuilt from the Markdown units. This repository currently contains **39 graded knowledge units** (**L1: 3 · L2: 21 · L3: 13 · L4: 2**):
 
 ### 1. Subdomain Statistics
 
 | Subdomain | Units | Level Breakdown (`L1–L4`) | Core Engineering Scope |
 | --- | :---: | :---: | --- |
-| `hccl` | **10** | `L1: 1, L2: 5, L3: 3, L4: 1` | HCCL RoCE/HCCS topology & rank-table axioms, communicator group & `HCCL_BUFFSIZE` sizing, EI0006/EI0002 & secondary timeout triage, HCCL-VM verification, and AICPU collective design & cost-model calibration |
+| `hccl` | **12** | `L1: 1, L2: 6, L3: 4, L4: 1` | HCCL RoCE/HCCS topology & rank-table axioms, communicator group & `HCCL_BUFFSIZE` sizing, EI0006/EI0002 & secondary timeout triage, HCCL-VM verification, `hccl-test` MPICH benchmarking & PFC/ECN triage, and AICPU collective design & cost-model calibration |
+| `parallelism` | **6** | `L1: 1, L2: 2, L3: 3` | Multi-dimensional parallelism (TP/DP/EP/CP/SP/PP) tensor partitioning axioms, module-level parallel linear & MoE wiring SOP, MindSpeed TP-2D/DualPipeV, TorchTitan 5D DeviceMesh/DSA-CP, and MindIE-SD/vLLM-Omni DiT comm masking, USP Ulysses/CFG & power-cap SOPs |
+| `shmem` | **6** | `L1: 1, L2: 3, L3: 1, L4: 1` | Ascend SHMEM PGAS symmetric heap addressing & Team axioms, device-side RMA (MTE vs SDMA) SOP, DeepSeek-V4 symmetric window buffer & Host DDR KVCache/HIXL offload SOPs, cross-PE signal-wait workflow, and low-latency MoE dispatch/combine double-buffer mutator |
 | `serving` | **5** | `L2: 3, L3: 2` | Multi-node MoE EP MC2/All2All convergence workflow, module-decoupled TP/EP/DP/CP/KVP parallel strategy sizing, PD-disaggregated asymmetric P-TP/D-TP KV-head slicing, and shard error aggregation |
-| `parallelism` | **4** | `L1: 1, L2: 1, L3: 2` | Multi-dimensional parallelism (TP/DP/EP/CP/SP/PP) tensor partitioning axioms, module-level parallel linear & MoE wiring SOP, MindSpeed TP-2D/DualPipeV, and TorchTitan 5D DeviceMesh/DSA-CP workflows |
-| `shmem` | **4** | `L1: 1, L2: 1, L3: 1, L4: 1` | Ascend SHMEM PGAS symmetric heap addressing & Team axioms, device-side RMA (MTE vs SDMA) SOP, cross-PE signal-wait synchronization workflow, and low-latency MoE cross-rank dispatch/combine double-buffer mutator |
+| `mooncake` | **4** | `L2: 3, L3: 1` | Mooncake Ascend Direct (ADXL/HIXL) port & timeout budgets, Transfer Engine zero-copy segment registration & P2P handshake, two-phase Put lease TTL eviction, and Etcd OpLog fail-closed standby promotion workflow |
+| `dynamo` | **3** | `L2: 2, L3: 1` | Dynamo disaggregated Prefill/Decode discovery & bootstrap handoff workflow, KV-aware router Radix overlap cost selection, and queue backpressure (HTTP 529) & inflight decode cancellation budget SOPs |
+| `vllm-ascend` | **3** | `L2: 2, L3: 1` | `vLLM-Ascend` multi-node Ray cluster NPU resource registration & HCCN verification, Dynamic Chunked Pipeline Parallelism (DCPP) quadratic latency predictor calibration, and Mooncake Layerwise/Store PD disaggregation workflow |
 
 ### 2. Representative Graded Knowledge Units
 
@@ -144,6 +147,8 @@ flowchart LR
 | [`unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow`](./serving/parallel-strategy/unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow.md) | `serving` | **L3** / `workflow` | Module-decoupled TP/EP/DP/CP/KVP parallel strategy sizing, CommManager physical group reuse, and packed TND padding workflow | `mindie://infer-distributed/units/unit-ascend-module-decoupled-tp-ep-cp-kvp-parallel-workflow@1` |
 | [`unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator`](./hccl/aicpu-collectives/debug-and-perf-tuning/unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator.md) | `hccl` | **L4** / `mutator` | HCCL AICPU Cost-Model α-β-γ Calibration, HVM Trace Profiling, and Selector Threshold Mutator | `mindie://infer-distributed/units/unit-hccl-aicpu-cost-model-calibration-and-hvm-estimate-mutator@1` |
 | [`unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator`](./shmem/symmetric-memory/sync-and-moe-dispatch/unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator.md) | `shmem` | **L4** / `mutator` | Ascend SHMEM Low-Latency MoE Cross-Rank Token Dispatch/Combine and Double-Buffer Mutator | `mindie://infer-distributed/units/unit-ascend-shmem-low-latency-moe-cross-rank-dispatch-combine-mutator@1` |
+| [`unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop`](./parallelism/mindie-sd-and-omni/collectives-and-connectors/unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop.md) | `parallelism` | **L2** / `sop` | MindIE-SD & vllm-omni Ulysses/Ring/CFG hybrid sequence parallelism, FA+AllToAll power-cap mitigation, EPLB, and YuanrongConnector SOP | `mindie://infer-distributed/units/unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop@1` |
+| [`unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow`](./parallelism/mindie-sd-and-omni/workflows/unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow.md) | `parallelism` | **L3** / `workflow` | MindIE-SD DiT-only few-step multirank probe, c/f communication-masking bound, and scaling convergence workflow | `mindie://infer-distributed/units/unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow@1` |
 
 ---
 
@@ -157,6 +162,7 @@ knowledge-infer-distributed/
 ├── AGENTS.md                           # Maintainer and AI-Agent repository boundary rules
 ├── README.md                           # Primary documentation (Chinese)
 ├── README.en.md                        # Primary documentation (English)
+├── LICENSE                             # Dual license (CC BY 4.0 corpus & docs + MIT scripts)
 ├── index/
 │   ├── routing-manifest.json           # [Derived Index] Live unit IDs, paths, tiers, conditions, inheritance & token estimates
 │   └── shard-topology.json             # [Derived Index] Subdomain shard counts and level topology
@@ -184,10 +190,19 @@ Every push and pull request targeting `main` is enforced by `.github/workflows/c
 - **Main Repository & One-Line Installer**: [`mindie-agent/mindie-agent`](https://github.com/mindie-agent/mindie-agent)
 - **Knowledge Runtime & Redaction Engine**: [`mindie-agent/knowledge`](https://github.com/mindie-agent/knowledge) (`mindie-knowledge`)
 - **The 7 Public Domain Knowledge Corpora**:
-  - [`knowledge-vllm-ascend`](https://github.com/mindie-agent/knowledge-vllm-ascend) — `vLLM-Ascend` model bring-up, ACLGraph, MoE & PD disaggregation (43 Units)
-  - [`knowledge-operators`](https://github.com/mindie-agent/knowledge-operators) — AscendC / BiShengIR / Triton / TileLang operator development & optimization (87 Units)
-  - [`knowledge-infer-core`](https://github.com/mindie-agent/knowledge-infer-core) — Core inference engine scheduling, KV cache, multi-stream overlap & serving (78 Units)
-  - [`knowledge-infer-distributed`](https://github.com/mindie-agent/knowledge-infer-distributed) — HCCL collectives, RoCE/HCCS topology, hybrid parallelism & SHMEM (23 Units)
-  - [`knowledge-infer-observability`](https://github.com/mindie-agent/knowledge-infer-observability) — CANN fault diagnostics, `msprof` profiling & accuracy validation (23 Units)
-  - [`knowledge-infer-ops-compat`](https://github.com/mindie-agent/knowledge-infer-ops-compat) — GE/TorchAir graph compilation, custom-op registration & CUDA migration (22 Units)
-  - [`knowledge-agent-engineering`](https://github.com/mindie-agent/knowledge-agent-engineering) — Multi-agent orchestration, NPU lease coordination, redaction audit & benchmarking (23 Units)
+  - [`knowledge-vllm-ascend`](https://github.com/mindie-agent/knowledge-vllm-ascend) — `vLLM-Ascend` & `vLLM-Omni` model bring-up, ACLGraph, MoE, PD disaggregation & omni pipelines (91 Units)
+  - [`knowledge-operators`](https://github.com/mindie-agent/knowledge-operators) — AscendC / BiShengIR / Triton / TileLang / MindIE-SD operator development & optimization (105 Units)
+  - [`knowledge-infer-core`](https://github.com/mindie-agent/knowledge-infer-core) — Core inference engine scheduling, KV cache, `MindIE-SD` DiT acceleration & serving (109 Units)
+  - [`knowledge-infer-distributed`](https://github.com/mindie-agent/knowledge-infer-distributed) — HCCL collectives, RoCE/HCCS topology, Ulysses/Ring/CFG hybrid parallelism & SHMEM (39 Units)
+  - [`knowledge-infer-observability`](https://github.com/mindie-agent/knowledge-infer-observability) — CANN fault diagnostics, `msprof` profiling & Window A/B/A perf/accuracy gates (39 Units)
+  - [`knowledge-infer-ops-compat`](https://github.com/mindie-agent/knowledge-infer-ops-compat) — GE/TorchAir/Inductor graph compilation, custom-op registration & two-stage integration (34 Units)
+  - [`knowledge-agent-engineering`](https://github.com/mindie-agent/knowledge-agent-engineering) — Multi-agent orchestration, S0–S6 auto-optimization, redaction audit & benchmarking (33 Units)
+
+---
+
+## 📄 License
+
+This repository is dual-licensed under [`LICENSE`](./LICENSE) in alignment with the `mindie-publication-contract/2` repository layout:
+
+- **Knowledge Corpus, Derived Indexes, Public Feedback & Documentation** (`<domain_path>/unit-*.md`, `index/`, `feedback/`, `README.md`, `README.en.md`, `AGENTS.md`, `docs/`) are licensed under **[Creative Commons Attribution 4.0 International (CC BY 4.0)](./LICENSE)**.
+- **Repository Maintenance Scripts & Workflow Configuration** (`scripts/`, `.github/workflows/`, `publication-contract.json`) are licensed under the **[MIT License](./LICENSE)**.
