@@ -2,15 +2,10 @@
 category: sop
 conditions:
   domain: dynamo
-  hardware:
-  - Ascend 910B
-  - Ascend 910C
-  - Multi-Worker LLM Serving Fleet
 domain_path: dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection
 evidence_strength: software_contract
 id: unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop
-inherits_from:
-- unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop
+inherits_from: []
 provenance:
   evidence_refs:
   - https://github.com/ai-dynamo/dynamo/blob/7bc6263706afdecdbdd316751cc0b72e35cee970/docs/fern/pages/developer-guide/knowledge-base/modular-components/router/routing-concepts.md#L10-L89
@@ -19,7 +14,7 @@ provenance:
   source_locator: ai-dynamo/dynamo@7bc6263706afdecdbdd316751cc0b72e35cee970:docs/fern/pages/developer-guide/knowledge-base/modular-components/router/routing-concepts.md
   source_type: source_contract
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 status: active
 tier: L2
@@ -39,6 +34,10 @@ triggers:
   - two-tier-cost-fn
   - pythonhashseed
 ---
+## Applicability boundary for offline analysis
+
+Block hashing, worker-set membership and the routing cost formula are host-side software contracts. Source inspection and local arithmetic tests do not require an Ascend SoC, HCCL rank table or a particular PD connector. The pinned Dynamo source below defines these formulas; compare the actual implementation when using another revision. Live throughput or cache-hit improvements still require measurements on the actual serving fleet.
+
 ## Preconditions & Trigger
 
 Apply this SOP when configuring or tuning the Dynamo KV-aware router (`python3 -m dynamo.frontend --router-mode kv`) to maximize prefix cache hit rates across multi-worker vLLM / SGLang / MindIE pools without overloading cache-hot replicas.

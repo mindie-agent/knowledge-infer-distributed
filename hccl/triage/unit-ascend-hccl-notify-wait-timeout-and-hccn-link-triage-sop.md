@@ -1,17 +1,12 @@
 ---
 category: sop
 conditions:
-  collective_transport:
-  - hccs
-  - roce-v2
-  ranktable_schema: '1.0'
   vendor: huawei-ascend
-content_digest: sha256:f0c56540f0120eb36f0a3cfb3c951297ee2ba2f6accc4ca3b54a3c178f662a51
+content_digest: sha256:c684ee76dba31f22be0f0caf63899ace6ab5494c8ff411784cdf675390990f1d
 domain_path: hccl/triage
 evidence_strength: software_contract
 id: unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop
-inherits_from:
-- unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms
+inherits_from: []
 provenance:
   evidence_refs:
   - docs/evidence/cannbot-distributed-provenance.json#unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop
@@ -24,7 +19,7 @@ provenance:
   source_locator: docs/evidence/cannbot-distributed-provenance.json#unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop
   source_type: software_contract+runbook
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 tier: L2
 title: 'Triage EI0006/EI0002 notify-wait timeouts: separate rank skew from HCCN link
@@ -50,14 +45,18 @@ triggers:
 ---
 # Triage `EI0006` / `EI0002` / `HCCL_E_WAIT_TIMEOUT`: rank skew or link degradation
 
+## Applicability boundary for offline analysis
+
+Steps 1 and 2 analyze logs, rank participation and host control flow; they also apply to an offline reproduction without a known SoC, transport or rank table. Stop when the first failure or participation divergence explains the timeout and the affected behavior is verified. Steps 3 and 4 are conditional live-device investigations: enter them only after establishing the actual rank-to-device mapping, transport and rank-table schema, then read and match `unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms`. Never synthesize those facts from this SOP or run physical checks merely to complete the checklist.
+
 `EI0006` is `Get_Socket_Timeout`. `EI0002` is a notify-wait timeout: a rank is waiting
 for a peer's notify register to advance, and the default collective budget is 1800 s.
 `HCCL_E_WAIT_TIMEOUT` is the same wait-timeout family. None of these is a root cause.
 They say "a peer did not arrive"; the job is to decide whether the missing peer is a
 rank that never entered the collective or a physical path that stopped delivering.
 
-Use this SOP exactly in order. Do not start by raising `HCCL_EXEC_TIMEOUT`; that only
-moves the observation window.
+Follow the evidence-dependent branches below. Do not start by raising
+`HCCL_EXEC_TIMEOUT`; that only moves the observation window.
 
 ## Step 1 - Freeze the scene and find the first failure on every rank
 
@@ -123,7 +122,7 @@ ledger matches before continuing.
 If every rank entered the same collective and the peer still does not advance,
 continue to Step 3. This is the boundary where physical triage becomes legitimate.
 
-## Step 3 - Inspect the physical path on the waiting peer's device
+## Step 3 - Conditional live check: inspect the waiting peer's physical path
 
 Run the checks on the device that the waiting rank actually uses. On A3 the device
 range is normally 0..15; on A2 0..7; on A5 read the live enumeration. If a rank maps
@@ -155,7 +154,7 @@ Take a `-stat -g` snapshot before and after the failing run. Absolute counters a
 not meaningful without a baseline. A single clean snapshot does not prove the link
 was clean during the timeout.
 
-## Step 4 - Correlate the device with the rank table, NIC and transport
+## Step 4 - Conditional live check: correlate the rank table, NIC and transport
 
 Map the failing rank through the three identities:
 
@@ -203,7 +202,11 @@ Remediate only the class you proved:
 - **Buffer**: size `HCCL_BUFFSIZE` from the operator's printed need and keep it equal
   on all ranks.
 
-Close only when:
+For an offline code or parser repair, close when the identified failure and the
+requested invariants pass the relevant local behavior regression. State that live
+job health remains unverified; do not continue physical checks without new evidence.
+
+For a live-job recovery objective, close only when:
 
 - the same collective, on the same rank set, completes through the previously failing
   step;
@@ -224,5 +227,5 @@ dummy flags that are not part of the scheduler fix) before declaring the job hea
   cross-node RoCE path is healthy.
 - Do not raise `HCCL_EXEC_TIMEOUT` before separating participation skew from link
   degradation.
-- Do not close on a single successful retry; require a sustained run and clean
-  counters.
+- Do not declare a live job healthy on a single successful retry; require a
+  sustained run and the counters relevant to the diagnosed transport.

@@ -2,16 +2,10 @@
 category: sop
 conditions:
   domain: dynamo
-  hardware:
-  - Ascend 910B
-  - Ascend 910C
-  - Distributed LLM Router Runtime
 domain_path: dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort
 evidence_strength: software_contract
 id: unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop
-inherits_from:
-- unit-tgi-async-rpc-cancellation-boundary
-- unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop
+inherits_from: []
 provenance:
   evidence_refs:
   - https://github.com/ai-dynamo/dynamo/blob/7bc6263706afdecdbdd316751cc0b72e35cee970/lib/llm/src/kv_router/routing_host/cancellation.rs#L17-L248
@@ -19,7 +13,7 @@ provenance:
   source_locator: ai-dynamo/dynamo@7bc6263706afdecdbdd316751cc0b72e35cee970:lib/llm/src/kv_router/routing_host/cancellation.rs
   source_type: source_contract
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 status: active
 tier: L2
@@ -40,6 +34,10 @@ triggers:
   - wspt
   - fcfs
 ---
+## Applicability boundary for offline analysis
+
+Queue ordering, cancellation and staged-KV ownership are host-side software contracts. Source inspection and local cancellation tests need no NPU SoC or Ascend rank table. The pinned Dynamo source below defines the described behavior; verify the corresponding code when applying it to another revision. TGI RPC cancellation and Ascend PD connector transport are separate implementations, not mandatory parent premises for this router.
+
 ## Preconditions & Trigger
 
 Apply this SOP when configuring policy-class admission queues, Deficit Round Robin (DRR) scheduling, or diagnosing leaked remote-prefill KV blocks after client disconnects in Dynamo's `RoutingHost` (`lib/llm/src/kv_router/routing_host/cancellation.rs`).

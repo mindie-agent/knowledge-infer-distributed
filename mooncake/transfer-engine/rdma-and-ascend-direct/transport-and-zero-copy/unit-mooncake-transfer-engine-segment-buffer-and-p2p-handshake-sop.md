@@ -2,15 +2,10 @@
 category: sop
 conditions:
   domain: mooncake
-  hardware:
-  - Ascend 910B
-  - Ascend 910C
-  - Multi-NIC RoCE / InfiniBand / PCIe
 domain_path: mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy
 evidence_strength: software_contract
 id: unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop
-inherits_from:
-- unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop
+inherits_from: []
 provenance:
   evidence_refs:
   - https://github.com/kvcache-ai/Mooncake/blob/1f65cf13c9f886f8db8b88b7733367b18340ebf0/docs/source/design/transfer-engine/index.md#L1-L162
@@ -18,7 +13,7 @@ provenance:
   source_locator: kvcache-ai/Mooncake@1f65cf13c9f886f8db8b88b7733367b18340ebf0:docs/source/design/transfer-engine/index.md
   source_type: source_contract
   supersedes: []
-revision: 1
+revision: 2
 schema: mindie-graded-unit/1
 status: active
 tier: L2
@@ -39,6 +34,10 @@ triggers:
   - zero-copy
   - kv-cache
 ---
+## Applicability boundary for offline analysis
+
+Segment identity, buffer bounds, handshake metadata and batch completion are Transfer Engine API contracts. They can be inspected or tested using the supported host/TCP path without an Ascend SoC or an asymmetric-TP PD deployment. The pinned source below defines the described API. Before selecting RDMA or Ascend Direct for a live transfer, establish that transport's device registration, memory and endpoint requirements; a host-side check does not establish device-transfer support or performance.
+
 ## Preconditions & Trigger
 
 Apply this SOP when configuring or troubleshooting Mooncake Transfer Engine (`TransferEngine`) for zero-copy KV cache block transfers across DRAM, GPU/NPU HBM, RDMA NICs (`rdma`), Ascend Direct (`ascend`), or TCP fallback (`tcp`) in P2P handshake (`P2PHANDSHAKE`) or centralized metadata store (`etcd` / `redis` / `http`) topologies.

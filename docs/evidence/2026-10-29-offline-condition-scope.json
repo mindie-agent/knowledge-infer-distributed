@@ -1,0 +1,273 @@
+{
+  "schema": "mindie-condition-scope-verification/1",
+  "date": "2026-10-29",
+  "scope": "deterministic query/explain applicability only; no live device or model task execution",
+  "base_commit": "a35f1a15c11bb8f0ddb717c3187a25a27262ca1c",
+  "generation": "9b94522727677db84b458c6ed6b5809ecb5c5e0a05fcabdd00297cc92d9da24c",
+  "cases": [
+    {
+      "id": "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop",
+      "revision_before": 1,
+      "revision_after": 2,
+      "observed_conditions": {
+        "domain": "dynamo"
+      },
+      "before_unresolved": [
+        {
+          "id": "unit-tgi-async-rpc-cancellation-boundary",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "repository",
+            "revision"
+          ],
+          "required_conditions": {
+            "repository": "huggingface/text-generation-inference",
+            "revision": "b4adbf2f6e2e721280bd0ea5f91d70f7d033f5ed"
+          }
+        },
+        {
+          "id": "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "ranktable_schema",
+            "transport",
+            "vendor"
+          ],
+          "required_conditions": {
+            "ranktable_schema": "1.0",
+            "transport": [
+              "hccs",
+              "roce-v2"
+            ],
+            "vendor": "huawei-ascend"
+          }
+        },
+        {
+          "id": "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "connector",
+            "kv_transport",
+            "supports_asymmetric_tp"
+          ],
+          "required_conditions": {
+            "connector": [
+              "MooncakeConnector",
+              "LlmDataDist"
+            ],
+            "kv_transport": [
+              "roce",
+              "rdma"
+            ],
+            "supports_asymmetric_tp": true
+          }
+        },
+        {
+          "id": "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "hardware"
+          ],
+          "required_conditions": {
+            "hardware": [
+              "Ascend 910B",
+              "Ascend 910C",
+              "Distributed LLM Router Runtime"
+            ]
+          }
+        }
+      ],
+      "after_units": [
+        "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop"
+      ],
+      "after_unresolved": [],
+      "query_ready_to_apply": true
+    },
+    {
+      "id": "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop",
+      "revision_before": 1,
+      "revision_after": 2,
+      "observed_conditions": {
+        "domain": "dynamo"
+      },
+      "before_unresolved": [
+        {
+          "id": "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "ranktable_schema",
+            "transport",
+            "vendor"
+          ],
+          "required_conditions": {
+            "ranktable_schema": "1.0",
+            "transport": [
+              "hccs",
+              "roce-v2"
+            ],
+            "vendor": "huawei-ascend"
+          }
+        },
+        {
+          "id": "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "connector",
+            "kv_transport",
+            "supports_asymmetric_tp"
+          ],
+          "required_conditions": {
+            "connector": [
+              "MooncakeConnector",
+              "LlmDataDist"
+            ],
+            "kv_transport": [
+              "roce",
+              "rdma"
+            ],
+            "supports_asymmetric_tp": true
+          }
+        },
+        {
+          "id": "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "hardware"
+          ],
+          "required_conditions": {
+            "hardware": [
+              "Ascend 910B",
+              "Ascend 910C",
+              "Multi-Worker LLM Serving Fleet"
+            ]
+          }
+        }
+      ],
+      "after_units": [
+        "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop"
+      ],
+      "after_unresolved": [],
+      "query_ready_to_apply": true
+    },
+    {
+      "id": "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop",
+      "revision_before": 1,
+      "revision_after": 2,
+      "observed_conditions": {
+        "domain": "mooncake"
+      },
+      "before_unresolved": [
+        {
+          "id": "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "ranktable_schema",
+            "transport",
+            "vendor"
+          ],
+          "required_conditions": {
+            "ranktable_schema": "1.0",
+            "transport": [
+              "hccs",
+              "roce-v2"
+            ],
+            "vendor": "huawei-ascend"
+          }
+        },
+        {
+          "id": "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "connector",
+            "kv_transport",
+            "supports_asymmetric_tp"
+          ],
+          "required_conditions": {
+            "connector": [
+              "MooncakeConnector",
+              "LlmDataDist"
+            ],
+            "kv_transport": [
+              "roce",
+              "rdma"
+            ],
+            "supports_asymmetric_tp": true
+          }
+        },
+        {
+          "id": "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "hardware"
+          ],
+          "required_conditions": {
+            "hardware": [
+              "Ascend 910B",
+              "Ascend 910C",
+              "Multi-NIC RoCE / InfiniBand / PCIe"
+            ]
+          }
+        }
+      ],
+      "after_units": [
+        "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop"
+      ],
+      "after_unresolved": [],
+      "query_ready_to_apply": true
+    },
+    {
+      "id": "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+      "revision_before": 1,
+      "revision_after": 2,
+      "observed_conditions": {
+        "vendor": "huawei-ascend"
+      },
+      "before_unresolved": [
+        {
+          "id": "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "ranktable_schema",
+            "transport"
+          ],
+          "required_conditions": {
+            "ranktable_schema": "1.0",
+            "transport": [
+              "hccs",
+              "roce-v2"
+            ]
+          }
+        },
+        {
+          "id": "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+          "status": "condition_unknown",
+          "missing_conditions": [
+            "collective_transport",
+            "ranktable_schema"
+          ],
+          "required_conditions": {
+            "collective_transport": [
+              "hccs",
+              "roce-v2"
+            ],
+            "ranktable_schema": "1.0"
+          }
+        }
+      ],
+      "after_units": [
+        "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop"
+      ],
+      "after_unresolved": [],
+      "query_ready_to_apply": true
+    }
+  ],
+  "preserved_legacy_content_digests": {
+    "algorithm": "sha256 of canonical JSON [metadata excluding content_digest/domain_path/revision, normalized body]; verified against original bytes and historical graded/units.py at 71d7439",
+    "units": [
+      {
+        "id": "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
+        "content_digest": "sha256:c684ee76dba31f22be0f0caf63899ace6ab5494c8ff411784cdf675390990f1d"
+      }
+    ]
+  }
+}

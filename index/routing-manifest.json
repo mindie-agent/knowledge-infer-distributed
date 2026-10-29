@@ -1,5 +1,5 @@
 {
-  "build_elapsed_ms": 20.38804200128652,
+  "build_elapsed_ms": 20.122500020079315,
   "closure": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
@@ -8,9 +8,7 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop"
     ],
-    "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": [
-      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
-    ],
+    "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": [],
     "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": [],
     "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
@@ -71,15 +69,8 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
     ],
-    "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop": [
-      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
-      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-    ],
-    "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop": [
-      "unit-tgi-async-rpc-cancellation-boundary",
-      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
-      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-    ],
+    "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop": [],
+    "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop": [],
     "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
@@ -129,10 +120,7 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
     ],
-    "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop": [
-      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
-      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-    ],
+    "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop": [],
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
@@ -156,7 +144,7 @@
       "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
     ]
   },
-  "generation": "96dc3b9f9401cb9ee2fb7d1cfeb5bc2f52e2b0d90bdf25aad7104f34cdd474b4",
+  "generation": "9b94522727677db84b458c6ed6b5809ecb5c5e0a05fcabdd00297cc92d9da24c",
   "id_path": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": "hccl/aicpu/unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop.md",
     "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop": "hccl/topology-and-network/roce-hccs-diagnostics/unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop.md",
@@ -320,22 +308,13 @@
     {
       "category": "sop",
       "conditions": {
-        "collective_transport": [
-          "hccs",
-          "roce-v2"
-        ],
-        "ranktable_schema": "1.0",
         "vendor": "huawei-ascend"
       },
       "domain_path": "hccl/triage",
       "evidence_strength": "software_contract",
       "id": "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
-      "inherits_from": [
-        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
-      ],
-      "inherits_from_closure": [
-        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
-      ],
+      "inherits_from": [],
+      "inherits_from_closure": [],
       "path": "hccl/triage/unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop.md",
       "provenance": {
         "evidence_refs": [
@@ -351,10 +330,10 @@
         "source_type": "software_contract+runbook",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "Triage EI0006/EI0002 notify-wait timeouts: separate rank skew from HCCN link degradation",
-      "token_estimate": 2037,
+      "token_estimate": 2296,
       "triggers": {
         "error_signatures": [
           "EI0006",
@@ -1213,23 +1192,13 @@
     {
       "category": "sop",
       "conditions": {
-        "domain": "dynamo",
-        "hardware": [
-          "Ascend 910B",
-          "Ascend 910C",
-          "Multi-Worker LLM Serving Fleet"
-        ]
+        "domain": "dynamo"
       },
       "domain_path": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection",
       "evidence_strength": "software_contract",
       "id": "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop",
-      "inherits_from": [
-        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-      ],
-      "inherits_from_closure": [
-        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
-        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-      ],
+      "inherits_from": [],
+      "inherits_from_closure": [],
       "path": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection/unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop.md",
       "provenance": {
         "evidence_refs": [
@@ -1241,10 +1210,10 @@
         "source_type": "source_contract",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "Dynamo KV-Aware Router Radix Prefix Overlap, Multi-Tier Cache Credits & Worker Cost Selection SOP",
-      "token_estimate": 1039,
+      "token_estimate": 1161,
       "triggers": {
         "error_signatures": [
           "Rejected cohort",
@@ -1265,25 +1234,13 @@
     {
       "category": "sop",
       "conditions": {
-        "domain": "dynamo",
-        "hardware": [
-          "Ascend 910B",
-          "Ascend 910C",
-          "Distributed LLM Router Runtime"
-        ]
+        "domain": "dynamo"
       },
       "domain_path": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort",
       "evidence_strength": "software_contract",
       "id": "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop",
-      "inherits_from": [
-        "unit-tgi-async-rpc-cancellation-boundary",
-        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-      ],
-      "inherits_from_closure": [
-        "unit-tgi-async-rpc-cancellation-boundary",
-        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
-        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-      ],
+      "inherits_from": [],
+      "inherits_from_closure": [],
       "path": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort/unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop.md",
       "provenance": {
         "evidence_refs": [
@@ -1294,10 +1251,10 @@
         "source_type": "source_contract",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "Dynamo Router Policy-Class Queue Backpressure (HTTP 529) & Staged-KV Decode Cancellation Budget SOP",
-      "token_estimate": 1278,
+      "token_estimate": 1399,
       "triggers": {
         "error_signatures": [
           "decode cleanup budget exhausted",
@@ -1910,23 +1867,13 @@
     {
       "category": "sop",
       "conditions": {
-        "domain": "mooncake",
-        "hardware": [
-          "Ascend 910B",
-          "Ascend 910C",
-          "Multi-NIC RoCE / InfiniBand / PCIe"
-        ]
+        "domain": "mooncake"
       },
       "domain_path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy",
       "evidence_strength": "software_contract",
       "id": "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop",
-      "inherits_from": [
-        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-      ],
-      "inherits_from_closure": [
-        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
-        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-      ],
+      "inherits_from": [],
+      "inherits_from_closure": [],
       "path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy/unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop.md",
       "provenance": {
         "evidence_refs": [
@@ -1937,10 +1884,10 @@
         "source_type": "source_contract",
         "supersedes": []
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "Mooncake Transfer Engine Segment Memory Registration, Zero-Copy Batch Submit & P2P Handshake SOP",
-      "token_estimate": 1089,
+      "token_estimate": 1227,
       "triggers": {
         "error_signatures": [
           "ERR_INVALID_ARGUMENT",

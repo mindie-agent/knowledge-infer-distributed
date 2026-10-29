@@ -7,9 +7,7 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop"
     ],
-    "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": [
-      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
-    ],
+    "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": [],
     "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms": [],
     "unit-ascend-hccl-secondary-timeout-and-in-kernel-mc2-sync-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
@@ -70,15 +68,8 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
     ],
-    "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop": [
-      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
-      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-    ],
-    "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop": [
-      "unit-tgi-async-rpc-cancellation-boundary",
-      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
-      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-    ],
+    "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop": [],
+    "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop": [],
     "unit-hccl-aicpu-checker-mismatch-and-algo-selection-debug-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop",
@@ -128,10 +119,7 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
     ],
-    "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop": [
-      "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
-      "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-    ],
+    "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop": [],
     "unit-multi-node-moe-ep-mc2-all2all-convergence-workflow": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop",
@@ -158,8 +146,8 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 234197,
-      "estimated_tokens": 41063,
+      "bytes": 236174,
+      "estimated_tokens": 41703,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
@@ -208,8 +196,8 @@
     "domains": [
       {
         "automatic": false,
-        "bytes": 18289,
-        "estimated_tokens": 3445,
+        "bytes": 18946,
+        "estimated_tokens": 3688,
         "exceeds": [],
         "kind": "federation",
         "path": "dynamo",
@@ -223,8 +211,8 @@
       },
       {
         "automatic": false,
-        "bytes": 74157,
-        "estimated_tokens": 12887,
+        "bytes": 75066,
+        "estimated_tokens": 13146,
         "exceeds": [],
         "kind": "federation",
         "path": "hccl",
@@ -247,8 +235,8 @@
       },
       {
         "automatic": false,
-        "bytes": 22601,
-        "estimated_tokens": 4333,
+        "bytes": 23012,
+        "estimated_tokens": 4471,
         "exceeds": [],
         "kind": "federation",
         "path": "mooncake",
@@ -331,7 +319,7 @@
       }
     ]
   },
-  "index_build_elapsed_ms": 20.38804200128652,
+  "index_build_elapsed_ms": 20.122500020079315,
   "leaves": [
     {
       "automatic": false,
@@ -348,8 +336,8 @@
     },
     {
       "automatic": false,
-      "bytes": 5717,
-      "estimated_tokens": 1039,
+      "bytes": 6068,
+      "estimated_tokens": 1161,
       "exceeds": [],
       "kind": "leaf",
       "path": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection",
@@ -361,8 +349,8 @@
     },
     {
       "automatic": false,
-      "bytes": 6497,
-      "estimated_tokens": 1278,
+      "bytes": 6803,
+      "estimated_tokens": 1399,
       "exceeds": [],
       "kind": "leaf",
       "path": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort",
@@ -468,8 +456,8 @@
     },
     {
       "automatic": false,
-      "bytes": 10312,
-      "estimated_tokens": 2037,
+      "bytes": 11221,
+      "estimated_tokens": 2296,
       "exceeds": [],
       "kind": "leaf",
       "path": "hccl/triage",
@@ -508,8 +496,8 @@
     },
     {
       "automatic": false,
-      "bytes": 11220,
-      "estimated_tokens": 2139,
+      "bytes": 11631,
+      "estimated_tokens": 2277,
       "exceeds": [],
       "kind": "leaf",
       "path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy",
@@ -726,8 +714,8 @@
     },
     {
       "automatic": false,
-      "bytes": 5717,
-      "estimated_tokens": 1039,
+      "bytes": 6068,
+      "estimated_tokens": 1161,
       "exceeds": [],
       "kind": "subtree",
       "path": "dynamo/kv-router/radix-and-cost-model",
@@ -739,8 +727,8 @@
     },
     {
       "automatic": false,
-      "bytes": 6497,
-      "estimated_tokens": 1278,
+      "bytes": 6803,
+      "estimated_tokens": 1399,
       "exceeds": [],
       "kind": "subtree",
       "path": "dynamo/runtime/backpressure-and-cancellation",
@@ -822,8 +810,8 @@
     },
     {
       "automatic": false,
-      "bytes": 10312,
-      "estimated_tokens": 2037,
+      "bytes": 11221,
+      "estimated_tokens": 2296,
       "exceeds": [],
       "kind": "subtree",
       "path": "hccl/triage",
@@ -862,8 +850,8 @@
     },
     {
       "automatic": false,
-      "bytes": 11220,
-      "estimated_tokens": 2139,
+      "bytes": 11631,
+      "estimated_tokens": 2277,
       "exceeds": [],
       "kind": "subtree",
       "path": "mooncake/transfer-engine/rdma-and-ascend-direct",
@@ -1069,15 +1057,13 @@
       "tier": "L2"
     },
     "unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop": {
-      "bytes": 10312,
+      "bytes": 11221,
       "category": "sop",
-      "content_sha256": "615ed244058f7f2b0c06056345ec3cf459f1f1369bd058080b5b938e3103fe9d",
+      "content_sha256": "8012ac1edc5a455a8a2f61f8d031be0c616fb19fd31d0d0ec990d64f0f0b9316",
       "domain_path": "hccl/triage",
-      "estimated_tokens": 2037,
+      "estimated_tokens": 2296,
       "evidence_strength": "software_contract",
-      "inherits_from": [
-        "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
-      ],
+      "inherits_from": [],
       "path": "hccl/triage/unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop.md",
       "tier": "L2"
     },
@@ -1283,29 +1269,24 @@
       "tier": "L3"
     },
     "unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop": {
-      "bytes": 5717,
+      "bytes": 6068,
       "category": "sop",
-      "content_sha256": "225fc87de43248628021261b4c321446e68499ade85b579d47b50f263546c669",
+      "content_sha256": "7ecde31d1bbc9a0277fddfb7dd9a83e1c030af141d1edb8f765054076d582a90",
       "domain_path": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection",
-      "estimated_tokens": 1039,
+      "estimated_tokens": 1161,
       "evidence_strength": "software_contract",
-      "inherits_from": [
-        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-      ],
+      "inherits_from": [],
       "path": "dynamo/kv-router/radix-and-cost-model/prefix-overlap-and-selection/unit-dynamo-kv-router-radix-overlap-and-worker-cost-selection-sop.md",
       "tier": "L2"
     },
     "unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop": {
-      "bytes": 6497,
+      "bytes": 6803,
       "category": "sop",
-      "content_sha256": "0f7c4e9114e0debaa5f9f99feae9099fbf7a04ccf92b9f04a329dc2268ac6ca1",
+      "content_sha256": "3fa8b43a4438bc57993dee81fc24b74b45417ca8aef8badc126a8ed1e2b0721f",
       "domain_path": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort",
-      "estimated_tokens": 1278,
+      "estimated_tokens": 1399,
       "evidence_strength": "software_contract",
-      "inherits_from": [
-        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop",
-        "unit-tgi-async-rpc-cancellation-boundary"
-      ],
+      "inherits_from": [],
       "path": "dynamo/runtime/backpressure-and-cancellation/queue-threshold-and-abort/unit-dynamo-router-queue-backpressure-and-inflight-cancellation-sop.md",
       "tier": "L2"
     },
@@ -1462,15 +1443,13 @@
       "tier": "L2"
     },
     "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop": {
-      "bytes": 5663,
+      "bytes": 6074,
       "category": "sop",
-      "content_sha256": "1dc70fdf9672a2030ddf68c66b82a75157ee410154985b0f6e983bcc63ef0ecb",
+      "content_sha256": "ab32847d3250fb462b6288625464a7d618b05cb3c522d951f3cc929d8c1703f8",
       "domain_path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy",
-      "estimated_tokens": 1089,
+      "estimated_tokens": 1227,
       "evidence_strength": "software_contract",
-      "inherits_from": [
-        "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
-      ],
+      "inherits_from": [],
       "path": "mooncake/transfer-engine/rdma-and-ascend-direct/transport-and-zero-copy/unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop.md",
       "tier": "L2"
     },
