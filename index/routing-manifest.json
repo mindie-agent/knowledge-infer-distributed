@@ -1,5 +1,5 @@
 {
-  "build_elapsed_ms": 20.122500020079315,
+  "build_elapsed_ms": 18.351499922573566,
   "closure": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms"
@@ -144,7 +144,7 @@
       "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
     ]
   },
-  "generation": "9b94522727677db84b458c6ed6b5809ecb5c5e0a05fcabdd00297cc92d9da24c",
+  "generation": "91f0a71bcb9c5b11ba281e169c80b3beefe3e2c17c95ad3ecc9ef0ca1156bf06",
   "id_path": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": "hccl/aicpu/unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop.md",
     "unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop": "hccl/topology-and-network/roce-hccs-diagnostics/unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop.md",
@@ -283,7 +283,7 @@
         "source_locator": "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_comm_group_construction_pitfalls.md",
         "source_type": "curated_repo"
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "Ascend HCCL Communicator Group Construction, HCCL_BUFFSIZE Sizing, and PD KV-Transfer RDMA Budget SOP",
       "token_estimate": 884,

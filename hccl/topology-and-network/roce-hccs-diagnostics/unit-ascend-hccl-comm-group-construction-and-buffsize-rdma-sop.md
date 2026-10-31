@@ -1,14 +1,5 @@
 ---
-schema: mindie-graded-unit/1
-id: unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop
-title: Ascend HCCL Communicator Group Construction, HCCL_BUFFSIZE Sizing, and PD KV-Transfer
-  RDMA Budget SOP
-domain_path: hccl/topology-and-network/roce-hccs-diagnostics
-tier: L2
 category: sop
-evidence_strength: reproduced_empirical
-status: active
-revision: 1
 conditions:
   accelerator: ascend
   communication_stack: hccl
@@ -16,10 +7,31 @@ conditions:
   runtime:
   - torch_npu
   - mindie
+domain_path: hccl/topology-and-network/roce-hccs-diagnostics
+evidence_strength: reproduced_empirical
+id: unit-ascend-hccl-comm-group-construction-and-buffsize-rdma-sop
 inherits_from:
 - unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms
 - unit-ascend-hccl-notify-wait-timeout-and-hccn-link-triage-sop
+provenance:
+  evidence_refs:
+  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_comm_group_construction_pitfalls.md
+  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_buffsize_too_small.md
+  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/moe_dispatch_combine_hccl_buffsize.md
+  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/pd_kv_transfer_timeout_from_hccl_rdma_budget.md
+  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/tensor_prep_before_hccl_collective.md
+  - https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-env-config/SKILL.md
+  - https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-env-debug/SKILL.md
+  source_digest: d6c40aa1ba022f59bcc69f94a43215e9f01f4bdb22fe4627a493db48c4376def
+  source_locator: https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_comm_group_construction_pitfalls.md
+  source_type: curated_repo
+revision: 2
+schema: mindie-graded-unit/1
+status: active
 supersedes: []
+tier: L2
+title: Ascend HCCL Communicator Group Construction, HCCL_BUFFSIZE Sizing, and PD KV-Transfer
+  RDMA Budget SOP
 triggers:
   error_signatures:
   - 'EI0006: HCCL buffer size is too small'
@@ -34,20 +46,7 @@ triggers:
   - pd_kv_transfer_timeout_from_hccl_rdma_budget
   - HCCL_RDMA_TIMEOUT
   - HCCL_RDMA_RETRY_CNT
-provenance:
-  source_type: curated_repo
-  source_locator: https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_comm_group_construction_pitfalls.md
-  evidence_refs:
-  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_comm_group_construction_pitfalls.md
-  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/hccl_buffsize_too_small.md
-  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/moe_dispatch_combine_hccl_buffsize.md
-  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/pd_kv_transfer_timeout_from_hccl_rdma_budget.md
-  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/tensor_prep_before_hccl_collective.md
-  - https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-env-config/SKILL.md
-  - https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/communication/hccl-env-debug/SKILL.md
-  source_digest: d6c40aa1ba022f59bcc69f94a43215e9f01f4bdb22fe4627a493db48c4376def
 ---
-
 ## HCCL Communicator Group Construction, Buffer Sizing, and RDMA Budget SOP
 
 ### Step 1: Enforce Deterministic Communicator Group Construction (`torch.distributed.new_group`)
