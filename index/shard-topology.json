@@ -138,6 +138,7 @@
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
     ],
+    "unit-vllm-ascend-parallel-ep-knee-eplb-and-xpyd-workflow": [],
     "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop": [
       "unit-ascend-hccl-roce-hccs-topology-and-ranktable-axioms",
       "unit-ascend-hybrid-tp-dp-ep-cp-sp-dimensional-partition-axioms"
@@ -146,8 +147,8 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 236174,
-      "estimated_tokens": 41703,
+      "bytes": 243729,
+      "estimated_tokens": 43129,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
@@ -189,9 +190,10 @@
         "unit-tgi-shard-result-aggregation",
         "unit-vllm-ascend-dynamic-chunked-pp-quadratic-predictor-and-calibration-sop",
         "unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow",
+        "unit-vllm-ascend-parallel-ep-knee-eplb-and-xpyd-workflow",
         "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop"
       ],
-      "units": 39
+      "units": 40
     },
     "domains": [
       {
@@ -251,8 +253,8 @@
       },
       {
         "automatic": false,
-        "bytes": 32762,
-        "estimated_tokens": 5090,
+        "bytes": 40317,
+        "estimated_tokens": 6516,
         "exceeds": [],
         "kind": "federation",
         "path": "parallelism",
@@ -263,9 +265,10 @@
           "unit-ascend-module-level-parallel-linear-and-moe-wiring-sop",
           "unit-ascend-torchtitan-fsdp2-5d-dtensor-and-dsa-cp-workflow",
           "unit-mindie-sd-dit-parallel-comm-masking-and-fewstep-probe-workflow",
-          "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop"
+          "unit-mindie-sd-usp-cfg-fa-power-cap-eplb-and-yuanrong-sop",
+          "unit-vllm-ascend-parallel-ep-knee-eplb-and-xpyd-workflow"
         ],
-        "units": 6
+        "units": 7
       },
       {
         "automatic": false,
@@ -319,7 +322,7 @@
       }
     ]
   },
-  "index_build_elapsed_ms": 18.351499922573566,
+  "index_build_elapsed_ms": 21.638750098645687,
   "leaves": [
     {
       "automatic": false,
@@ -507,6 +510,19 @@
         "unit-mooncake-transfer-engine-segment-buffer-and-p2p-handshake-sop"
       ],
       "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 7555,
+      "estimated_tokens": 1426,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "parallelism/ep-knee-eplb-xpyd",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-vllm-ascend-parallel-ep-knee-eplb-and-xpyd-workflow"
+      ],
+      "units": 1
     },
     {
       "automatic": false,
@@ -864,6 +880,19 @@
     },
     {
       "automatic": false,
+      "bytes": 7555,
+      "estimated_tokens": 1426,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "parallelism/ep-knee-eplb-xpyd",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-vllm-ascend-parallel-ep-knee-eplb-and-xpyd-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 20458,
       "estimated_tokens": 2924,
       "exceeds": [],
@@ -1027,7 +1056,7 @@
       "units": 1
     }
   ],
-  "unit_count": 39,
+  "unit_count": 40,
   "units": {
     "unit-ascend-hccl-aicpu-template-dataflow-and-dual-cmake-sop": {
       "bytes": 6037,
@@ -1527,6 +1556,17 @@
         "unit-pd-disaggregated-kv-connector-and-asymmetric-tp-sop"
       ],
       "path": "vllm-ascend/pd-disaggregation/mooncake-connectors/multi-node-and-colocated/unit-vllm-ascend-mooncake-layerwise-and-store-pd-disaggregation-workflow.md",
+      "tier": "L3"
+    },
+    "unit-vllm-ascend-parallel-ep-knee-eplb-and-xpyd-workflow": {
+      "bytes": 7555,
+      "category": "workflow",
+      "content_sha256": "b74a20ba4d006b0a633a0826f5794be55af0267c53adfa352a2dca1c614759cc",
+      "domain_path": "parallelism/ep-knee-eplb-xpyd",
+      "estimated_tokens": 1426,
+      "evidence_strength": "hypothesis",
+      "inherits_from": [],
+      "path": "parallelism/ep-knee-eplb-xpyd/unit-vllm-ascend-parallel-ep-knee-eplb-and-xpyd-workflow.md",
       "tier": "L3"
     },
     "unit-vllm-ascend-ray-multi-node-hccn-verification-and-tp-pp-launch-sop": {
